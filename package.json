@@ -1,0 +1,74 @@
+{
+  "name": "vue3-dnd",
+  "version": "0.0.0",
+  "description": "Drag and Drop for Vue3",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "test": "vitest run",
+	"clean": "shx rm -rf dist/",
+	"build_types": "tsc -b ./lib",
+	"build_esm": "swc -C module.type=es6 -d dist/esm lib/",
+	"build_cjs": "swc -C module.type=commonjs -d dist/cjs lib/",
+	"build": "run-s test clean && run-p build_types build_esm build_cjs"
+  },
+  "author": "hcg1023 <2293885211@qq.com>",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js",
+    "types": "./dist/types/index.d.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@react-dnd/invariant": "^3.0.0",
+    "@react-dnd/shallowequal": "^3.0.0",
+    "dnd-core": "^15.1.1",
+    "fast-deep-equal": "^3.1.3"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "files": ["dist"],
+  "keywords": [
+    "drag",
+    "drop",
+    "dnd",
+    "vue",
+    "vuejs",
+    "vue3",
+    "composition-api",
+    "react-dnd",
+    "draggable",
+    "droppable",
+    "drag-and-drop"
+  ],
+  "devDependencies": {
+    "@testing-library/vue": "^6.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "@vitejs/plugin-vue": "^2.2.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "less": "^4.1.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.5.1",
+    "react-dnd-html5-backend": "^15.1.2",
+    "react-dnd-test-backend": "^15.1.1",
+    "react-dnd-test-utils": "^15.1.1",
+    "shx": "^0.3.4",
+    "swc": "^1.0.11",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0",
+    "vite-plugin-dts": "^0.9.10",
+    "vitest": "^0.6.0",
+    "vue": "^3.2.31",
+    "vue-eslint-parser": "^8.3.0",
+    "vue-router": "^4.0.14",
+    "vue-tsc": "^0.29.8"
+  }
+}

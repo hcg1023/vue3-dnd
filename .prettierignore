@@ -1,0 +1,9 @@
+.yarn/
+.vscode
+.idea
+node_modules/
+dist/
+public/
+pnpm-lock.yaml
+pnpm-workspace.yaml
+yarn.lock
