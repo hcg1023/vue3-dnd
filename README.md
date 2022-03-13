@@ -1,6 +1,5 @@
 [![npm version](https://img.shields.io/npm/v/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
 [![npm downloads](https://img.shields.io/npm/dm/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
-[![Build Status](https://travis-ci.org/vue3-dnd/vue3-dnd.svg?branch=main)](https://travis-ci.org/vue3-dnd/vue3-dnd)
 
 # Vue3 _DnD_
 
