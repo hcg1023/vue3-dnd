@@ -7,6 +7,11 @@ export const routes: RouteRecordRaw[] = [
 		component: () => import('../views/Home.vue'),
 	},
 	{
+		path: '/example',
+		name: 'Example',
+		component: () => import('../views/Example.vue'),
+	},
+	{
 		path: '/dustbin/single-target',
 		name: 'SingleTarget',
 		component: () => import('../examples/00-chessboard/dustbin/single-target'),
