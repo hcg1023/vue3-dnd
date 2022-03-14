@@ -1,6 +1,6 @@
 {
   "name": "vue3-dnd",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Drag and Drop for Vue3",
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,7 @@
     "build": "run-s test clean && run-p build_types build_esm build_cjs",
     "prepare": "husky install",
     "prettier": "lint-staged",
-	"prepublish": "standard-version"
+    "prepublishOnly": "standard-version"
   },
   "author": "hcg1023 <2293885211@qq.com>",
   "main": "dist/cjs/index.js",
