@@ -18,7 +18,15 @@ export default defineConfig({
 		lib: {
 			entry: path.resolve(__dirname, './lib/index.ts'),
 			formats: ['cjs', 'es'],
-			fileName: 'vue3-dnd',
+			fileName: format => `${format}/index.js`,
+		},
+		rollupOptions: {
+			external: [
+				'@react-dnd/invariant',
+				'@react-dnd/shallowequal',
+				'dnd-core',
+				'fast-deep-equal',
+			],
 		},
 	},
 	resolve: {
