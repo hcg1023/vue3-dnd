@@ -22,4 +22,14 @@ export const routes: RouteRecordRaw[] = [
 		component: () =>
 			import('../examples/00-chessboard/dustbin/multiple-targets'),
 	},
+	{
+		path: '/drag-around/naive',
+		name: 'Naive',
+		component: () => import('../examples/02-drag-around/naive'),
+	},
+	{
+		path: '/drag-around/custom-drag-layer',
+		name: 'CustomDragLayer',
+		component: () => import('../examples/02-drag-around/custom-drag-layer'),
+	},
 ]

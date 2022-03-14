@@ -26,28 +26,36 @@ import Home from './Home.vue'
 </template>
 // Home.vue
 <script>
-import { useDrag, useDrop } from 'vue3-dnd'
+import { useDrag, useDrop, useDragLayer } from 'vue3-dnd'
 // Write your own code
 </script>
 ```
 
+## Docs
+Please refer to the [react-dnd](https://react-dnd.github.io/react-dnd/docs/overview) documentation and [github example](https://github.com/hcg1023/vue3-dnd/tree/main/src/examples), and we will supplement our documentation later.
 
+## Notice
 **Because of composition-API limitations, please do not attempt to deconstruct assignment for the collect parameter from hooks such as useDrag and useDrop, otherwise it will lose its responsiveness, Such as:**
 
 ```ts
-const [dragCollect, drag] = useDrag(() => ({
+import { toRefs } from 'vue'
+import { useDrag, toRefsReactive } from 'vue3-dnd'
+
+const [collect, drag] = useDrag(() => ({
 	type: props.type,
-	item: { name: props.name },
+	item: {name: props.name},
 	collect: monitor => ({
 		opacity: monitor.isDragging() ? 0.4 : 1,
 	}),
 }))
 
 // good
-const opacity = computed(() => unref(dragCollect).opacity)
+const opacity = computed(() => unref(collect).opacity)
+// using toRefsReactive api
+const { opacity } = toRefs(toRefsReactive(collect))
 // bad
-const { opacity } = dragCollect.value	
-const { opacity } = toRefs(dragCollect.value)
+const {opacity} = collect.value
+const {opacity} = toRefs(collect.value)
 ```
 
 # example
