@@ -5,7 +5,7 @@ import type {
 	DragSourceOptions,
 	DragPreviewOptions,
 	DropTargetOptions,
-} from '../types/index.js'
+} from '../types'
 
 export type FactoryOrInstance<T> = T | (() => T)
 export type DragObjectFactory<T> = (monitor: DragSourceMonitor<T>) => T | null
@@ -54,7 +54,7 @@ export interface DragSourceHookSpec<DragObject, DropResult, CollectedProps> {
 	 */
 	end?: (
 		draggedItem: DragObject,
-		monitor: DragSourceMonitor<DragObject, DropResult>,
+		monitor: DragSourceMonitor<DragObject, DropResult>
 	) => void
 
 	/**
@@ -83,7 +83,7 @@ export interface DragSourceHookSpec<DragObject, DropResult, CollectedProps> {
 	 * A function to collect rendering properties
 	 */
 	collect?: (
-		monitor: DragSourceMonitor<DragObject, DropResult>,
+		monitor: DragSourceMonitor<DragObject, DropResult>
 	) => CollectedProps
 }
 
@@ -113,7 +113,7 @@ export interface DropTargetHookSpec<DragObject, DropResult, CollectedProps> {
 	 */
 	drop?: (
 		item: DragObject,
-		monitor: DropTargetMonitor<DragObject, DropResult>,
+		monitor: DropTargetMonitor<DragObject, DropResult>
 	) => DropResult | undefined
 
 	/**
@@ -124,7 +124,7 @@ export interface DropTargetHookSpec<DragObject, DropResult, CollectedProps> {
 	 */
 	hover?: (
 		item: DragObject,
-		monitor: DropTargetMonitor<DragObject, DropResult>,
+		monitor: DropTargetMonitor<DragObject, DropResult>
 	) => void
 
 	/**
@@ -134,13 +134,13 @@ export interface DropTargetHookSpec<DragObject, DropResult, CollectedProps> {
 	 */
 	canDrop?: (
 		item: DragObject,
-		monitor: DropTargetMonitor<DragObject, DropResult>,
+		monitor: DropTargetMonitor<DragObject, DropResult>
 	) => boolean
 
 	/**
 	 * A function to collect rendering properties
 	 */
 	collect?: (
-		monitor: DropTargetMonitor<DragObject, DropResult>,
+		monitor: DropTargetMonitor<DragObject, DropResult>
 	) => CollectedProps
 }

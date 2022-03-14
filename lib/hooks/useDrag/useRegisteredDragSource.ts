@@ -6,33 +6,6 @@ import { useDragDropManager } from '../useDragDropManager.js'
 import { useDragType } from './useDragType.js'
 import { Ref, unref, watchEffect } from 'vue'
 
-// export function useRegisteredDragSource<O, R, P>(
-// 	spec: DragSourceHookSpec<O, R, P>,
-// 	monitor: DragSourceMonitor<O, R>,
-// 	connector: SourceConnector
-// ): void {
-// 	const manager = useDragDropManager()
-// 	const handler = useDragSource(spec, monitor, connector)
-// 	const itemType = useDragType(spec)
-//
-// 	useIsomorphicLayoutEffect(
-// 		function registerDragSource() {
-// 			if (itemType != null) {
-// 				const [handlerId, unregister] = registerSource(
-// 					itemType,
-// 					handler,
-// 					manager
-// 				)
-// 				monitor.receiveHandlerId(handlerId)
-// 				connector.receiveHandlerId(handlerId)
-// 				return unregister
-// 			}
-// 			return
-// 		},
-// 		[manager, monitor, connector, handler, itemType]
-// 	)
-// }
-
 export function useRegisteredDragSource<O, R, P>(
 	spec: Ref<DragSourceHookSpec<O, R, P>>,
 	monitor: Ref<DragSourceMonitor<O, R>>,

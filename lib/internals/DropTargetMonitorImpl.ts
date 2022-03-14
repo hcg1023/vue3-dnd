@@ -7,7 +7,7 @@ import type {
 	XYCoord,
 } from 'dnd-core'
 import { invariant } from '@react-dnd/invariant'
-import type { DropTargetMonitor } from '../types/index.js'
+import type { DropTargetMonitor } from '../types'
 
 let isCallingCanDrop = false
 
@@ -29,7 +29,7 @@ export class DropTargetMonitorImpl implements DropTargetMonitor {
 
 	public subscribeToStateChange(
 		listener: Listener,
-		options?: { handlerIds?: Identifier[] },
+		options?: { handlerIds?: Identifier[] }
 	): Unsubscribe {
 		return this.internalMonitor.subscribeToStateChange(listener, options)
 	}
@@ -44,7 +44,7 @@ export class DropTargetMonitorImpl implements DropTargetMonitor {
 		invariant(
 			!isCallingCanDrop,
 			'You may not call monitor.canDrop() inside your canDrop() implementation. ' +
-				'Read more: http://react-dnd.github.io/react-dnd/docs/api/drop-target-monitor',
+				'Read more: http://react-dnd.github.io/react-dnd/docs/api/drop-target-monitor'
 		)
 
 		try {

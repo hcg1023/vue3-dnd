@@ -1,5 +1,5 @@
-import { registerTarget, TargetConnector } from '../../internals/index.js'
-import type { DropTargetMonitor } from '../../types/index.js'
+import { registerTarget, TargetConnector } from '../../internals'
+import type { DropTargetMonitor } from '../../types'
 import type { DropTargetHookSpec } from '../types.js'
 import { useDragDropManager } from '../useDragDropManager.js'
 import { useAccept } from './useAccept.js'

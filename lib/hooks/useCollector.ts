@@ -8,33 +8,6 @@ import { Ref, ref, unref, watchEffect } from 'vue'
  * @param collect The collecting function
  * @param onUpdate A method to invoke when updates occur
  */
-// export function useCollector<T, S>(
-// 	monitor: T,
-// 	collect: (monitor: T) => S,
-// 	onUpdate?: () => void,
-// ): [S, () => void] {
-// 	const [collected, setCollected] = useState(() => collect(monitor))
-//
-// 	const updateCollected = useCallback(() => {
-// 		const nextValue = collect(monitor)
-// 		// This needs to be a deep-equality check because some monitor-collected values
-// 		// include XYCoord objects that may be equivalent, but do not have instance equality.
-// 		if (!equal(collected, nextValue)) {
-// 			setCollected(nextValue)
-// 			if (onUpdate) {
-// 				onUpdate()
-// 			}
-// 		}
-// 	}, [collected, monitor, onUpdate])
-//
-// 	// update the collected properties after react renders.
-// 	// Note that the "Dustbin Stress Test" fails if this is not
-// 	// done when the component updates
-// 	useIsomorphicLayoutEffect(updateCollected)
-//
-// 	return [collected, updateCollected]
-// }
-
 export function useCollector<T, S>(
 	monitor: MaybeRef<T>,
 	collect: MaybeRef<(monitor: T) => S>,

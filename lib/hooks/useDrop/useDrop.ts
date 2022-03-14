@@ -10,8 +10,7 @@ import { computed, Ref, unref } from 'vue'
 
 /**
  * useDropTarget Hook
- * @param spec The drop target specification (object or function, function preferred)
- * @param deps The memoization deps array to use when evaluating spec changes
+ * @param specArg The drop target specification (object or function, function preferred)
  */
 export function useDrop<
 	DragObject = unknown,
