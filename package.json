@@ -6,11 +6,13 @@
     "dev": "vite",
     "preview": "vite preview",
     "test": "vitest run",
-	"clean": "shx rm -rf dist/",
-	"build_types": "tsc -b ./lib",
-	"build_esm": "swc -C module.type=es6 -d dist/esm lib/",
-	"build_cjs": "swc -C module.type=commonjs -d dist/cjs lib/",
-	"build": "run-s test clean && run-p build_types build_esm build_cjs"
+    "clean": "shx rm -rf dist/",
+    "build_types": "tsc -b ./lib",
+    "build_esm": "swc -C module.type=es6 -d dist/esm lib/",
+    "build_cjs": "swc -C module.type=commonjs -d dist/cjs lib/",
+    "build": "run-s test clean && run-p build_types build_esm build_cjs",
+    "prepare": "husky install",
+    "prettier": "lint-staged"
   },
   "author": "hcg1023 <2293885211@qq.com>",
   "main": "dist/cjs/index.js",
@@ -21,6 +23,11 @@
     "require": "./dist/cjs/index.js",
     "types": "./dist/types/index.d.ts"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hcg1023/vue3-dnd"
+  },
+  "bugs": "https://github.com/hcg1023/vue3-dnd/issues",
   "license": "MIT",
   "dependencies": {
     "@react-dnd/invariant": "^3.0.0",
@@ -31,7 +38,9 @@
   "peerDependencies": {
     "vue": "^3.2.0"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "drag",
     "drop",
@@ -46,6 +55,8 @@
     "drag-and-drop"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@testing-library/vue": "^6.5.1",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
@@ -54,13 +65,17 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.5.0",
+    "husky": "^7.0.4",
     "less": "^4.1.2",
+    "lint-staged": "^12.3.5",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
     "react-dnd-html5-backend": "^15.1.2",
     "react-dnd-test-backend": "^15.1.1",
     "react-dnd-test-utils": "^15.1.1",
     "shx": "^0.3.4",
+    "standard-version": "^9.3.2",
+    "stylelint": "^14.5.3",
     "swc": "^1.0.11",
     "typescript": "^4.5.4",
     "vite": "^2.8.0",
@@ -70,5 +85,13 @@
     "vue-eslint-parser": "^8.3.0",
     "vue-router": "^4.0.14",
     "vue-tsc": "^0.29.8"
+  },
+  "lint-staged": {
+    "*.{js,js,ts,tsx,vue}": [
+      "prettier --write"
+    ],
+    "*.{less,css}": [
+      "stylelint --fix"
+    ]
   }
 }
