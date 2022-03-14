@@ -16,7 +16,7 @@ pnpm install vue3-dnd
 <script>
 import { DndProvider } from 'vue3-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import Example from './Example.vue'
+import Home from './Home.vue'
 </script>
 
 <template>
@@ -24,7 +24,14 @@ import Example from './Example.vue'
         <Home></Home>
     </DndProvider>
 </template>
+// Home.vue
+<script>
+import { useDrag, useDrop } from 'vue3-dnd'
+
+
+</script>
 ```
+
 
 **Because of composition-API limitations, please do not attempt to deconstruct assignment for the collect parameter from hooks such as useDrag and useDrop, otherwise it will lose its responsiveness, Such as:**
 
