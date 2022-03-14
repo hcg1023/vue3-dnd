@@ -1,6 +1,6 @@
 {
   "name": "vue3-dnd",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Drag and Drop for Vue3",
   "scripts": {
     "dev": "vite",
@@ -11,8 +11,8 @@
     "build_esm": "swc -C module.type=es6 -d dist/esm lib/",
     "build_cjs": "swc -C module.type=commonjs -d dist/cjs lib/",
     "build:swc": "run-s test clean && run-p build_types build_esm build_cjs",
-	"build:vite": "vite build",
-	"build": "run-s test clean build:vite build_types",
+    "build:vite": "vite build",
+    "build": "run-s test clean build:vite build_types",
     "prepare": "husky install",
     "prettier": "lint-staged",
     "prepublishOnly": "npm run build && standard-version"
