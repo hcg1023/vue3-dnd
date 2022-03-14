@@ -1,4 +1,3 @@
-<script lang="ts">
 import { defineComponent, onUnmounted, PropType } from 'vue'
 import { useDndContextProvider } from './DndContext'
 import {
@@ -110,4 +109,3 @@ export default defineComponent({
 		return () => slots.default?.() ?? null
 	},
 })
-</script>

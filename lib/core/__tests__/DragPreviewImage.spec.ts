@@ -1,4 +1,4 @@
-import DragPreviewImage from '../DragPreviewImage.vue'
+import DragPreviewImage from '../DragPreviewImage'
 import { DndProvider } from '../../core'
 import { TestBackend } from 'react-dnd-test-backend'
 import { render, cleanup } from '@testing-library/vue'

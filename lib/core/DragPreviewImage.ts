@@ -1,4 +1,3 @@
-<script lang="ts">
 import { defineComponent, PropType, watchEffect } from 'vue'
 import { ConnectDragPreview } from '../types'
 
@@ -33,4 +32,3 @@ export default defineComponent({
 		return () => null
 	},
 })
-</script>

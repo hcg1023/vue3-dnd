@@ -1,7 +1,7 @@
 import { createDragDropManager, DragDropManager } from 'dnd-core'
 import { render, cleanup } from '@testing-library/vue'
 import { useDndContextInjector } from '../DndContext'
-import DndProvider from '../DndProvider.vue'
+import DndProvider from '../DndProvider'
 import { TestBackend } from 'react-dnd-test-backend'
 import { defineComponent, h } from 'vue'
 

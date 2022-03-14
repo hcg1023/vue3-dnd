@@ -1,5 +1,5 @@
 export * from './DndContext.js'
-import DndProvider from './DndProvider.vue'
-import DndPreviewImage from './DragPreviewImage.vue'
+import DndProvider from './DndProvider.js'
+import DndPreviewImage from './DragPreviewImage.js'
 
 export { DndProvider, DndPreviewImage }
