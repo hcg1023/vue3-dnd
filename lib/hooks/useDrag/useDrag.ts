@@ -17,6 +17,7 @@ export function useDrag<
 	DragObject = unknown,
 	DropResult = unknown,
 	CollectedProps = unknown,
+	ConnectDragSourceOptions = unknown,
 	ConnectDragPreviewOption = unknown
 >(
 	specArg: FactoryOrInstance<
@@ -24,7 +25,7 @@ export function useDrag<
 	>
 ): [
 	Ref<CollectedProps>,
-	Ref<ConnectDragSource>,
+	Ref<ConnectDragSource<ConnectDragSourceOptions>>,
 	Ref<ConnectDragPreview<ConnectDragPreviewOption>>
 ] {
 	const spec = useOptionalFactory(specArg)

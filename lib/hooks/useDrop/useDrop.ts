@@ -15,12 +15,13 @@ import { computed, Ref, unref } from 'vue'
 export function useDrop<
 	DragObject = unknown,
 	DropResult = unknown,
-	CollectedProps = unknown
+	CollectedProps = unknown,
+	ConnectDropTargetOptions = unknown
 >(
 	specArg: FactoryOrInstance<
 		DropTargetHookSpec<DragObject, DropResult, CollectedProps>
 	>
-): [Ref<CollectedProps>, Ref<ConnectDropTarget>] {
+): [Ref<CollectedProps>, Ref<ConnectDropTarget<ConnectDropTargetOptions>>] {
 	const spec = useOptionalFactory(specArg)
 	const monitor = useDropTargetMonitor<DragObject, DropResult>()
 	const connector = useDropTargetConnector(computed(() => unref(spec).options))

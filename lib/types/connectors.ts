@@ -1,10 +1,10 @@
-import { ComponentPublicInstance, VNode } from 'vue'
+export type ConnectableElement = Element | null
 
-export type ConnectableElement = Element | ComponentPublicInstance | null
-
-export type ConnectDragSource = ConnectableElement
-export type ConnectDropTarget = ConnectableElement
-export type ConnectDragPreview<Options> = (
+type ConnectNode<Options> = (
 	elementOrNode: ConnectableElement,
 	options?: Options
-) => VNode
+) => Element
+
+export type ConnectDragSource<Options> = ConnectNode<Options>
+export type ConnectDropTarget<Options> = ConnectNode<Options>
+export type ConnectDragPreview<Options> = ConnectNode<Options>

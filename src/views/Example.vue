@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useDrag, useDrop } from 'vue3-dnd'
 import { computed, unref } from 'vue'
+import Box from './Box.vue'
 
 const [dropCollect, drop] = useDrop(() => ({
 	accept: 'Box',
@@ -36,6 +37,10 @@ const [collect, drag] = useDrag(() => ({
 const isDragging = computed(() => collect.value.isDragging)
 
 const opacity = computed(() => (unref(isDragging) ? 0.4 : 1))
+
+const setRef = (instance: any) => {
+	drag.value(instance.el)
+}
 </script>
 
 <template>
@@ -51,7 +56,14 @@ const opacity = computed(() => (unref(isDragging) ? 0.4 : 1))
 			</div>
 		</div>
 		<div :style="{ overflow: 'hidden', clear: 'both' }">
-			<div :ref="drag" class="box" role="Box" :style="{ opacity }">Box</div>
+			<Box
+				:ref="setRef"
+				class="box"
+				role="Box"
+				:style="{ opacity }"
+				title="Box"
+			></Box>
+			<!--			<div :ref="drag" class="box" role="Box" :style="{ opacity }">Box</div>-->
 		</div>
 	</div>
 </template>
