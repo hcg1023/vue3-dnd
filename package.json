@@ -1,6 +1,6 @@
 {
   "name": "vue3-dnd",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Drag and Drop for Vue3",
   "scripts": {
     "dev": "vite",
