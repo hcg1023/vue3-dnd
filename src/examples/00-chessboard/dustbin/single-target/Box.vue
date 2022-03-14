@@ -13,6 +13,7 @@
 import { useDrag } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
 import { computed, toRefs, unref } from 'vue'
+import { toRefsReactive } from '../../../../../lib/internals/toReactive'
 
 interface DropResult {
 	name: string
@@ -46,7 +47,8 @@ const [collect, drag] = useDrag(() => ({
 		handlerId: monitor.getHandlerId(),
 	}),
 }))
-const isDragging = computed(() => collect.value.isDragging)
+
+const { isDragging } = toRefs(toRefsReactive(collect))
 
 const opacity = computed(() => (unref(isDragging) ? 0.4 : 1))
 </script>

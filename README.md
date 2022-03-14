@@ -27,8 +27,7 @@ import Home from './Home.vue'
 // Home.vue
 <script>
 import { useDrag, useDrop } from 'vue3-dnd'
-
-
+// Write your own code
 </script>
 ```
 
