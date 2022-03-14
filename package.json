@@ -12,7 +12,8 @@
     "build_cjs": "swc -C module.type=commonjs -d dist/cjs lib/",
     "build": "run-s test clean && run-p build_types build_esm build_cjs",
     "prepare": "husky install",
-    "prettier": "lint-staged"
+    "prettier": "lint-staged",
+	"prepublish": "standard-version"
   },
   "author": "hcg1023 <2293885211@qq.com>",
   "main": "dist/cjs/index.js",

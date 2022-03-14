@@ -5,6 +5,27 @@
 
 React Dnd implementation in Vue3
 
+# Using
+```
+npm install vue3-dnd
+yarn add vue3-dnd
+pnpm install vue3-dnd
+```
+```vue
+// App.vue
+<script>
+import { DndProvider } from 'vue3-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import Example from './Example.vue'
+</script>
+
+<template>
+    <DndProvider :backend="HTML5Backend">
+        <Home></Home>
+    </DndProvider>
+</template>
+```
+
 **Because of composition-API limitations, please do not attempt to deconstruct assignment for the collect parameter from hooks such as useDrag and useDrop, otherwise it will lose its responsiveness, Such as:**
 
 ```ts
