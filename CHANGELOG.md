@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/hcg1023/vue3-dnd/compare/v0.0.4...v0.0.5) (2022-03-14)
+
+
+### Features
+
+* update DndProvider and DragPreviewImage vue to ts ([bb70f59](https://github.com/hcg1023/vue3-dnd/commit/bb70f59f6b0fd1fcc8dd52a28699fa9c0456fc3a))
+
 ### [0.0.4](https://github.com/hcg1023/vue3-dnd/compare/v0.0.3...v0.0.4) (2022-03-14)
 
 
