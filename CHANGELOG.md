@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/hcg1023/vue3-dnd/compare/v0.0.6...v0.0.7) (2022-03-15)
+
+
+### Features
+
+* error message about wrapping a Vue component with drag ([dd8536d](https://github.com/hcg1023/vue3-dnd/commit/dd8536d63d8776272b943be7818419599109fb54))
+
 ### [0.0.6](https://github.com/hcg1023/vue3-dnd/compare/v0.0.5...v0.0.6) (2022-03-14)
 
 
