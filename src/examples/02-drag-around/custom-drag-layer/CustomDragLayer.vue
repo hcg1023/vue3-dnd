@@ -4,7 +4,7 @@ import { ItemTypes } from './ItemTypes'
 import BoxDragPreview from './BoxDragPreview.vue'
 import { snapToGrid } from './snapToGrid'
 import { toRefs } from 'vue'
-import { toRefsReactive } from '../../../../lib/internals/toReactive'
+import { toRefsReactive } from 'vue-ref2reactive'
 
 function getItemStyles(
 	initialOffset: XYCoord | null,

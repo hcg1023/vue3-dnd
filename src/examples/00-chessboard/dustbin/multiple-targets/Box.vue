@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useDrag } from 'vue3-dnd'
 import { computed, toRefs } from 'vue'
-import { toRefsReactive } from '../../../../../lib/internals/toReactive'
+import { toRefsReactive } from 'vue-ref2reactive'
 
 const style = {
 	border: '1px dashed gray',

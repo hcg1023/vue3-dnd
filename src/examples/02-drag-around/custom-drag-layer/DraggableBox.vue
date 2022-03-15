@@ -3,7 +3,7 @@ import { useDrag, DragSourceMonitor } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
 import { getEmptyImage } from 'react-dnd-html5-backend'
 import Box from './Box.vue'
-import { toRefsReactive } from '../../../../lib/internals/toReactive'
+import { toRefsReactive } from 'vue-ref2reactive'
 import { toRefs } from 'vue'
 
 const props = defineProps<{

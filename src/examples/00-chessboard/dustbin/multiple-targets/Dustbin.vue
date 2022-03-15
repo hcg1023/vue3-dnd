@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useDrop } from 'vue3-dnd'
 import { computed, toRefs, unref } from 'vue'
-import { toRefsReactive } from '../../../../../lib/internals/toReactive'
+import { toRefsReactive } from 'vue-ref2reactive'
 
 const style = {
 	height: '12rem',

@@ -5,7 +5,7 @@
 
 React Dnd implementation in Vue3
 
-# Using
+## Using
 ```
 npm install vue3-dnd
 yarn add vue3-dnd
@@ -39,7 +39,8 @@ Please refer to the [react-dnd](https://react-dnd.github.io/react-dnd/docs/overv
 
 ```ts
 import { toRefs } from 'vue'
-import { useDrag, toRefsReactive } from 'vue3-dnd'
+import { useDrag } from 'vue3-dnd'
+import { toRefsValue } from 'vue-ref2reactive'
 
 const [collect, drag] = useDrag(() => ({
 	type: props.type,
@@ -51,14 +52,14 @@ const [collect, drag] = useDrag(() => ({
 
 // good
 const opacity = computed(() => unref(collect).opacity)
-// using toRefsReactive api
-const { opacity } = toRefs(toRefsReactive(collect))
+// using toRefsValue api
+const { opacity } = toRefsValue(collect)
 // bad
 const {opacity} = collect.value
 const {opacity} = toRefs(collect.value)
 ```
 
-# example
+## example
 App.vue
 ```vue
 <script setup lang="ts">
@@ -162,3 +163,7 @@ const opacity = computed(() => (unref(isDragging) ? 0.4 : 1))
 }
 </style>
 ```
+
+## Thanks
+
+[React-Dnd](https://github.com/react-dnd/react-dnd)

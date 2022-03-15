@@ -2,7 +2,7 @@
 import { useDrop } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
 import { computed, toRefs, unref } from 'vue'
-import { toRefsReactive } from '../../../../../lib/internals/toReactive'
+import { toRefsReactive } from 'vue-ref2reactive'
 
 const style = {
 	height: '12rem',

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useDrag } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
-import { toRefsReactive } from '../../../../lib/internals/toReactive'
+import { toRefsReactive } from 'vue-ref2reactive'
 import { toRefs } from 'vue'
 
 const props = defineProps<{
