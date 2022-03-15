@@ -1,25 +1,20 @@
-import { invariant } from '@react-dnd/invariant'
-import { Ref, VNode, Component } from 'vue'
-import { cloneElement, isValidElement } from './utils'
+import { isValidElement, isVueSkipInstance } from './utils'
 
-function throwIfCompositeComponentElement(element: VNode) {
-	// Custom components can no longer be wrapped directly in React DnD 2.0
-	// so that we don't need to depend on findDOMNode() from react-dom.
-	if (typeof element.type === 'string') {
-		return
-	}
-
-	const displayName = (element.type as Component).name || 'the component'
+function throwIfCompositeComponentElement() {
+	// Custom components can no longer be wrapped directly in Vue Dnd
 
 	throw new Error(
-		'Only native element nodes can now be passed to React DnD connectors.' +
-			`You can either wrap ${displayName} into a <div>, or turn it into a ` +
+		'Only native element nodes can now be passed to Vue DnD connectors.' +
+			`You can either wrap Component into a <div>, or turn it into a ` +
 			'drag source or a drop target itself.'
 	)
 }
 
 function wrapHookToRecognizeElement(hook: (node: any, options: any) => void) {
 	return (elementOrNode = null, options = null) => {
+		if (isVueSkipInstance(elementOrNode)) {
+			throwIfCompositeComponentElement()
+		}
 		// When passed a node, call the hook straight away.
 		if (!isValidElement(elementOrNode)) {
 			const node = elementOrNode
@@ -28,16 +23,6 @@ function wrapHookToRecognizeElement(hook: (node: any, options: any) => void) {
 			// <div ref={node => connectDragSource(connectDropTarget(node))}/>
 			return node
 		}
-
-		// If passed a ReactElement, clone it and attach this function as a ref.
-		// This helps us achieve a neat API where user doesn't even know that refs
-		// are being used under the hood.
-		const element: VNode | null = elementOrNode
-		throwIfCompositeComponentElement(element as any)
-
-		// When no options are passed, use the hook directly
-		const ref = options ? (node: Element) => hook(node, options) : hook
-		return cloneWithRef(element, ref)
 	}
 }
 
@@ -57,36 +42,4 @@ export function wrapConnectorHooks(hooks: any) {
 	})
 
 	return wrappedHooks
-}
-
-function setRef(ref: ((node: any) => void) | Ref<any>, node: any) {
-	if (typeof ref === 'function') {
-		ref(node)
-	} else {
-		ref.value = node
-	}
-}
-
-function cloneWithRef(element: any, newRef: any): VNode {
-	const previousRef = element.ref
-	invariant(
-		typeof previousRef !== 'string',
-		'Cannot connect React DnD to an element with an existing string ref. ' +
-			'Please convert it to use a callback ref instead, or wrap it into a <span> or <div>. ' +
-			'Read more: https://reactjs.org/docs/refs-and-the-dom.html#callback-refs'
-	)
-
-	if (!previousRef) {
-		// When there is no ref on the element, use the new ref directly
-		return cloneElement(element, {
-			ref: newRef,
-		})!
-	} else {
-		return cloneElement(element, {
-			ref: (node: any) => {
-				setRef(previousRef, node)
-				setRef(newRef, node)
-			},
-		})!
-	}
 }

@@ -12,6 +12,10 @@ export function isEmptyElement(c: any) {
 	)
 }
 
+export function isVueSkipInstance(element: any): boolean {
+	return element ? element.__v_skip : false
+}
+
 export function isValidElement(element: any) {
 	return isVNode(element) && typeof element.type !== 'symbol' // remove text node
 }
