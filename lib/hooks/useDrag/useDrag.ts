@@ -8,6 +8,7 @@ import { useCollectedProps } from '../useCollectedProps.js'
 import { useConnectDragPreview, useConnectDragSource } from './connectors.js'
 import { invariant } from '@react-dnd/invariant'
 import { computed, Ref, unref } from 'vue'
+import { DragPreviewOptions, DragSourceOptions } from '../../types'
 
 /**
  * useDragSource hook
@@ -17,8 +18,8 @@ export function useDrag<
 	DragObject = unknown,
 	DropResult = unknown,
 	CollectedProps = unknown,
-	ConnectDragSourceOptions = unknown,
-	ConnectDragPreviewOption = unknown
+	ConnectDragSourceOptions extends DragSourceOptions = DragSourceOptions,
+	ConnectDragPreviewOption extends DragPreviewOptions = DragPreviewOptions
 >(
 	specArg: FactoryOrInstance<
 		DragSourceHookSpec<DragObject, DropResult, CollectedProps>

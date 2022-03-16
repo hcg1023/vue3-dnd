@@ -33,7 +33,7 @@ specifiers:
   vitest: ^0.6.0
   vue: ^3.2.31
   vue-eslint-parser: ^8.3.0
-  vue-ref2reactive: ^0.0.0
+  vue-ref2reactive: 0.0.3
   vue-router: ^4.0.14
   vue-tsc: ^0.29.8
 
@@ -72,7 +72,7 @@ devDependencies:
   vitest: registry.npmmirror.com/vitest/0.6.0_less@4.1.2
   vue: registry.npmmirror.com/vue/3.2.31
   vue-eslint-parser: registry.npmmirror.com/vue-eslint-parser/8.3.0_eslint@8.10.0
-  vue-ref2reactive: 0.0.0_vue@3.2.31
+  vue-ref2reactive: 0.0.3_vue@3.2.31
   vue-router: registry.npmmirror.com/vue-router/4.0.14_vue@3.2.31
   vue-tsc: registry.npmmirror.com/vue-tsc/0.29.8_typescript@4.6.2
 
@@ -2876,8 +2876,23 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vue-ref2reactive/0.0.0_vue@3.2.31:
-    resolution: {integrity: sha512-DIdHzI0geMDiq2k+lMyPKYmgjM2wFqhbxot9phoaWIw/j2YI0gn9CjjoNHqhjqyTyM01udx/qEfpxM0tbtohRQ==}
+  /vue-demi/0.12.3_vue@3.2.31:
+    resolution: {integrity: sha512-u1dV2Y7nxUCHJC0+KZG7YgqjOgDgd8GS0rHp2YTiXy6rBPaYvEraoXkndU3UrExMLoN8SOnCWkDB27yu0BxGtg==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: registry.npmmirror.com/vue/3.2.31
+    dev: true
+
+  /vue-ref2reactive/0.0.3_vue@3.2.31:
+    resolution: {integrity: sha512-ZWLC9Bdi/swNEr2cV01dwUQBEd40LtgB2r2uGcZo/0rEF3hyMRCmop7Em3KbYxR4JYEIGvve+bNk/gUAk4rxEg==}
     peerDependencies:
       '@vue/composition-api': ^1.0.0-rc.1
       vue: ^2.0.0 || >=3.0.0
@@ -2886,6 +2901,7 @@ packages:
         optional: true
     dependencies:
       vue: registry.npmmirror.com/vue/3.2.31
+      vue-demi: 0.12.3_vue@3.2.31
     dev: true
 
   /which/1.3.1:

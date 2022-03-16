@@ -7,6 +7,7 @@ import { useDropTargetConnector } from './useDropTargetConnector.js'
 import { useCollectedProps } from '../useCollectedProps.js'
 import { useConnectDropTarget } from './connectors.js'
 import { computed, Ref, unref } from 'vue'
+import { DropTargetOptions } from '../../types'
 
 /**
  * useDropTarget Hook
@@ -16,7 +17,7 @@ export function useDrop<
 	DragObject = unknown,
 	DropResult = unknown,
 	CollectedProps = unknown,
-	ConnectDropTargetOptions = unknown
+	ConnectDropTargetOptions extends DropTargetOptions = DropTargetOptions
 >(
 	specArg: FactoryOrInstance<
 		DropTargetHookSpec<DragObject, DropResult, CollectedProps>

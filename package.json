@@ -86,7 +86,7 @@
     "vitest": "^0.6.0",
     "vue": "^3.2.31",
     "vue-eslint-parser": "^8.3.0",
-    "vue-ref2reactive": "^0.0.0",
+    "vue-ref2reactive": "^0.0.3",
     "vue-router": "^4.0.14",
     "vue-tsc": "^0.29.8"
   },

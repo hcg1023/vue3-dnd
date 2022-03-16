@@ -35,32 +35,61 @@ import { useDrag, useDrop, useDragLayer } from 'vue3-dnd'
 Please refer to the [react-dnd](https://react-dnd.github.io/react-dnd/docs/overview) documentation and [github example](https://github.com/hcg1023/vue3-dnd/tree/main/src/examples), and we will supplement our documentation later.
 
 ## Notice
-**Because of composition-API limitations, please do not attempt to deconstruct assignment for the collect parameter from hooks such as useDrag and useDrop, otherwise it will lose its responsiveness, Such as:**
+1. **Because of composition-API limitations, please do not attempt to deconstruct assignment for the collect parameter from hooks such as useDrag and useDrop, otherwise it will lose its responsiveness, Such as:**
 
-```ts
-import { toRefs } from 'vue'
-import { useDrag } from 'vue3-dnd'
-import { toRefsValue } from 'vue-ref2reactive'
+    ```ts
+    import { toRefs } from 'vue'
+    import { useDrag } from 'vue3-dnd'
+    import { toRefsValue } from 'vue-ref2reactive'
+    
+    const [collect, drag] = useDrag(() => ({
+        type: props.type,
+        item: {name: props.name},
+        collect: monitor => ({
+            opacity: monitor.isDragging() ? 0.4 : 1,
+        }),
+    }))
+    
+    // good
+    const opacity = computed(() => unref(collect).opacity)
+    // using toRefsValue api
+    const { opacity } = toRefsValue(collect)
+    // bad
+    const {opacity} = collect.value
+    const {opacity} = toRefs(collect.value)
+    ```
 
-const [collect, drag] = useDrag(() => ({
-	type: props.type,
-	item: {name: props.name},
-	collect: monitor => ({
-		opacity: monitor.isDragging() ? 0.4 : 1,
-	}),
+2. **The drag drop dragPreview ref is a function, using template please using `v-bind:ref="drag"`, You can also set the value to it using a new function**
+```vue
+<template>
+  <div :ref="drag">box</div>
+  <div :ref="setDrop">drop div
+    <section>
+      drop section
+    </section>
+  </div>
+</template>
+<script lang="ts" setup>
+import { useDrag, useDrop } from 'vue3-dnd'
+
+const [, drag] = useDrag(() => ({
+	type: 'Box',
+}))
+const [, drop] = useDrop(() => ({
+  type: 'Box'
 }))
 
-// good
-const opacity = computed(() => unref(collect).opacity)
-// using toRefsValue api
-const { opacity } = toRefsValue(collect)
-// bad
-const {opacity} = collect.value
-const {opacity} = toRefs(collect.value)
+// You can also set the value to it using a new function
+const setDrop = (el: HTMLDivElement | null) => {
+	drop.value(el)
+    // or
+	drop.value(el?.querySelector('section') || null)
+}
+</script>
 ```
 
 ## example
-App.vue
+### App.vue
 ```vue
 <script setup lang="ts">
 import { DndProvider } from 'vue3-dnd'
@@ -75,7 +104,7 @@ import Example from './Example.vue'
 </template>
 
 ```
-Example.vue
+#### Example.vue
 ```vue
 <script lang="ts" setup>
 import { useDrag, useDrop } from 'vue3-dnd'
