@@ -12,20 +12,28 @@ export function useDragSourceConnector(
 	const connector = computed<SourceConnector>(
 		() => new SourceConnector(unref(manager).getBackend())
 	)
-	watchEffect(onCleanup => {
-		connector.value.dragSourceOptions = unref(dragSourceOptions) || null
-		unref(connector).reconnect()
-		onCleanup(() => {
-			connector.value.disconnectDragSource()
-		})
-	})
-	watchEffect(onCleanup => {
-		connector.value.dragPreviewOptions = unref(dragPreviewOptions) || null
-		unref(connector).reconnect()
-		onCleanup(() => {
-			connector.value.disconnectDragPreview()
-		})
-	})
+	watchEffect(
+		onCleanup => {
+			debugger
+			connector.value.dragSourceOptions = unref(dragSourceOptions) || null
+			debugger
+			unref(connector).reconnect()
+			onCleanup(() => {
+				connector.value.disconnectDragSource()
+			})
+		},
+		{ flush: 'post' }
+	)
+	watchEffect(
+		onCleanup => {
+			connector.value.dragPreviewOptions = unref(dragPreviewOptions) || null
+			unref(connector).reconnect()
+			onCleanup(() => {
+				connector.value.disconnectDragPreview()
+			})
+		},
+		{ flush: 'post' }
+	)
 
 	return connector
 }

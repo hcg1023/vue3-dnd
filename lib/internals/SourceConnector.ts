@@ -17,6 +17,12 @@ export class SourceConnector implements Connector {
 			node: Element | ComponentPublicInstance | Ref<any>,
 			options?: DragSourceOptions
 		) => {
+			// Avoid dragging and dropping while Vue keeps calling connect Function
+			if (isRef(node) && this.dragSourceRef === node) {
+				return
+			} else if (this.dragSourceNode === node) {
+				return
+			}
 			this.clearDragSource()
 			this.dragSourceOptions = options || null
 			if (isRef(node)) {
@@ -27,6 +33,12 @@ export class SourceConnector implements Connector {
 			this.reconnectDragSource()
 		},
 		dragPreview: (node: any, options?: DragPreviewOptions) => {
+			// Avoid dragging and dropping while Vue keeps calling connect Function
+			if (isRef(node) && this.dragPreviewRef === node) {
+				return
+			} else if (this.dragPreviewNode === node) {
+				return
+			}
 			this.clearDragPreview()
 			this.dragPreviewOptions = options || null
 			if (isRef(node)) {

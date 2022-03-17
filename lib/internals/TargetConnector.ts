@@ -9,6 +9,12 @@ import { MaybeRef } from '../types/utils'
 export class TargetConnector implements Connector {
 	public hooks = wrapConnectorHooks({
 		dropTarget: (node: MaybeRef<any>, options: DropTargetOptions) => {
+			// Avoid dragging and dropping while Vue keeps calling connect Function
+			if (isRef(node) && this.dropTargetRef === node) {
+				return
+			} else if (this.dropTargetNode === node) {
+				return
+			}
 			this.clearDropTarget()
 			this.dropTargetOptions = options
 			if (isRef(node)) {

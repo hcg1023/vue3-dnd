@@ -31,7 +31,7 @@ const [collect, drop] = useDrop(() => ({
 	accept: ItemTypes.BOX,
 	drop(_item: unknown, monitor) {
 		const didDrop = monitor.didDrop()
-		if (didDrop && !greedy) {
+		if (didDrop && !props.greedy) {
 			return
 		}
 		hasDropped.value = true

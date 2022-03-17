@@ -6,7 +6,6 @@ import { toRefsValue } from 'vue-ref2reactive'
 
 const props = defineProps<{
 	color: string
-	onToggleForbidDrag?: () => void
 }>()
 
 const forbidDrag = ref(false)

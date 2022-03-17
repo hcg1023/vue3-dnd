@@ -1,6 +1,8 @@
-export type ConnectableElement = Element | null
+import { MaybeRef } from './utils'
 
-type ConnectNode<Options> = (
+export type ConnectableElement = MaybeRef<Element | null>
+
+export type ConnectNode<Options> = (
 	elementOrNode: ConnectableElement,
 	options?: Options
 ) => Element

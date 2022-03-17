@@ -85,6 +85,8 @@ const setDrop = (el: HTMLDivElement | null) => {
     // or
 	drop.value(el?.querySelector('section') || null)
 }
+
+
 </script>
 ```
 
@@ -192,6 +194,29 @@ const opacity = computed(() => (unref(isDragging) ? 0.4 : 1))
 }
 </style>
 ```
+
+## Q/A
+### Q: The data does not change during or after the drag is complete
+
+A: Check if your spec or item is a function, If your item is a static object, you really don't get reactive data changes during drag and drop
+
+```ts
+// The following situations may result in don't have reactive
+const [collect, connectDrag] = useDrag({
+	type: 'box',
+	item: { id: props.id },
+})
+// The correct way to write it
+const [collect, connectDrag] = useDrag({
+	type: 'box',
+	item: () => ({ id: props.id }),
+})
+const [collect, connectDrag] = useDrag(() => ({
+	type: 'box',
+	item:  { id: props.id },
+}))
+```
+
 
 ## Thanks
 
