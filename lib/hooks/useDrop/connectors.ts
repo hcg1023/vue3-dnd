@@ -2,9 +2,13 @@ import type { TargetConnector } from '../../internals'
 import { MaybeRef } from '../../types/utils'
 import { computed, unref } from 'vue'
 import { connectDragRef } from '../connectDragRef'
+import { DropTargetHookSpec } from '../types'
 
-export function useConnectDropTarget(connector: MaybeRef<TargetConnector>) {
+export function useConnectDropTarget<O, R, P>(
+	connector: MaybeRef<TargetConnector>,
+	spec: MaybeRef<DropTargetHookSpec<O, R, P>>
+) {
 	return computed(() =>
-		connectDragRef(connector, unref(connector).hooks.dropTarget())
+		connectDragRef(unref(connector).hooks.dropTarget(), unref(spec).options)
 	)
 }

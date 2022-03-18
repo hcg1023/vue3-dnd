@@ -39,7 +39,7 @@ const isDragging = computed(() => collect.value.isDragging)
 const opacity = computed(() => (unref(isDragging) ? 0.4 : 1))
 
 const setRef = (instance: any) => {
-	drag.value(instance.el)
+	drag.value(instance?.el)
 }
 </script>
 

@@ -50,7 +50,7 @@ export function useDrag<
 			monitor,
 			connector
 		),
-		useConnectDragSource(connector),
-		useConnectDragPreview(connector),
+		useConnectDragSource(connector, spec),
+		useConnectDragPreview(connector, spec),
 	]
 }

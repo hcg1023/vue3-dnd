@@ -34,6 +34,6 @@ export function useDrop<
 			monitor,
 			connector
 		),
-		useConnectDropTarget(connector),
+		useConnectDropTarget(connector, spec),
 	]
 }
