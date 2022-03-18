@@ -67,4 +67,43 @@ export const routes: RouteRecordRaw[] = [
 		name: 'Drop Effects',
 		component: () => import('../examples/05-customize/drop-effects'),
 	},
+	{
+		path: '/other/native-files',
+		name: 'Native Files',
+		component: () => import('../examples/06-other/native-files'),
+	},
+	{
+		path: '/other/native-html',
+		name: 'Native HTML',
+		component: () => import('../examples/06-other/native-html'),
+	},
 ]
+
+interface MenuItem {
+	name: string
+	children: RouteRecordRaw[]
+}
+
+export const menus = routes.reduce((result, current) => {
+	const paths = current.path.split('/').filter(Boolean)
+	const name = paths[0].replace(/(^\w)|(-\w)/g, (_, $1, $2) => {
+		if ($1) {
+			return $1.toUpperCase()
+		}
+		if ($2) {
+			return ' ' + $2.slice(1).toUpperCase()
+		}
+		return ''
+	})
+	let menuItem = result[result.length - 1]
+	if (!menuItem || menuItem.name !== name) {
+		result.push(
+			(menuItem = {
+				name,
+				children: [],
+			})
+		)
+	}
+	menuItem.children.push(current)
+	return result
+}, [] as MenuItem[])

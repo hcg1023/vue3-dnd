@@ -1,0 +1,39 @@
+<script lang="ts" setup>
+import { NativeTypes } from 'react-dnd-html5-backend'
+import { useDrop } from 'vue3-dnd'
+import { toRefsValue } from 'vue-ref2reactive'
+import { computed, unref } from 'vue'
+
+const props = defineProps<{
+	onDrop: (arg: { html: string }) => void
+}>()
+
+const [collect, drop] = useDrop(() => ({
+	accept: [NativeTypes.HTML],
+	drop(item: { html: string }) {
+		props.onDrop?.(item)
+	},
+	collect: monitor => ({
+		isOver: monitor.isOver(),
+		canDrop: monitor.canDrop(),
+	}),
+}))
+const { canDrop, isOver } = toRefsValue(collect)
+const isActive = computed(() => unref(canDrop) && unref(isOver))
+</script>
+
+<template>
+	<div :ref="drop" class="target-box">
+		{{ isActive ? 'Release to drop' : 'Drag HTML here' }}
+	</div>
+</template>
+
+<style lang="less" scoped>
+.target-box {
+	border: 1px solid gray;
+	height: 15rem;
+	width: 15rem;
+	padding: 2rem;
+	text-align: center;
+}
+</style>
