@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/hcg1023/vue3-dnd/compare/v0.0.8...v0.0.9) (2022-03-18)
+
+
+### Bug Fixes
+
+* comment connect ([0c3383c](https://github.com/hcg1023/vue3-dnd/commit/0c3383cbe90b9902818bca0aedcc9cdcd95e15e4))
+* connect being triggered all the time during drag ([fd32396](https://github.com/hcg1023/vue3-dnd/commit/fd32396064c610cb1f74b2a8378ee3fb786aefd1))
+* options for the spec are not in effect ([bf3fa8d](https://github.com/hcg1023/vue3-dnd/commit/bf3fa8d1e9e5248e338e17472c9cd07efd2a0f17))
+
 ### [0.0.9](https://github.com/hcg1023/vue3-dnd/compare/v0.0.8...v0.0.9) (2022-03-17)
 
 
