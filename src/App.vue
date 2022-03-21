@@ -10,7 +10,7 @@ import { menus } from './router/routes'
 			<div v-for="item in menus" :key="item.name">
 				<div>{{ item.name }}</div>
 				<ul>
-					<li v-for="route in item.children" :key="route.name">
+					<li v-for="route in item.children" :key="route.path">
 						<router-link :to="route.path">{{ route.name }}</router-link>
 					</li>
 				</ul>

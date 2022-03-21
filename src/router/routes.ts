@@ -9,18 +9,27 @@ export const routes: RouteRecordRaw[] = [
 	{
 		path: '/dustbin/single-target',
 		name: 'Single Target',
-		component: () => import('../examples/01-chessboard/dustbin/single-target'),
+		component: () => import('../examples/01-dustbin/single-target'),
+	},
+	{
+		path: '/dustbin/iframe',
+		name: 'Within an Iframe',
+		component: () => import('../examples/01-dustbin/single-target-in-iframe'),
 	},
 	{
 		path: '/dustbin/copy-or-move',
 		name: 'Copy Or Move',
-		component: () => import('../examples/01-chessboard/dustbin/copy-or-move'),
+		component: () => import('../examples/01-dustbin/copy-or-move'),
 	},
 	{
 		path: '/dustbin/multiple-targets',
 		name: 'Multiple Targets',
-		component: () =>
-			import('../examples/01-chessboard/dustbin/multiple-targets'),
+		component: () => import('../examples/01-dustbin/multiple-targets'),
+	},
+	{
+		path: '/dustbin/stress-test',
+		name: 'Dustbin Stress Test',
+		component: () => import('../examples/01-dustbin/stress-test'),
 	},
 	{
 		path: '/drag-around/naive',
