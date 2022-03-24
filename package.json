@@ -95,7 +95,7 @@
   "lint-staged": {
     "*.{js,js,ts,tsx,vue}": [
       "prettier --write",
-	  "vitest related"
+	  "vitest related --run"
     ],
     "*.{less,css}": [
       "stylelint --fix"
