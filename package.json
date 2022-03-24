@@ -1,6 +1,6 @@
 {
   "name": "vue3-dnd",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Drag and Drop for Vue3",
   "scripts": {
     "dev": "vite",
@@ -95,7 +95,7 @@
   "lint-staged": {
     "*.{js,js,ts,tsx,vue}": [
       "prettier --write",
-	  "vitest related --run"
+      "vitest related --run"
     ],
     "*.{less,css}": [
       "stylelint --fix"
