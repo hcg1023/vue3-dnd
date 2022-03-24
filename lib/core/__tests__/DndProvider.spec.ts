@@ -17,7 +17,8 @@ describe('DndProvider', () => {
 			return () => null
 		})
 		const TestComponent = defineComponent(() => {
-			return () => h(DndProvider, { manager }, [h(ChildComponent)])
+			return () =>
+				h(DndProvider, { manager }, { default: () => h(ChildComponent) })
 		})
 
 		render(TestComponent)
@@ -33,7 +34,12 @@ describe('DndProvider', () => {
 			return () => null
 		})
 		const TestProvider = defineComponent(() => {
-			return () => h(DndProvider, { backend: TestBackend }, [h(ChildComponent)])
+			return () =>
+				h(
+					DndProvider,
+					{ backend: TestBackend },
+					{ default: () => h(ChildComponent) }
+				)
 		})
 
 		const mountProvider = () => render(TestProvider)
