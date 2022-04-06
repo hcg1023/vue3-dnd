@@ -3,11 +3,12 @@
 
 # Vue3 _DnD_
 
-React Dnd implementation in Vue3
+React Dnd 的 Vue3 实现
 
 **[中文](README_ZH.md)** | **[English](README.md)**
 
-## Using
+
+## 使用
 ```
 npm install vue3-dnd
 yarn add vue3-dnd
@@ -29,15 +30,15 @@ import Home from './Home.vue'
 // Home.vue
 <script>
 import { useDrag, useDrop, useDragLayer } from 'vue3-dnd'
-// Write your own code
+// 开始你的杰作
 </script>
 ```
 
-## Docs
-Please refer to the [react-dnd](https://react-dnd.github.io/react-dnd/docs/overview) documentation and [github example](https://github.com/hcg1023/vue3-dnd/tree/main/src/examples), and we will supplement our documentation later.
+## 文档
+请先参考 [react-dnd](https://react-dnd.github.io/react-dnd/docs/overview) 的文档和[github 示例](https://github.com/hcg1023/vue3-dnd/tree/main/src/examples), 之后会补充我们的文档。
 
-## Notice
-1. **Because of composition-API limitations, please do not attempt to deconstruct assignment for the collect parameter from hooks such as useDrag and useDrop, otherwise it will lose its responsiveness, Such as:**
+## 注意
+1. **由于 composition-api 的限制，请不要尝试从 useDrag 和 useDrop 等钩子中解构 collect 参数，这样会失去响应性，例如：**
 
     ```ts
     import { toRefs } from 'vue'
@@ -54,14 +55,14 @@ Please refer to the [react-dnd](https://react-dnd.github.io/react-dnd/docs/overv
     
     // good
     const opacity = computed(() => unref(collect).opacity)
-    // using toRefsValue api
+    // 如果希望解构，可以使用vue-ref2reactive这个库
     const { opacity } = toRefsValue(collect)
     // bad
     const {opacity} = collect.value
     const {opacity} = toRefs(collect.value)
     ```
 
-2. **The drag drop dragPreview ref is a function, using template please using `v-bind:ref="drag"`, You can also set the value to it using a new function**
+2. **`drag drop dragPreview`等ref是一个函数，在template中请使用`v-bind:ref="drag"`，您也可以在一个新的函数中调用它们**
 ```vue
 <template>
   <div :ref="drag">box</div>
@@ -81,7 +82,7 @@ const [, drop] = useDrop(() => ({
   type: 'Box'
 }))
 
-// You can also set the value to it using a new function
+// 你还可以使用新函数为其设置值
 const setDrop = (el: HTMLDivElement | null) => {
 	drop.value(el)
     // or
@@ -92,7 +93,7 @@ const setDrop = (el: HTMLDivElement | null) => {
 </script>
 ```
 
-## example
+## 示例
 ### App.vue
 ```vue
 <script setup lang="ts">
@@ -198,17 +199,17 @@ const opacity = computed(() => (unref(isDragging) ? 0.4 : 1))
 ```
 
 ## Q/A
-### Q: The data does not change during or after the drag is complete
+### Q: 在拖动期间或拖动完成之后数据没有更改
 
-A: Check if your spec or item is a function, If your item is a static object, you really don't get reactive data changes during drag and drop
+A: 检查你的spec 或者 item是否是函数，如果你的item是静态对象，则在拖放过程中你不会得到响应式的数据更改
 
 ```ts
-// The following situations may result in don't have reactive
+// 以下情况可能导致没有反应
 const [collect, connectDrag] = useDrag({
 	type: 'box',
 	item: { id: props.id },
 })
-// The correct way to write it
+// 正确的写法
 const [collect, connectDrag] = useDrag({
 	type: 'box',
 	item: () => ({ id: props.id }),
@@ -220,6 +221,6 @@ const [collect, connectDrag] = useDrag(() => ({
 ```
 
 
-## Thanks
+## 感谢
 
 [React-Dnd](https://github.com/react-dnd/react-dnd)
