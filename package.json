@@ -32,6 +32,7 @@
     "type": "git",
     "url": "https://github.com/hcg1023/vue3-dnd"
   },
+  "homepage": "https://hcg1023.github.io/vue3-dnd/",
   "bugs": "https://github.com/hcg1023/vue3-dnd/issues",
   "license": "MIT",
   "dependencies": {
