@@ -12,12 +12,13 @@
     "build_cjs": "swc -C module.type=commonjs -d dist/cjs lib/",
     "build:swc": "run-p build_types build_esm build_cjs",
     "build:docs": "vite build",
+	"copyhtml": "shx cp dist-docs/index.html dist-docs/404.html",
     "deploy": "gh-pages -d dist-docs",
     "build": "run-s test clean build:swc",
     "prepare": "husky install",
     "prettier": "lint-staged",
     "prepublishOnly": "npm run build && standard-version",
-    "postpublish": "run-s build:docs deploy"
+    "postpublish": "run-s build:docs copyhtml deploy"
   },
   "author": "hcg1023 <2293885211@qq.com>",
   "main": "dist/cjs/index.js",

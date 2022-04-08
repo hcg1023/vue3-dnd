@@ -219,6 +219,8 @@ const [collect, connectDrag] = useDrag(() => ({
 }))
 ```
 
+## Stargazers
+[![Stargazers repo roster for vue3-dnd](https://reporoster.com/stars/hcg1023/vue3-dnd)](https://github.com/hcg1023/vue3-dnd/stargazers)
 
 ## Thanks
 
