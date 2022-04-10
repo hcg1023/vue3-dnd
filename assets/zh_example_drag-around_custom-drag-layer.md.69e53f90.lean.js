@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.7889fcff.js";const m='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"zh/example/customize/handles-and-previews.md"}',r={};function o(s,c,n,p,i,_){return a(),t("div")}var l=e(r,[["render",o]]);export{m as __pageData,l as default};
