@@ -11,14 +11,15 @@
     "build_esm": "swc -C module.type=es6 -d dist/esm lib/",
     "build_cjs": "swc -C module.type=commonjs -d dist/cjs lib/",
     "build:swc": "run-p build_types build_esm build_cjs",
-    "build:docs": "vite build",
-	"copyhtml": "shx cp dist-docs/index.html dist-docs/404.html",
-    "deploy": "gh-pages -d dist-docs",
     "build": "run-s test clean build:swc",
     "prepare": "husky install",
     "prettier": "lint-staged",
     "prepublishOnly": "npm run build && standard-version",
-    "postpublish": "run-s build:docs copyhtml deploy"
+    "postpublish": "run-s docs:build deploy",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "cross-env NODE_ENV=production vitepress serve docs",
+	"deploy": "gh-pages -d docs/.vitepress/dist"
   },
   "author": "hcg1023 <2293885211@qq.com>",
   "main": "dist/cjs/index.js",
@@ -46,7 +47,8 @@
     "vue": "^3.2.0"
   },
   "files": [
-    "dist"
+    "dist",
+    "README_ZH.md"
   ],
   "keywords": [
     "drag",
@@ -69,6 +71,7 @@
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "@vitejs/plugin-vue": "^2.2.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -80,9 +83,10 @@
     "lint-staged": "^12.3.5",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
-    "react-dnd-html5-backend": "^15.1.2",
-    "react-dnd-test-backend": "^15.1.1",
-    "react-dnd-test-utils": "^15.1.1",
+    "react-dnd-html5-backend": "~15.1.2",
+    "react-dnd-test-backend": "~15.1.1",
+    "react-dnd-test-utils": "~15.1.1",
+    "react-dnd-touch-backend": "~15.1.1",
     "shx": "^0.3.4",
     "standard-version": "^9.3.2",
     "stylelint": "^14.5.3",
@@ -90,6 +94,7 @@
     "typescript": "^4.5.4",
     "vite": "^2.8.0",
     "vite-plugin-dts": "^0.9.10",
+    "vitepress": "^0.22.3",
     "vitest": "^0.6.0",
     "vue": "^3.2.31",
     "vue-eslint-parser": "^8.3.0",
