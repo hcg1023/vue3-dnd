@@ -7,11 +7,11 @@ npm install vue3-dnd react-dnd-html5-backend
 ```
 
 ### 如何使组件只能通过指定的小手柄拖拽？
-将容器节点指定为`dragPreview`，但仅将拖动手柄设为`dragSource`。请参阅[自定义拖动手柄示例](/zh/example/customize/handles-and-previews)。
+将容器节点指定为`dragPreview`，但仅将拖动手柄设为`dragSource`。请参阅[自定义拖动手柄示例](/example/customize/handles-and-previews)。
 
 
 ### 如何限制拖拽移动的预览？
-默认情况下，您无法约束拖动预览移动，因为拖动预览是由浏览器绘制的。但是，您可以使用[自定义拖动层](/zh/example/drag-around/custom-drag-layer)，您可以在其中自由渲染任何内容，包括任何捕捉或约束。
+默认情况下，您无法约束拖动预览移动，因为拖动预览是由浏览器绘制的。但是，您可以使用[自定义拖动层](/example/drag-around/custom-drag-layer)，您可以在其中自由渲染任何内容，包括任何捕捉或约束。
 
 ## 如何使单个元素既可以拖拽又可以放置？
 `useDrag`和`useDrop`的连接器可以同时使用。例如：

@@ -32,25 +32,29 @@ export default defineConfig({
 				nav: [
 					{ text: '首页', link: '/', activeMatch: '^/$' },
 					{
-						text: '教程',
-						link: '/zh/guide/',
-						activeMatch: '^/zh/guide/',
+						text: '学习',
+						link: '/guide/',
+						activeMatch: '^/guide/',
 					},
 					{
 						text: '示例',
-						link: '/zh/example/',
-						activeMatch: '^/zh/example/',
+						link: '/example/',
+						activeMatch: '^/example/',
+					},
+					{
+						text: 'GitHub',
+						link: 'https://github.com/hcg1023/vue3-dnd',
 					},
 				],
 				sidebar: {
-					'/zh/guide/': [
+					'/guide/': [
 						{
 							text: '入门',
-							link: '/zh/guide/',
+							link: '/guide/',
 							children: [
 								{
 									text: '概述',
-									link: '/zh/guide/overview',
+									link: '/guide/overview',
 								},
 								// {
 								// 	text: '测试',
@@ -58,11 +62,11 @@ export default defineConfig({
 								// },
 								{
 									text: '常见问题',
-									link: '/zh/guide/faq',
+									link: '/guide/faq',
 								},
 								{
 									text: '示例',
-									link: '/zh/example/',
+									link: '/example/',
 								},
 							],
 						},
@@ -71,30 +75,36 @@ export default defineConfig({
 							children: [
 								{
 									text: 'DndProvider',
-									link: '/zh/guide/components/dnd-provider',
+									link: '/guide/components/dnd-provider',
 								},
 								{
 									text: 'DragPreviewImage',
-									link: '/zh/guide/components/drag-preview-image',
+									link: '/guide/components/drag-preview-image',
 								},
 							],
 						},
 						{
 							text: 'Composition API',
-							link: '/zh/guide/composition/',
+							link: '/guide/composition/',
+							children: [
+								{
+									text: 'useDrag',
+									link: 'guide/composition/use-drag',
+								},
+							],
 						},
 					],
-					'/zh/example/': [
+					'/example/': [
 						{
 							text: '示例',
 							children: [
 								{
 									text: '介绍',
-									link: '/zh/guide/',
+									link: '/guide/',
 								},
 								{
 									text: '概述',
-									link: '/zh/guide/overview',
+									link: '/guide/overview',
 								},
 							],
 						},
@@ -105,7 +115,7 @@ export default defineConfig({
 				selectText: 'Languages',
 				label: 'English',
 				nav: [
-					{ text: 'Home', link: '/', activeMatch: '^/$' },
+					{ text: 'Home', link: '/en/', activeMatch: '^/$' },
 					{
 						text: 'Getting Started',
 						link: '/en/guide/',

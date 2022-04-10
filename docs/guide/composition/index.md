@@ -61,3 +61,5 @@ const { canDrop, isOver } = toRefsValue(collect)
 	</div>
 </template>
 ```
+
+这样我们就实现了一个拖拽的盒子，你可以接着阅读单独的API文档，或者查看[示例](/example/)。
