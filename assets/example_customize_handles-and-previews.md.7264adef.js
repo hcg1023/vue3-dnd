@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.db0e4df7.js";const l='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"example/customize/handles-and-previews.md"}',r={};function s(n,o,c,d,i,p){return a(),t("div")}var m=e(r,[["render",s]]);export{l as __pageData,m as default};
