@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: 快速上手 →
-actionLink: /zh/guide/
+actionLink: /guide/
 features:
 - title: 数据驱动
   details: 采用Composition API，基于数据驱动
