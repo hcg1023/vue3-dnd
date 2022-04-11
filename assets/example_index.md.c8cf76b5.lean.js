@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./app.db0e4df7.js";const l='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"example/drag-around/custom-drag-layer.md"}',r={};function o(c,n,s,d,p,_){return a(),t("div")}var m=e(r,[["render",o]]);export{l as __pageData,m as default};
