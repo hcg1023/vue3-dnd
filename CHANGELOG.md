@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.14](https://github.com/hcg1023/vue3-dnd/compare/v0.0.13...v0.0.14) (2022-04-11)
+
+
+### Features
+
+* update toRefsValue to @vueuse/core toRefs ([aaad2c6](https://github.com/hcg1023/vue3-dnd/commit/aaad2c6614631df4b6bc08d15546a686b8163baf))
+
 ### [0.0.13](https://github.com/hcg1023/vue3-dnd/compare/v0.0.12...v0.0.13) (2022-04-06)
 
 ### [0.0.12](https://github.com/hcg1023/vue3-dnd/compare/v0.0.11...v0.0.12) (2022-04-06)
