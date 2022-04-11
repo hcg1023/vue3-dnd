@@ -10,6 +10,10 @@ export default defineConfig({
 				'vue3-dnd': path.resolve(process.cwd(), './lib'),
 			},
 		},
+		// @ts-ignore vite的内置类型中没有ssr，所以暂时可以通过这个去配置
+		ssr: {
+			noExternal: [/^react-dnd-/, 'dnd-core'],
+		},
 	},
 	locales: {
 		'/': {
