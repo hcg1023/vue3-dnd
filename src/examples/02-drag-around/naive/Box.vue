@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import { useDrag } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
-import { toRefsReactive } from 'vue-ref2reactive'
-import { toRefs } from 'vue'
+import { toRefs } from '@vueuse/core'
 
 const props = defineProps<{
 	id: any
@@ -18,7 +17,7 @@ const [collect, drag] = useDrag(() => ({
 		isDragging: monitor.isDragging(),
 	}),
 }))
-const { isDragging } = toRefs(toRefsReactive(collect))
+const { isDragging } = toRefs(collect)
 </script>
 
 <template>

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { NativeTypes } from 'react-dnd-html5-backend'
 import { useDrop, DropTargetMonitor } from 'vue3-dnd'
-import { toRefsValue } from 'vue-ref2reactive'
 import { computed, unref } from 'vue'
+import { toRefs } from '@vueuse/core'
 
 const props = defineProps<{
 	onDrop: (item: { files: any[] }) => void
@@ -32,7 +32,7 @@ const [collect, drop] = useDrop(() => ({
 		}
 	},
 }))
-const { canDrop, isOver } = toRefsValue(collect)
+const { canDrop, isOver } = toRefs(collect)
 const isActive = computed(() => unref(canDrop) && unref(isOver))
 </script>
 

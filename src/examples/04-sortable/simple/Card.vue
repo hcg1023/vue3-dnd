@@ -3,7 +3,7 @@ import { computed, ref, unref } from 'vue'
 import { useDrag, useDrop } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
 import type { XYCoord, Identifier } from 'dnd-core'
-import { toRefsValue } from 'vue-ref2reactive'
+import { toRefs } from '@vueuse/core'
 
 const props = defineProps<{
 	id: any
@@ -88,8 +88,8 @@ const [collect, drag] = useDrag({
 	}),
 })
 
-const { handlerId } = toRefsValue(dropCollect)
-const { isDragging } = toRefsValue(collect)
+const { handlerId } = toRefs(dropCollect)
+const { isDragging } = toRefs(collect)
 const opacity = computed(() => (unref(isDragging) ? 0 : 1))
 
 const setRef = (el: HTMLDivElement) => {

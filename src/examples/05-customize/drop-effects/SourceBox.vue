@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useDrag } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
-import { toRefsValue } from 'vue-ref2reactive'
+import { toRefs } from '@vueuse/core'
 
 const props = defineProps<{
 	showCopyIcon?: boolean
@@ -16,7 +16,7 @@ const [collect, drag] = useDrag(() => ({
 		opacity: monitor.isDragging() ? 0.4 : 1,
 	}),
 }))
-const { opacity } = toRefsValue(collect)
+const { opacity } = toRefs(collect)
 </script>
 <template>
 	<div :ref="drag" class="source-box" :style="{ opacity }">

@@ -2,7 +2,7 @@
 import { useDrag, useDrop } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
 import { computed, unref } from 'vue'
-import { toRefsValue } from 'vue-ref2reactive'
+import { toRefs } from '@vueuse/core'
 
 const props = defineProps<{
 	id: string
@@ -42,7 +42,7 @@ const [, drop] = useDrop(() => ({
 	},
 }))
 
-const { isDragging } = toRefsValue(collect)
+const { isDragging } = toRefs(collect)
 const opacity = computed(() => (unref(isDragging) ? 0 : 1))
 </script>
 

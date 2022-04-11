@@ -12,8 +12,8 @@
 <script lang="ts" setup>
 import { useDrag } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
-import { computed, toRefs, unref } from 'vue'
-import { toRefsReactive } from 'vue-ref2reactive'
+import { computed, unref } from 'vue'
+import { toRefs } from '@vueuse/core'
 
 interface DropResult {
 	name: string
@@ -48,7 +48,7 @@ const [collect, drag] = useDrag(() => ({
 	}),
 }))
 
-const { isDragging } = toRefs(toRefsReactive(collect))
+const { isDragging } = toRefs(collect)
 
 const opacity = computed(() => (unref(isDragging) ? 0.4 : 1))
 </script>

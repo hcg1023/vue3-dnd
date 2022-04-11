@@ -2,7 +2,7 @@
 import { useDrag, DragSourceMonitor } from 'vue3-dnd'
 import { Colors } from './Colors'
 import { computed, ref, unref } from 'vue'
-import { toRefsValue } from 'vue-ref2reactive'
+import { toRefs } from '@vueuse/core'
 
 const props = defineProps<{
 	color: string
@@ -16,7 +16,7 @@ const [collect, drag] = useDrag(() => ({
 		isDragging: monitor.isDragging(),
 	}),
 }))
-const { isDragging } = toRefsValue(collect)
+const { isDragging } = toRefs(collect)
 
 const onToggleForbidDrag = () => {
 	forbidDrag.value = !forbidDrag.value

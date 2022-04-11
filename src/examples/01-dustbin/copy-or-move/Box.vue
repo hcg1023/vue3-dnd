@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import { ItemTypes } from './ItemTypes'
 import { useDrag, DragSourceMonitor } from 'vue3-dnd'
-import { computed, toRefs } from 'vue'
-import { toRefsReactive } from 'vue-ref2reactive'
+import { toRefs } from '@vueuse/core'
 
 const style = {
 	border: '1px dashed gray',
@@ -48,7 +47,7 @@ const [collect, drag] = useDrag(() => ({
 		opacity: monitor.isDragging() ? 0.4 : 1,
 	}),
 }))
-const { opacity } = toRefs(toRefsReactive(collect))
+const { opacity } = toRefs(collect)
 </script>
 
 <template>

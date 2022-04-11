@@ -2,14 +2,15 @@
 import { DragPreviewImage, useDrag } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
 import { boxImage } from './boxImage'
-import { toRefsValue } from 'vue-ref2reactive'
+import { toRefs } from '@vueuse/core'
+
 const [collect, drag, preview] = useDrag(() => ({
 	type: ItemTypes.BOX,
 	collect: monitor => ({
 		opacity: monitor.isDragging() ? 0.4 : 1,
 	}),
 }))
-const { opacity } = toRefsValue(collect)
+const { opacity } = toRefs(collect)
 </script>
 <template>
 	<DragPreviewImage :connect="preview" :src="boxImage" />

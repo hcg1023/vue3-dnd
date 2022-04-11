@@ -14,7 +14,7 @@
 ```vue
 <script setup lang="ts">
 import { useDrag } from 'vue3-dnd'
-import { toRefsValue } from "vue-ref2reactive";
+import { toRefs } from "@vueuse/core";
 
 const [collect, drag, dragPreview] = useDrag(() => ({
 	// “type”是必需的。它由放置目标的“accept”使用。
@@ -25,8 +25,8 @@ const [collect, drag, dragPreview] = useDrag(() => ({
 	})
 }))
 // collect是一个Ref对象，默认取值需要从collect.value中获取,
-// 可以使用toRefsValue将Ref对象转换为Reactive对象
-const { isDragging } = toRefsValue(collect)
+// 可以使用toRefs将Ref对象转换为可解构的对象
+const { isDragging } = toRefs(collect)
 </script>
 
 <template>
@@ -38,21 +38,23 @@ const { isDragging } = toRefsValue(collect)
 ```
 
 接下来，我们需要一个放置目标。
+
 ```vue
+
 <script setup lang="ts">
-import { useDrop } from 'vue3-dnd'
-import { toRefsValue } from 'vue-ref2reactive'
+import {useDrop} from 'vue3-dnd'
+import {toRefs} from '@vueuse/core'
 
 const [collect, drop] = useDrop(() => ({
-    // 允许放置的type(string|symbol)，或者types
+	// 允许放置的type(string|symbol)，或者types
 	accept: 'BOX',
-    // 传递个collect的数据
+	// 传递个collect的数据
 	collect: monitor => ({
 		isOver: monitor.isOver(),
 		canDrop: monitor.canDrop(),
 	}),
 }))
-const { canDrop, isOver } = toRefsValue(collect)
+const {canDrop, isOver} = toRefs(collect)
 </script>
 
 <template>

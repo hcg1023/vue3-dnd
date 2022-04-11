@@ -10,6 +10,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.14.0
   '@typescript-eslint/parser': ^5.14.0
   '@vitejs/plugin-vue': ^2.2.0
+  '@vueuse/core': ^8.2.5
   cross-env: ^7.0.3
   dnd-core: ^15.1.1
   eslint: ^8.10.0
@@ -39,7 +40,6 @@ specifiers:
   vitest: ^0.6.0
   vue: ^3.2.31
   vue-eslint-parser: ^8.3.0
-  vue-ref2reactive: ^0.0.3
   vue-router: ^4.0.14
   vue-tsc: ^0.29.8
 
@@ -57,6 +57,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.14.0_f4054b8c3cd621db16ae1b9d571bccc0
   '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser/5.14.0_eslint@8.10.0+typescript@4.6.2
   '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/2.2.4_vite@2.8.6+vue@3.2.31
+  '@vueuse/core': 8.2.5_vue@3.2.31
   cross-env: registry.npmmirror.com/cross-env/7.0.3
   eslint: registry.npmmirror.com/eslint/8.10.0
   eslint-config-prettier: registry.npmmirror.com/eslint-config-prettier/8.5.0_eslint@8.10.0
@@ -84,7 +85,6 @@ devDependencies:
   vitest: registry.npmmirror.com/vitest/0.6.0_less@4.1.2
   vue: registry.npmmirror.com/vue/3.2.31
   vue-eslint-parser: registry.npmmirror.com/vue-eslint-parser/8.3.0_eslint@8.10.0
-  vue-ref2reactive: 0.0.3_vue@3.2.31
   vue-router: registry.npmmirror.com/vue-router/4.0.14_vue@3.2.31
   vue-tsc: registry.npmmirror.com/vue-tsc/0.29.8_typescript@4.6.2
 
@@ -470,19 +470,55 @@ packages:
     dev: true
 
   /@types/node/17.0.21:
-    resolution: {integrity: sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==}
+    resolution: { integrity: sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ== }
     dev: true
 
   /@types/normalize-package-data/2.4.1:
-    resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
+    resolution: { integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw== }
     dev: true
 
   /@types/parse-json/4.0.0:
-    resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
+    resolution: { integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA== }
+    dev: true
+
+  /@vueuse/core/8.2.5_vue@3.2.31:
+    resolution: { integrity: sha512-5prZAA1Ji2ltwNUnzreu6WIXYqHYP/9U2BiY5mD/650VYLpVcwVlYznJDFcLCmEWI3o3Vd34oS1FUf+6Mh68GQ== }
+    peerDependencies:
+      '@vue/composition-api': ^1.1.0
+      vue: ^2.6.0 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      vue:
+        optional: true
+    dependencies:
+      '@vueuse/metadata': 8.2.5
+      '@vueuse/shared': 8.2.5_vue@3.2.31
+      vue: registry.npmmirror.com/vue/3.2.31
+      vue-demi: 0.12.3_vue@3.2.31
+    dev: true
+
+  /@vueuse/metadata/8.2.5:
+    resolution: { integrity: sha512-Lk9plJjh9cIdiRdcj16dau+2LANxIdFCiTgdfzwYXbflxq0QnMBeOD2qHgKDE7fuVrtPcVWj8VSuZEx1HRfNQA== }
+    dev: true
+
+  /@vueuse/shared/8.2.5_vue@3.2.31:
+    resolution: { integrity: sha512-lNWo+7sk6JCuOj4AiYM+6HZ6fq4xAuVq1sVckMQKgfCJZpZRe4i8es+ZULO5bYTKP+VrOCtqrLR2GzEfrbr3YQ== }
+    peerDependencies:
+      '@vue/composition-api': ^1.1.0
+      vue: ^2.6.0 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      vue:
+        optional: true
+    dependencies:
+      vue: registry.npmmirror.com/vue/3.2.31
+      vue-demi: 0.12.3_vue@3.2.31
     dev: true
 
   /JSONStream/1.3.5:
-    resolution: {integrity: sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ==}
+    resolution: { integrity: sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ== }
     hasBin: true
     dependencies:
       jsonparse: 1.3.1
@@ -3111,19 +3147,6 @@ packages:
         optional: true
     dependencies:
       vue: registry.npmmirror.com/vue/3.2.31
-    dev: true
-
-  /vue-ref2reactive/0.0.3_vue@3.2.31:
-    resolution: {integrity: sha512-ZWLC9Bdi/swNEr2cV01dwUQBEd40LtgB2r2uGcZo/0rEF3hyMRCmop7Em3KbYxR4JYEIGvve+bNk/gUAk4rxEg==}
-    peerDependencies:
-      '@vue/composition-api': ^1.0.0-rc.1
-      vue: ^2.0.0 || >=3.0.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-    dependencies:
-      vue: registry.npmmirror.com/vue/3.2.31
-      vue-demi: 0.12.3_vue@3.2.31
     dev: true
 
   /wordwrap/1.0.0:

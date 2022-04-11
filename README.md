@@ -40,9 +40,8 @@ Please refer to the [react-dnd](https://react-dnd.github.io/react-dnd/docs/overv
 1. **Because of composition-API limitations, please do not attempt to deconstruct assignment for the collect parameter from hooks such as useDrag and useDrop, otherwise it will lose its responsiveness, Such as:**
 
     ```ts
-    import { toRefs } from 'vue'
     import { useDrag } from 'vue3-dnd'
-    import { toRefsValue } from 'vue-ref2reactive'
+    import { toRefs } from '@vueuse/core'
     
     const [collect, drag] = useDrag(() => ({
         type: props.type,
@@ -54,11 +53,10 @@ Please refer to the [react-dnd](https://react-dnd.github.io/react-dnd/docs/overv
     
     // good
     const opacity = computed(() => unref(collect).opacity)
-    // using toRefsValue api
-    const { opacity } = toRefsValue(collect)
+    // using vueuse toRefs api
+    const { opacity } = toRefs(collect)
     // bad
-    const {opacity} = collect.value
-    const {opacity} = toRefs(collect.value)
+    const { opacity } = collect.value
     ```
 
 2. **The drag drop dragPreview ref is a function, using template please using `v-bind:ref="drag"`, You can also set the value to it using a new function**

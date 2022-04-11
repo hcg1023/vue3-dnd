@@ -3,8 +3,7 @@ import { XYCoord, useDragLayer } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
 import BoxDragPreview from './BoxDragPreview.vue'
 import { snapToGrid } from './snapToGrid'
-import { toRefs } from 'vue'
-import { toRefsReactive } from 'vue-ref2reactive'
+import { toRefs } from '@vueuse/core'
 
 function getItemStyles(
 	initialOffset: XYCoord | null,
@@ -44,9 +43,8 @@ const collect = useDragLayer(monitor => ({
 	currentOffset: monitor.getSourceClientOffset(),
 	isDragging: monitor.isDragging(),
 }))
-const { itemType, isDragging, item, initialOffset, currentOffset } = toRefs(
-	toRefsReactive(collect)
-)
+const { itemType, isDragging, item, initialOffset, currentOffset } =
+	toRefs(collect)
 </script>
 
 <template>

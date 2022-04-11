@@ -2,7 +2,7 @@
 import { useDrop, DropTargetMonitor } from 'vue3-dnd'
 import type { DragItem } from './interfaces'
 import { Colors } from './Colors'
-import { toRefsValue } from 'vue-ref2reactive'
+import { toRefs } from '@vueuse/core'
 import { computed, unref } from 'vue'
 
 const props = defineProps<{
@@ -22,7 +22,7 @@ const [collect, drop] = useDrop(() => ({
 		draggingColor: monitor.getItemType() as string,
 	}),
 }))
-const { isOver, draggingColor, canDrop } = toRefsValue(collect)
+const { isOver, draggingColor, canDrop } = toRefs(collect)
 
 const opacity = computed(() => (unref(isOver) ? 1 : 0.7))
 const backgroundColor = computed(() => {

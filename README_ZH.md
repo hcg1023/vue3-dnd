@@ -41,9 +41,8 @@ import { useDrag, useDrop, useDragLayer } from 'vue3-dnd'
 1. **由于 composition-api 的限制，请不要尝试从 useDrag 和 useDrop 等钩子中解构 collect 参数，这样会失去响应性，例如：**
 
     ```ts
-    import { toRefs } from 'vue'
     import { useDrag } from 'vue3-dnd'
-    import { toRefsValue } from 'vue-ref2reactive'
+    import { toRefs } from '@vueuse/core'
     
     const [collect, drag] = useDrag(() => ({
         type: props.type,
@@ -55,11 +54,10 @@ import { useDrag, useDrop, useDragLayer } from 'vue3-dnd'
     
     // good
     const opacity = computed(() => unref(collect).opacity)
-    // 如果希望解构，可以使用vue-ref2reactive这个库
-    const { opacity } = toRefsValue(collect)
+    // 如果希望解构，可以使用@vueuse/core提供的toRefs
+    const { opacity } = toRefs(collect)
     // bad
     const {opacity} = collect.value
-    const {opacity} = toRefs(collect.value)
     ```
 
 2. **`drag drop dragPreview`等ref是一个函数，在template中请使用`v-bind:ref="drag"`，您也可以在一个新的函数中调用它们**

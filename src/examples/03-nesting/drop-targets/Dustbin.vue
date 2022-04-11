@@ -2,7 +2,7 @@
 import { computed, ref, unref } from 'vue'
 import { useDrop } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
-import { toRefsValue } from 'vue-ref2reactive'
+import { toRefs } from '@vueuse/core'
 
 function getStyle(backgroundColor: string) {
 	return {
@@ -42,7 +42,7 @@ const [collect, drop] = useDrop(() => ({
 		isOverCurrent: monitor.isOver({ shallow: true }),
 	}),
 }))
-const { isOver, isOverCurrent } = toRefsValue(collect)
+const { isOver, isOverCurrent } = toRefs(collect)
 const text = computed(() => (props.greedy ? 'greedy' : 'not greedy'))
 const backgroundColor = computed(() => {
 	let backgroundColor = 'rgba(0, 0, 0, .5)'

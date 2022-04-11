@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useDrag } from 'vue3-dnd'
-import { toRefsValue } from 'vue-ref2reactive'
+import { toRefs } from '@vueuse/core'
 import { computed, unref } from 'vue'
 
 const style = {
@@ -30,7 +30,7 @@ const [collect, drag] = useDrag(() => ({
 		isDragging: monitor.isDragging(),
 	}),
 }))
-const { isDragging } = toRefsValue(collect)
+const { isDragging } = toRefs(collect)
 const opacity = computed(() => (unref(isDragging) ? 0.4 : 1))
 </script>
 

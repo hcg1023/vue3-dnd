@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useDrop } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
-import { toRefsValue } from 'vue-ref2reactive'
+import { toRefs } from '@vueuse/core'
 
 const [collect, drop] = useDrop(() => ({
 	accept: ItemTypes.BOX,
@@ -9,7 +9,7 @@ const [collect, drop] = useDrop(() => ({
 		isActive: monitor.canDrop() && monitor.isOver(),
 	}),
 }))
-const { isActive } = toRefsValue(collect)
+const { isActive } = toRefs(collect)
 </script>
 
 <template>

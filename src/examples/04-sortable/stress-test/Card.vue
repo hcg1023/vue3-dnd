@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { useDrag, useDrop } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
-import { toRefsValue } from 'vue-ref2reactive'
-import { computed, ref, unref, watch, watchEffect } from 'vue'
+import { computed, ref, unref } from 'vue'
+import { toRefs } from '@vueuse/core'
 
 const props = defineProps<{
 	id: any
@@ -21,7 +21,7 @@ const [collect, connectDrag] = useDrag({
 		return result
 	},
 })
-const { isDragging, handlerId } = toRefsValue(collect)
+const { isDragging, handlerId } = toRefs(collect)
 
 const [, connectDrop] = useDrop({
 	accept: ItemTypes.CARD,

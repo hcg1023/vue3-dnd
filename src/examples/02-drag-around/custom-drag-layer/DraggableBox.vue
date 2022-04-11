@@ -3,8 +3,7 @@ import { useDrag, DragSourceMonitor } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
 import { getEmptyImage } from 'react-dnd-html5-backend'
 import Box from './Box.vue'
-import { toRefsReactive } from 'vue-ref2reactive'
-import { toRefs } from 'vue'
+import { toRefs } from '@vueuse/core'
 
 const props = defineProps<{
 	id: string
@@ -23,7 +22,7 @@ const [collect, drag, preview] = useDrag(() => ({
 
 preview.value(getEmptyImage(), { captureDraggingState: true })
 
-const { isDragging } = toRefs(toRefsReactive(collect))
+const { isDragging } = toRefs(collect)
 </script>
 
 <template>

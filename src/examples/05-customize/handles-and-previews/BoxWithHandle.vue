@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useDrag } from 'vue3-dnd'
 import { ItemTypes } from './ItemTypes'
-import { toRefsValue } from 'vue-ref2reactive'
+import { toRefs } from '@vueuse/core'
 
 const [collect, drag, preview] = useDrag(() => ({
 	type: ItemTypes.BOX,
@@ -9,7 +9,7 @@ const [collect, drag, preview] = useDrag(() => ({
 		opacity: monitor.isDragging() ? 0.4 : 1,
 	}),
 }))
-const { opacity } = toRefsValue(collect)
+const { opacity } = toRefs(collect)
 </script>
 
 <template>

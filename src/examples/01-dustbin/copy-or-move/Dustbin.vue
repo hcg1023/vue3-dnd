@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ItemTypes } from './ItemTypes'
 import { useDrop } from 'vue3-dnd'
-import { computed, toRefs, unref } from 'vue'
-import { toRefsReactive } from 'vue-ref2reactive'
+import { computed, unref } from 'vue'
+import { toRefs } from '@vueuse/core'
 
 const style = {
 	height: '12rem',
@@ -33,7 +33,7 @@ const [collect, drop] = useDrop(() => ({
 	}),
 }))
 
-const { canDrop, isOver } = toRefs(toRefsReactive(collect))
+const { canDrop, isOver } = toRefs(collect)
 const isActive = computed(() => unref(canDrop) && unref(isOver))
 const backgroundColor = computed(() =>
 	unref(isActive) ? 'darkgreen' : unref(canDrop) ? 'darkkhaki' : '#222'
