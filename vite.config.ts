@@ -14,6 +14,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'vue3-dnd': path.resolve(__dirname, './lib'),
+			'@vitepress': path.resolve(__dirname, './docs/.vitepress'),
 		},
 	},
 	test: {

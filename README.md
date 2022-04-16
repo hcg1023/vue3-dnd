@@ -1,9 +1,12 @@
-[![npm version](https://img.shields.io/npm/v/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
-[![npm downloads](https://img.shields.io/npm/dm/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
-
 # Vue3 _DnD_
 
 React Dnd implementation in Vue3
+
+[![npm version](https://img.shields.io/npm/v/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
+[![GitHub open issues](https://img.shields.io/github/issues/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/issues?q=is%3Aopen+is%3Aissue)
+[![npm download](https://img.shields.io/npm/dt/vue3-dnd.svg?maxAge=30)](https://www.npmjs.com/package/vue3-dnd)
+[![npm download per month](https://img.shields.io/npm/dm/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
+[![MIT License](https://img.shields.io/github/license/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/blob/main/LICENSE)
 
 **[中文](README_ZH.md)** | **[English](README.md)**
 

@@ -1,5 +1,5 @@
 # 关于
-Vue3 DnD是基于[React DnD](https://react-dnd.github.io/react-dnd/about) 开发的Vue3版本。我们会尽可能的保证它与React DnD的功能一致。
+[Vue3 DnD](https://github.com/hcg1023/vue3-dnd)是基于[React DnD](https://react-dnd.github.io/react-dnd/about) 开发的Vue3版本。我们会尽可能的保证它与React DnD的功能一致，甚至于你可以把该文档看作是React DnD的部分文档（当然，react hooks api的依赖部分除外）。
 
 # 安装
 ```bash
