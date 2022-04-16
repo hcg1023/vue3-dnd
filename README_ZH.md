@@ -1,5 +1,7 @@
 # Vue3 _DnD_
 
+[官网](https://hcg1023.github.io/vue3-dnd/)
+
 React Dnd 的 Vue3 实现
 
 
@@ -39,7 +41,7 @@ import { useDrag, useDrop, useDragLayer } from 'vue3-dnd'
 ```
 
 ## 文档
-请先参考 [react-dnd](https://react-dnd.github.io/react-dnd/docs/overview) 的文档和[github 示例](https://github.com/hcg1023/vue3-dnd/tree/main/src/examples), 之后会补充我们的文档。
+[https://hcg1023.github.io/vue3-dnd/](https://hcg1023.github.io/vue3-dnd/)
 
 ## 注意
 1. **由于 composition-api 的限制，请不要尝试从 useDrag 和 useDrop 等钩子中解构 collect 参数，这样会失去响应性，例如：**
