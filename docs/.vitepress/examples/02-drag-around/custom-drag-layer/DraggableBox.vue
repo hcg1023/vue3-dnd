@@ -4,6 +4,7 @@ import { ItemTypes } from './ItemTypes'
 import { getEmptyImage } from 'react-dnd-html5-backend'
 import Box from './Box.vue'
 import { toRefs } from '@vueuse/core'
+import { onMounted } from 'vue'
 
 const props = defineProps<{
 	id: string
@@ -20,7 +21,9 @@ const [collect, drag, preview] = useDrag(() => ({
 	}),
 }))
 
-preview.value(getEmptyImage(), { captureDraggingState: true })
+onMounted(() => {
+	preview.value(getEmptyImage(), { captureDraggingState: true })
+})
 
 const { isDragging } = toRefs(collect)
 </script>
