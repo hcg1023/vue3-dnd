@@ -19,6 +19,7 @@ const handleSnapToGridWhileDraggingChange = () => {
 	<div>
 		<Container :snap-to-grid="snapToGridAfterDrop" />
 		<CustomDragLayer :snap-to-grid="snapToGridWhileDragging" />
+		<CustomDragLayer :snap-to-grid="snapToGridWhileDragging" />
 		<p>
 			<label for="snapToGridWhileDragging">
 				<input
