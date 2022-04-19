@@ -33,6 +33,13 @@ export default defineConfig({
 				// 多语言下拉菜单的标题
 				selectText: '选择语言',
 				label: '简体中文',
+				repo: 'https://github.com/hcg1023/vue3-dnd',
+				repoLabel: 'GitHub',
+				docsDir: 'docs',
+				docsBranch: 'main',
+				editLinks: true,
+				editLinkText: '帮助我们改善此页面！',
+				lastUpdated: '上次更新',
 				nav: [
 					{ text: '首页', link: '/', activeMatch: '^/$' },
 					{
@@ -46,8 +53,8 @@ export default defineConfig({
 						activeMatch: '^/example/',
 					},
 					{
-						text: 'GitHub',
-						link: 'https://github.com/hcg1023/vue3-dnd',
+						text: 'Gitee',
+						link: 'https://gitee.com/haochenguang/vue3-dnd',
 					},
 				],
 				sidebar: {
@@ -93,15 +100,15 @@ export default defineConfig({
 							children: [
 								{
 									text: 'useDrag',
-									link: 'guide/composition/use-drag',
+									link: '/guide/composition/use-drag',
 								},
 								{
 									text: 'useDrop',
-									link: 'guide/composition/use-drop',
+									link: '/guide/composition/use-drop',
 								},
 								{
 									text: 'useDragLayer',
-									link: 'guide/composition/use-drag-layer',
+									link: '/guide/composition/use-drag-layer',
 								},
 							],
 						},
@@ -110,15 +117,15 @@ export default defineConfig({
 							children: [
 								{
 									text: 'DragSourceMonitor',
-									link: 'guide/monitors/drag-source-monitor',
+									link: '/guide/monitors/drag-source-monitor',
 								},
 								{
 									text: 'DropTargetMonitor',
-									link: 'guide/monitors/drop-target-monitor',
+									link: '/guide/monitors/drop-target-monitor',
 								},
 								{
 									text: 'DragLayerMonitor',
-									link: 'guide/monitors/drag-layer-monitor',
+									link: '/guide/monitors/drag-layer-monitor',
 								},
 							],
 						},
@@ -127,15 +134,15 @@ export default defineConfig({
 							children: [
 								{
 									text: 'HTML5',
-									link: 'guide/backend/html5',
+									link: '/guide/backend/html5',
 								},
 								{
 									text: 'Touch',
-									link: 'guide/backend/touch',
+									link: '/guide/backend/touch',
 								},
 								{
 									text: 'Test',
-									link: 'guide/backend/test',
+									link: '/guide/backend/test',
 								},
 							],
 						},
