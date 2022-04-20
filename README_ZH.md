@@ -5,6 +5,8 @@
 
 React Dnd 的 Vue3 实现
 
+如果你觉得这个项目对你有帮助，希望你能贡献一个 [star⭐](https://github.com/hcg1023/vue3-dnd)
+
 
 [![npm version](https://img.shields.io/npm/v/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
 [![GitHub open issues](https://img.shields.io/github/issues/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/issues?q=is%3Aopen+is%3Aissue)

@@ -5,6 +5,8 @@
 
 React Dnd implementation in Vue3
 
+If you think this project is helpful to you, I hope you can contribute a [star⭐](https://github.com/hcg1023/vue3-dnd)
+
 [![npm version](https://img.shields.io/npm/v/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
 [![GitHub open issues](https://img.shields.io/github/issues/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/issues?q=is%3Aopen+is%3Aissue)
 [![npm download](https://img.shields.io/npm/dt/vue3-dnd.svg?maxAge=30)](https://www.npmjs.com/package/vue3-dnd)
@@ -224,7 +226,7 @@ const [collect, connectDrag] = useDrag(() => ({
 }))
 ```
 
-## Stargazers
+## ⭐Stargazers
 [![Stargazers repo roster for vue3-dnd](https://reporoster.com/stars/hcg1023/vue3-dnd)](https://github.com/hcg1023/vue3-dnd/stargazers)
 
 ## Thanks
