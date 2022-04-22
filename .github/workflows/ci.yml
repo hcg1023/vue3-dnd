@@ -1,0 +1,31 @@
+name: CI
+
+# 在master分支发生push事件时触发。
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs: # 工作流
+  build:
+    runs-on: ubuntu-latest #运行在虚拟机环境ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.15.1
+
+      - name: Set node version to 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: 'pnpm'
+
+      - run: pnpm install
+
+      - name: Run Deploy
+        run: pnpm run docs:build && pnpm run deploy
