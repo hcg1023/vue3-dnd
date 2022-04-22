@@ -27,5 +27,13 @@ jobs: # 工作流
 
       - run: pnpm install
 
+      - name: Run Build
+        run: pnpm run docs:build
+
       - name: Run Deploy
-        run: pnpm run docs:build && pnpm run deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./docs/.vitepress/dist
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'

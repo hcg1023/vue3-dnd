@@ -16,7 +16,7 @@ jobs:
         id: release_tag
         uses: yyx990803/release-tag@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           body: |
