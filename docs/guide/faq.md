@@ -55,3 +55,40 @@ const [collect, drop] = useDrop(() => ({
 
 ## Could not find the drag and drop manager in the context
 请检查你的组件是否使用`DndProvider`包裹。
+
+
+## useDrop的collect函数不能及时执行
+
+请检查你传入的accept参数是否是一个常量或者是一个ref。
+这个场景常见于：当accept参数是从props传入时，用户直接在vue的template或者render函数内写入一个引用类型的值，如下所示：
+```vue {2}
+<template>
+  <UseDrop :accept="['box']"></UseDrop>
+</template>
+```
+```vue
+<script>
+export default {
+  name: 'UseDrop',
+}
+</script>
+<script setup lang="ts">
+import { useDrop } from 'vue3-dnd'
+const props = defineProps<{ accept: string[] }>()
+
+const [collect, drop] = useDrop(() => ({
+  // 这个时候会因为render函数的执行导致 accept 的引用发生改变，随后触发useDrop的一系列副作用，导致collect收集不成功
+  accept: props.accept,
+}))
+</script>
+```
+
+解决方案
+```vue {2,5}
+<template>
+	<UseDrop :accept="accept"></UseDrop>
+</template>
+<script setup>
+const accept = ['box']
+</script>
+```
