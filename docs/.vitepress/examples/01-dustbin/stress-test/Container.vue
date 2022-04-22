@@ -35,13 +35,15 @@ const boxes = ref<SourceBox[]>([
 ])
 const droppedBoxNames = ref<string[]>([])
 
-const interval = setInterval(() => {
-	boxes.value.sort(() => Math.random() - 0.5)
-	dustbins.value.sort(() => Math.random() - 0.5)
-}, 4000)
-onUnmounted(() => {
-	clearInterval(interval)
-})
+if (typeof window !== 'undefined') {
+	const interval = setInterval(() => {
+		boxes.value.sort(() => Math.random() - 0.5)
+		dustbins.value.sort(() => Math.random() - 0.5)
+	}, 4000)
+	onUnmounted(() => {
+		clearInterval(interval)
+	})
+}
 const isDropped = (boxName: string) =>
 	droppedBoxNames.value.indexOf(boxName) > -1
 

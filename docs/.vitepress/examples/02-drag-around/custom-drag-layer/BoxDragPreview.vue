@@ -6,10 +6,12 @@ const props = defineProps<{
 	title: string
 }>()
 
-const interval = setInterval(() => (tickTock.value = !tickTock.value), 500)
-onUnmounted(() => {
-	clearInterval(interval)
-})
+if (typeof window === 'undefined') {
+	const interval = setInterval(() => (tickTock.value = !tickTock.value), 500)
+	onUnmounted(() => {
+		clearInterval(interval)
+	})
+}
 
 const tickTock = ref(false)
 </script>
