@@ -1,7 +1,7 @@
 # Vue3 _DnD_
 
 [website](https://hcg1023.github.io/vue3-dnd/) | 
-[gitee](https://haochenguang.gitee.io/vue3-dnd/)
+[chinese website](https://haochenguang.gitee.io/vue3-dnd/)
 
 React Dnd implementation in Vue3
 
@@ -9,6 +9,10 @@ If you think this project is helpful to you, I hope you can contribute a [starâ­
 
 [![npm version](https://img.shields.io/npm/v/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
 [![GitHub open issues](https://img.shields.io/github/issues/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/issues?q=is%3Aopen+is%3Aissue)
+[![GitHub Stars](https://img.shields.io/github/stars/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/hcg1023/vue3-dnd)](https://github.com/hcg1023/vue3-dnd/network/members)
+[![GitHub PR](https://img.shields.io/github/issues-pr/hcg1023/vue3-dnd)](https://github.com/hcg1023/vue3-dnd/pulls)
+[![GitHub contributors](https://img.shields.io/github/contributors/hcg1023/vue3-dnd?color=2b9348)](https://github.com/hcg1023/vue3-dnd/graphs/contributors)
 [![npm download](https://img.shields.io/npm/dt/vue3-dnd.svg?maxAge=30)](https://www.npmjs.com/package/vue3-dnd)
 [![npm download per month](https://img.shields.io/npm/dm/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
 [![MIT License](https://img.shields.io/github/license/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/blob/main/LICENSE)
