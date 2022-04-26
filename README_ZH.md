@@ -1,7 +1,7 @@
 # Vue3 _DnD_
 
 [官网](https://hcg1023.github.io/vue3-dnd/) | 
-[国内镜像](https://haochenguang.gitee.io/vue3-dnd/)
+[中文官网](https://haochenguang.gitee.io/vue3-dnd/)
 
 React Dnd 的 Vue3 实现
 

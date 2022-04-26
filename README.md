@@ -1,7 +1,7 @@
 # Vue3 _DnD_
 
 [website](https://hcg1023.github.io/vue3-dnd/) | 
-[China's Internet](https://haochenguang.gitee.io/vue3-dnd/)
+[chinese website](https://haochenguang.gitee.io/vue3-dnd/)
 
 React Dnd implementation in Vue3
 
