@@ -1,8 +1,12 @@
 import { defineConfig } from 'vitepress'
 import path from 'path'
 
+const BASE_URL = process.env.BASE_URL || '/'
+
+console.log(BASE_URL, 'BASE_URL')
+
 export default defineConfig({
-	base: process.env.NODE_ENV === 'production' ? '/vue3-dnd' : '/',
+	base: BASE_URL,
 	lang: 'zh-CN',
 	vite: {
 		resolve: {

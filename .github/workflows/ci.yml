@@ -1,5 +1,8 @@
 name: CI
 
+env:
+  BASE_URL: ${{ format(github.repository, github.repository_owner) }}
+
 # 在master分支发生push事件时触发。
 on:
   push:
@@ -28,7 +31,7 @@ jobs: # 工作流
       - run: pnpm install
 
       - name: Run Build
-        run: pnpm run docs:build
+        run: BASE_URL=$BASE_URL pnpm run docs:build
 
       - name: Run Deploy
         uses: peaceiris/actions-gh-pages@v3
