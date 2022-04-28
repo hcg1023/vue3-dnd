@@ -1,7 +1,7 @@
 name: CI
 
 env:
-  BASE_URL: ${{ format(github.repository, github.repository_owner) }}
+  BASE_URL: /vue3-dnd
 
 # 在master分支发生push事件时触发。
 on:
