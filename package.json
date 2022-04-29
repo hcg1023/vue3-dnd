@@ -4,8 +4,13 @@
   "description": "Drag and Drop for Vue3",
   "scripts": {
 	"test": "vitest --run",
-    "prepare": "husky install",
-    "prettier": "lint-staged"
+	"lint": "eslint packages --ext .js,.ts,.vue --fix",
+	"prettier": "prettier --write packages/**/*.{js,ts,vue}",
+	"prepare": "husky install",
+	"lint-staged": "lint-staged",
+	"version": "changeset version",
+	"prepublishOnly": "pnpm run version",
+	"commitlint": "commitlint -e -V"
   },
   "author": "hcg1023 <2293885211@qq.com>",
   "main": "dist/cjs/index.js",
@@ -59,12 +64,13 @@
     "vue-eslint-parser": "^8.3.0"
   },
   "lint-staged": {
-    "*.{js,js,ts,tsx,vue}": [
-      "prettier --write",
-      "vitest related --run"
-    ],
-    "*.{less,css}": [
-      "stylelint --fix"
-    ]
+	"*.{js,js,ts,tsx,vue}": [
+	  "eslint --fix",
+	  "prettier --write",
+	  "vitest related --run"
+	],
+	"*.{less,css}": [
+	  "stylelint --fix"
+	]
   }
 }

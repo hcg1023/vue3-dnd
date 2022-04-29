@@ -1,8 +1,7 @@
-import { Connector } from '../internals'
 import { ConnectableElement, ConnectNode } from '../types'
 import { isRef, watch } from 'vue'
 
-export function connectDragRef<ConnectorNode extends Connector, Options>(
+export function connectDragRef<Options>(
 	fn: ConnectNode<Options>,
 	options?: Options
 ) {
