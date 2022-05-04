@@ -8,6 +8,9 @@ console.log(BASE_URL, 'BASE_URL')
 export default defineConfig({
 	base: BASE_URL,
 	lang: 'zh-CN',
+	head: [
+		['link', { rel: 'icon', type: 'image/svg+xml', href: '/vue3-dnd.svg' }],
+	],
 	vite: {
 		resolve: {
 			alias: {
@@ -32,6 +35,7 @@ export default defineConfig({
 		},
 	},
 	themeConfig: {
+		logo: './vue3-dnd.svg',
 		algolia: {
 			appId: 'MPEA5OIOBN',
 			apiKey: '4731e5999d5e86ca8daf77c77a921adc',
