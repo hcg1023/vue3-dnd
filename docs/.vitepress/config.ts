@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, withBase } from 'vitepress'
 import path from 'path'
 
 const BASE_URL = process.env.BASE_URL || '/'
@@ -9,7 +9,7 @@ export default defineConfig({
 	base: BASE_URL,
 	lang: 'zh-CN',
 	head: [
-		['link', { rel: 'icon', type: 'image/svg+xml', href: '/vue3-dnd.svg' }],
+		['link', { rel: 'icon', type: 'image/svg+xml', href: './vue3-dnd.svg' }],
 	],
 	vite: {
 		resolve: {
