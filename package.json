@@ -15,7 +15,6 @@
     "prepare": "husky install",
     "prettier": "lint-staged",
     "prepublishOnly": "npm run build && standard-version",
-    "postpublish": "run-s docs:build deploy",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "cross-env NODE_ENV=production vitepress serve docs",
