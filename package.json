@@ -48,7 +48,8 @@
   },
   "files": [
     "dist",
-    "README_ZH.md"
+    "README_ZH.md",
+	"logo.svg"
   ],
   "keywords": [
     "drag",

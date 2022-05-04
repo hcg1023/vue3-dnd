@@ -1,4 +1,4 @@
-# Vue3 _DnD_
+# Vue3 Dn<img src="./logo.svg" width="28">
 
 [website](https://hcg1023.github.io/vue3-dnd/) | 
 [China's Internet](https://haochenguang.gitee.io/vue3-dnd/)
