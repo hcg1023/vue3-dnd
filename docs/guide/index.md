@@ -26,3 +26,5 @@ yarn add vue3-dnd react-dnd-html5-backend
 
 # 感谢
 感谢[React DnD](https://react-dnd.github.io/react-dnd/about) 的作者，他们的开源项目是我们的基础。
+
+感谢设计师王珩提供的logo。
