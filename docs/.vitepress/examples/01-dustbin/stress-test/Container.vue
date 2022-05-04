@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { NativeTypes } from 'react-dnd-html5-backend'
 import Dustbin from './Dustbin.vue'
 import Box from './Box.vue'
@@ -35,7 +35,7 @@ const boxes = ref<SourceBox[]>([
 ])
 const droppedBoxNames = ref<string[]>([])
 
-if (typeof window !== 'undefined') {
+onMounted(() => {
 	const interval = setInterval(() => {
 		boxes.value.sort(() => Math.random() - 0.5)
 		dustbins.value.sort(() => Math.random() - 0.5)
@@ -43,7 +43,7 @@ if (typeof window !== 'undefined') {
 	onUnmounted(() => {
 		clearInterval(interval)
 	})
-}
+})
 const isDropped = (boxName: string) =>
 	droppedBoxNames.value.indexOf(boxName) > -1
 

@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import Box from './Box.vue'
-import { onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 const props = defineProps<{
 	title: string
 }>()
 
-if (typeof window === 'undefined') {
+onMounted(() => {
 	const interval = setInterval(() => (tickTock.value = !tickTock.value), 500)
 	onUnmounted(() => {
 		clearInterval(interval)
 	})
-}
+})
 
 const tickTock = ref(false)
 </script>
