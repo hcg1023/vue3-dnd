@@ -1,6 +1,6 @@
 {
   "name": "vue3-dnd",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Drag and Drop for Vue3",
   "scripts": {
     "dev": "vite",
@@ -49,7 +49,7 @@
   "files": [
     "dist",
     "README_ZH.md",
-	"logo.svg"
+    "logo.svg"
   ],
   "keywords": [
     "drag",
