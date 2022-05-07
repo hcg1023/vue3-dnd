@@ -1,4 +1,4 @@
-# Vue3 Dn<img src="./logo.svg" width="28">
+# Vue3 Dn<img src="http://image.haochenguang.cn/pictures/vue3-dnd.svg" width="28">
 
 [官网](https://hcg1023.github.io/vue3-dnd/) | 
 [国内镜像](https://haochenguang.gitee.io/vue3-dnd/)
