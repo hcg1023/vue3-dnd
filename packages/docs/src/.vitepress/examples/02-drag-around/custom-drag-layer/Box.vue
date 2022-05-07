@@ -21,8 +21,8 @@ const backgroundColor = computed(() => (props.yellow ? 'yellow' : 'white'))
 
 <style lang="less" scoped>
 .box {
-	border: 1px dashed gray;
 	padding: 0.5rem 1rem;
+	border: 1px dashed gray;
 	cursor: move;
 }
 </style>

@@ -21,11 +21,11 @@ const { opacity } = toRefs(collect)
 
 <style lang="less" scoped>
 .box {
-	border: 1px dashed gray;
-	padding: 0.5rem 1rem;
-	margin-bottom: 0.5rem;
-	background-color: white;
-	cursor: move;
 	width: 20rem;
+	margin-bottom: 0.5rem;
+	padding: 0.5rem 1rem;
+	background-color: white;
+	border: 1px dashed gray;
+	cursor: move;
 }
 </style>

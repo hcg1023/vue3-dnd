@@ -55,13 +55,13 @@ const opacity = computed(() => (unref(isDragging) ? 0.4 : 1))
 
 <style lang="less" scoped>
 .box {
-	border: 1px solid gray;
-	background-color: white;
-	padding: 0.5rem 1rem;
+	float: left;
 	margin-right: 1.5rem;
 	margin-bottom: 1.5rem;
+	padding: 0.5rem 1rem;
+	background-color: white;
+	border: 1px solid gray;
 	cursor: move;
-	float: left;
 
 	&.dragging {
 		opacity: 0.4;

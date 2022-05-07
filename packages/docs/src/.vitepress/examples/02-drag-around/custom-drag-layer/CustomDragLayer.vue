@@ -58,11 +58,11 @@ const { itemType, isDragging, item, initialOffset, currentOffset } =
 <style lang="less" scoped>
 .layer {
 	position: fixed;
-	pointer-events: none;
-	z-index: 100;
-	left: 0;
 	top: 0;
+	left: 0;
+	z-index: 100;
 	width: 100%;
 	height: 100%;
+	pointer-events: none;
 }
 </style>

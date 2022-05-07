@@ -2,9 +2,14 @@ name: CI
 
 # 在master分支发生push事件时触发。
 on:
+  schedule:
+    - cron: '0 0 * * *'
+
   push:
     branches:
       - main
+      - changeset-release/main
+
   pull_request:
     branches:
       - main
@@ -13,27 +18,27 @@ jobs: # 工作流
   build:
     runs-on: ubuntu-latest #运行在虚拟机环境ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout code repository # 步骤的名字 切到对应的分支
+        uses: actions/checkout@v2 # 使用actions/checkout@v2这个action
+        with: # 这个action的参数
+          fetch-depth: 0
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2.0.1
+        uses: ./.github/actions/pnpm
         with:
-          version: 6.15.1
-
-      - name: Set node version to 16
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          cache: 'pnpm'
-
-      - run: pnpm install
+          cache: '.pnpm-store'
 
       - name: Run Lint
         run: pnpm run lint
 
+      - name: Run Stylelint
+        run: pnpm run stylelint
+
       - name: Run Prettier
         run: pnpm run prettier
 
+      - name: Run Test
+        run: pnpm run test
+
       - name: Run Build
         run: pnpm -r build
-

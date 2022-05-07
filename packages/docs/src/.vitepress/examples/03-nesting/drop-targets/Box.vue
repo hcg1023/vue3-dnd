@@ -12,9 +12,9 @@ const [, drag] = useDrag(() => ({ type: ItemTypes.BOX }))
 <style lang="less" scoped>
 .box {
 	display: inline-block;
-	border: 1px dashed gray;
 	padding: 0.5rem 1rem;
 	background-color: white;
+	border: 1px dashed gray;
 	cursor: move;
 }
 </style>

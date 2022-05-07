@@ -21,18 +21,19 @@ const { opacity } = toRefs(collect)
 
 <style lang="less" scoped>
 .box-preview {
-	border: 1px dashed gray;
-	padding: 0.5rem 1rem;
-	margin-bottom: 0.5rem;
-	background-color: white;
 	width: 20rem;
+	margin-bottom: 0.5rem;
+	padding: 0.5rem 1rem;
+	background-color: white;
+	border: 1px dashed gray;
 }
+
 .box-drag {
-	background-color: green;
+	display: inline-block;
 	width: 1rem;
 	height: 1rem;
-	display: inline-block;
 	margin-right: 0.75rem;
+	background-color: green;
 	cursor: move;
 }
 </style>

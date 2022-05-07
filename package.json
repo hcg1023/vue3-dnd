@@ -1,26 +1,25 @@
 {
   "name": "root",
   "version": "0.0.0",
+  "private": true,
   "description": "Drag and Drop for Vue3",
   "scripts": {
-	"test": "vitest --run",
-	"lint": "eslint packages --ext .js,.ts,.vue --fix",
-	"prettier": "prettier --write packages/**/*.{js,ts,vue}",
-	"prepare": "husky install",
-	"lint-staged": "lint-staged",
-	"version": "changeset version",
-	"prepublishOnly": "pnpm run version",
-	"commitlint": "commitlint -e -V"
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install",
+    "test": "vitest --run --passWithNoTests",
+    "lint": "eslint packages --quiet --ext .js,.ts,.vue --fix --no-error-on-unmatched-pattern",
+	"lint:vitepress-style": "stylelint \"packages/**/\\.vitepress/**/*.{less,css,vue}\" --fix --allow-empty-input",
+    "lint:style": "stylelint \"packages/**/*.{less,css,vue}\" --fix --allow-empty-input",
+	"stylelint": "run-p lint:vitepress-style lint:style",
+    "prettier": "prettier --write packages/**/*.{js,ts,jsx,tsx,vue} --no-error-on-unmatched-pattern",
+	"ci": "run-p test lint stylelint prettier",
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint -e -V",
+    "pack-version": "changeset version",
+    "release": "pnpm -r publish && changeset tag",
+    "publish-success": "echo \"publish success\""
   },
   "author": "hcg1023 <2293885211@qq.com>",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
-  "exports": {
-    "import": "./dist/esm/index.js",
-    "require": "./dist/cjs/index.js",
-    "types": "./dist/types/index.d.ts"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/hcg1023/vue3-dnd"
@@ -42,9 +41,9 @@
     "drag-and-drop"
   ],
   "devDependencies": {
-	"@commitlint/cli": "^16.2.1",
-	"@commitlint/config-conventional": "^16.2.1",
     "@changesets/cli": "^2.22.0",
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "cross-env": "^7.0.3",
@@ -52,25 +51,34 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.5.0",
+    "fast-glob": "^3.2.11",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.5",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.13",
+    "postcss-html": "^1.4.1",
+    "postcss-less": "^6.0.0",
     "prettier": "^2.5.1",
     "shx": "^0.3.4",
     "standard-version": "^9.3.2",
     "stylelint": "^14.5.3",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-less": "^1.0.5",
+    "stylelint-order": "^5.0.0",
     "typescript": "^4.5.4",
     "vitest": "^0.6.0",
     "vue-eslint-parser": "^8.3.0"
   },
   "lint-staged": {
-	"*.{js,js,ts,tsx,vue}": [
-	  "eslint --fix",
-	  "prettier --write",
-	  "vitest related --run"
-	],
-	"*.{less,css}": [
-	  "stylelint --fix"
-	]
+    "*.{js,js,ts,tsx,vue}": [
+      "eslint --fix",
+      "prettier --write",
+      "vitest related --run"
+    ],
+    "*.{less,css,vue}": [
+      "stylelint --fix"
+    ]
   }
 }
