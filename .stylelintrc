@@ -1,0 +1,22 @@
+{
+  "extends": ["stylelint-config-standard","stylelint-config-rational-order", "stylelint-config-prettier"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+	"color-no-invalid-hex": true,
+	"block-no-empty": true,
+	"selector-pseudo-class-no-unknown": [true, {
+	  "ignorePseudoClasses": ["global"]
+	}]
+  },
+  "overrides": [
+	{
+	  "files": ["packages/**/*.less", "packages/**/\\.vitepress/**/*.less"],
+	  "plugins": ["stylelint-less", "stylelint-order"],
+	  "customSyntax": "postcss-less"
+	},
+	{
+	  "files": ["packages/**/*.vue","packages/**/\\.vitepress/**/*.vue"],
+	  "customSyntax": "postcss-html"
+	}
+  ]
+}

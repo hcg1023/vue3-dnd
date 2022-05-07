@@ -12,14 +12,8 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
 	"types": [
-	  "vitest",
-	  "vitest/globals"
-	],
-	"paths": {
-	  "vue3-dnd": ["./lib"],
-	  "@vitepress/*": ["./docs/.vitepress/*"]
-	}
+	]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "docs/.vitepress/**/*.ts", "docs/.vitepress/**/*.tsx", "docs/.vitepress/**/*.vue"],
+  "include": ["packages/**/src/**/*.ts", "packages/**/test/**/*.ts", "packages/**/src/**/*.vue", "packages/**/src/**/*.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
