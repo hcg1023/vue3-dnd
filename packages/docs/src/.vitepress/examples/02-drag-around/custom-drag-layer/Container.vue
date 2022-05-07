@@ -55,9 +55,9 @@ const [, drop] = useDrop(() => ({
 
 <style scoped lang="less">
 .container {
+	position: relative;
 	width: 300px;
 	height: 300px;
 	border: 1px solid black;
-	position: relative;
 }
 </style>

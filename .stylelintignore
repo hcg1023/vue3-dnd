@@ -1,0 +1,20 @@
+*.min.css
+
+# 其他类型文件
+*.js
+*.ts
+*.md
+*.jpg
+*.json
+*.woff
+
+# 测试和打包目录
+/test/
+
+# Build files
+dist
+dist-types
+dist-ssr
+dist-docs
+*.local
+.yalc

@@ -1,0 +1,33 @@
+name: Deploy Docs
+description: Deploys the docs to GitHub Pages
+
+on:
+  workflow_call:
+    inputs:
+      build:
+        required: true
+        type: string
+      publish_dir:
+        required: true
+        type: string
+      github_token:
+        required: true
+        type: string
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: ./.github/actions/pnpm
+
+    - name: build project
+      run: ${{ inputs.build }}
+      shell: bash
+
+    - name: Run Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      if: ${{ hashFiles(inputs.publish_dir) }}
+      with:
+        github_token: ${{ inputs.github_token }}
+        publish_dir: ${{ inputs.publish_dir }}
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'

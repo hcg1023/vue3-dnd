@@ -56,8 +56,8 @@ const containerStyle = computed(() => ({
 
 <style lang="less" scoped>
 .source-box {
-	border: 1px dashed gray;
-	padding: 0.5rem;
 	margin: 0.5rem;
+	padding: 0.5rem;
+	border: 1px dashed gray;
 }
 </style>

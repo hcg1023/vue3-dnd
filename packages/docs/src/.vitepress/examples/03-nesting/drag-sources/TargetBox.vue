@@ -58,10 +58,10 @@ const backgroundColor = computed(() => {
 
 <style lang="less" scoped>
 .target-box {
-	border: 1px solid gray;
-	height: 15rem;
 	width: 15rem;
+	height: 15rem;
 	padding: 2rem;
 	text-align: center;
+	border: 1px solid gray;
 }
 </style>

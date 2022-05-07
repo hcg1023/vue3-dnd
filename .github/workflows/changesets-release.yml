@@ -1,0 +1,56 @@
+name: changesets-release
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+env:
+  BASE_URL: /vue3-dnd
+  BUILD_PACKAGE_NAME: "docs"
+  PUBLISH_DIR: ./packages/docs/dist
+
+on:
+  workflow_run:
+    workflows: [ci]
+    branches: [main]
+    types: [completed]
+
+jobs:
+  release:
+    if: github.event.workflow_run.conclusion == 'success'
+    timeout-minutes: 10
+    runs-on: ubuntu-latest #运行在虚拟机环境ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: ./.github/actions/pnpm
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        # https://github.com/changesets/action
+        uses: changesets/action@v1
+        with:
+          # this expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: pnpm run release
+          version: pnpm run pack-version
+          commit: 'chore(changesets): release'
+          title: 'Release From Changesets'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Post Publish to npm # 发布成功后，可以执行一些事情
+        if: ${{ steps.changesets.outputs.published == 'true' }}
+        run: pnpm run publish-success
+
+      - name: Deploy to GitHub Pages # 发布成功以后自动部署到 GitHub Pages,或者没有任何changeset更改的时候
+        if: ${{ steps.changesets.outputs.published == 'true' || steps.changesets.outputs.hasChangesets == 'false' }}
+        uses: ./.github/actions/deploy-docs
+        with:
+          build: BASE_URL=${{ env.BASE_URL }} pnpm -r build --filter=${{ env.BUILD_PACKAGE_NAME }}
+          publish_dir: ${{ env.PUBLISH_DIR }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+

@@ -36,9 +36,9 @@ const { isDragging } = toRefs(collect)
 <style lang="less" scoped>
 .box {
 	position: absolute;
-	border: 1px dashed gray;
-	background-color: white;
 	padding: 0.5rem 1rem;
+	background-color: white;
+	border: 1px dashed gray;
 	cursor: move;
 }
 </style>
