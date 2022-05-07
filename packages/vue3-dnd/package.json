@@ -9,7 +9,7 @@
     "build_esm": "swc -C module.type=es6 -d dist/esm src/",
     "build_cjs": "swc -C module.type=commonjs -d dist/cjs src/",
     "build:swc": "run-p build_types build_esm build_cjs",
-    "build": "run-s test clean build:swc",
+    "build": "run-s clean build:swc",
     "prepublishOnly": "npm run build"
   },
   "author": "hcg1023 <2293885211@qq.com>",
@@ -72,6 +72,7 @@
     "react-dnd-test-backend": "^15.1.2",
     "react-dnd-test-utils": "^15.1.2",
     "shx": "^0.3.4",
+	"@swc/core": "^1.2.178",
 	"@swc/cli": "^0.1.57",
 	"typescript": "^4.6.4",
     "vitest": "^0.6.3",
