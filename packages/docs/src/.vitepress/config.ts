@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, withBase } from 'vitepress'
 import path from 'path'
 
 const BASE_URL = process.env.BASE_URL || '/'
@@ -7,6 +7,9 @@ export default defineConfig({
 	base: BASE_URL,
 	outDir: path.resolve(__dirname, '../../dist'),
 	lang: 'zh-CN',
+	head: [
+		['link', { rel: 'icon', type: 'image/svg+xml', href: './vue3-dnd.svg' }],
+	],
 	vite: {
 		// @ts-ignore vite的内置类型中没有ssr，所以暂时可以通过这个去配置
 		ssr: {
@@ -26,6 +29,7 @@ export default defineConfig({
 		},
 	},
 	themeConfig: {
+		logo: './vue3-dnd.svg',
 		algolia: {
 			appId: 'MPEA5OIOBN',
 			apiKey: '4731e5999d5e86ca8daf77c77a921adc',

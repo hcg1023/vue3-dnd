@@ -1,5 +1,6 @@
 ---
 home: true
+heroImage: /vue3-dnd.svg
 actionText: 快速上手 →
 actionLink: /guide/
 features:
@@ -9,4 +10,10 @@ features:
   details: 不包含任何UI，可以随意定制
 - title: 双端支持
   details: 使用backend支持双端拖拽
+
 ---
+<style>
+.home-hero .figure .image {
+    width: 160px;
+}
+</style>
