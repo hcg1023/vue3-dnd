@@ -1,0 +1,27 @@
+{
+  "name": "docs",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+	"dev": "vitepress dev src",
+	"build": "vitepress build src",
+	"serve": "vitepress serve src"
+  },
+  "dependencies": {
+	"vue3-dnd": "workspace:*",
+	"faker": "^5.5.3",
+	"@vueuse/core": "^8.2.5",
+	"react-dnd-html5-backend": "^15.1.2",
+	"react-dnd-touch-backend": "^15.1.1",
+	"vitepress": "^0.22.3"
+  },
+  "devDependencies": {
+	"less": "^4.1.2",
+	"@types/faker": "^5.5.8"
+  },
+  "keywords": [],
+  "author": "hcg1023 <2293885211@qq.com>",
+  "license": "ISC"
+}
