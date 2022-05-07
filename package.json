@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
-    "test": "vitest --run --passWithNoTests",
+    "test": "pnpm -r test",
     "lint": "eslint packages --quiet --ext .js,.ts,.vue --fix --no-error-on-unmatched-pattern",
     "lint:vitepress-style": "stylelint \"packages/**/\\.vitepress/**/*.{less,css,vue}\" --fix --allow-empty-input",
     "lint:style": "stylelint \"packages/**/*.{less,css,vue}\" --fix --allow-empty-input",
