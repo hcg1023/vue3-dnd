@@ -3,7 +3,9 @@
 [官网](https://hcg1023.github.io/vue3-dnd/) | 
 [国内镜像](https://haochenguang.gitee.io/vue3-dnd/)
 
-React Dnd 的 Vue3 实现
+React Dnd 的 Composition-api 实现。
+
+**支持Vue2和Vue3**
 
 如果你觉得这个项目对你有帮助，希望你能贡献一个 [star⭐](https://github.com/hcg1023/vue3-dnd)
 
