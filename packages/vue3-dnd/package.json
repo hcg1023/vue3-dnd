@@ -9,7 +9,7 @@
     "build_esm": "swc -C module.type=es6 -d dist/esm src/",
     "build_cjs": "swc -C module.type=commonjs -d dist/cjs src/",
     "build:swc": "run-p build_types build_esm build_cjs",
-    "build": "run-s clean build:swc",
+    "build": "run-s switch:3 clean build:swc",
     "prepublishOnly": "npm run build",
     "switch:2": "vue-demi-switch 2 vue2",
 	"switch:3": "vue-demi-switch 3"
