@@ -4,9 +4,9 @@ import { useRegisteredDropTarget } from './useRegisteredDropTarget.js'
 import { useOptionalFactory } from '../useOptionalFactory.js'
 import { useDropTargetMonitor } from './useDropTargetMonitor.js'
 import { useDropTargetConnector } from './useDropTargetConnector.js'
-import { useCollectedProps } from '../useCollectedProps.js'
-import { useConnectDropTarget } from './connectors.js'
-import { computed, Ref, unref } from 'vue'
+import { useCollectedProps } from '../useCollectedProps'
+import { useConnectDropTarget } from './connectors'
+import { computed, Ref, unref } from 'vue-demi'
 import { DropTargetOptions } from '../../types'
 
 /**

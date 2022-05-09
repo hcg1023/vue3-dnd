@@ -2,7 +2,7 @@ import { useDrop } from '../useDrop'
 import { render, cleanup } from '@testing-library/vue'
 import { DndProvider } from '../..'
 import { TestBackend } from 'react-dnd-test-backend'
-import { defineComponent, h } from 'vue'
+import { defineComponent, h } from 'vue-demi'
 import { describe, afterEach, it, vi, expect } from 'vitest'
 
 describe('The useDrop hook', () => {

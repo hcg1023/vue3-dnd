@@ -1,5 +1,5 @@
 import { ConnectableElement, ConnectNode } from '../types'
-import { isRef, watch } from 'vue'
+import { isRef, watch } from 'vue-demi'
 
 export function connectDragRef<Options>(
 	fn: ConnectNode<Options>,

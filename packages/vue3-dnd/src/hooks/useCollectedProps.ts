@@ -1,7 +1,7 @@
 import type { Connector } from '../internals'
 import type { HandlerManager, MonitorEventEmitter } from '../types'
 import { useMonitorOutput } from './useMonitorOutput.js'
-import { unref } from 'vue'
+import { unref } from 'vue-demi'
 import { MaybeRef } from '../types/utils'
 
 export function useCollectedProps<Collected, Monitor extends HandlerManager>(

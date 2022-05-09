@@ -1,6 +1,6 @@
 import type { TargetConnector } from '../../internals'
 import { MaybeRef } from '../../types/utils'
-import { computed, unref } from 'vue'
+import { computed, unref } from 'vue-demi'
 import { connectDragRef } from '../connectDragRef'
 import { DropTargetHookSpec } from '../types'
 
