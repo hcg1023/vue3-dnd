@@ -1,8 +1,8 @@
 import { invariant } from '@react-dnd/invariant'
 import type { Identifier } from 'dnd-core'
-import type { DropTargetHookSpec } from '../types.js'
+import type { DropTargetHookSpec } from '../types'
 import { MaybeRef } from '../../types/utils'
-import { computed, ComputedRef, unref } from 'vue'
+import { computed, ComputedRef, unref } from 'vue-demi'
 
 /**
  * Internal utility hook to get an array-version of spec.accept.

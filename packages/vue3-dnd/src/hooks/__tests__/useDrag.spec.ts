@@ -2,7 +2,7 @@ import { useDrag } from '../useDrag'
 import { DndProvider } from '../../core'
 import { TestBackend } from 'react-dnd-test-backend'
 import { render, cleanup, RenderResult } from '@testing-library/vue'
-import { defineComponent, h } from 'vue'
+import { defineComponent, h } from 'vue-demi'
 import { describe, afterEach, it, vi, expect } from 'vitest'
 
 describe('The useDrag hook', () => {

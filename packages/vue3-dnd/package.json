@@ -10,7 +10,9 @@
     "build_cjs": "swc -C module.type=commonjs -d dist/cjs src/",
     "build:swc": "run-p build_types build_esm build_cjs",
     "build": "run-s clean build:swc",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "switch:2": "vue-demi-switch 2 vue2",
+	"switch:3": "vue-demi-switch 3"
   },
   "author": "hcg1023 <2293885211@qq.com>",
   "main": "src/index.ts",
@@ -42,10 +44,11 @@
     "@react-dnd/invariant": "^3.0.1",
     "@react-dnd/shallowequal": "^3.0.1",
     "dnd-core": "^15.1.2",
-    "fast-deep-equal": "^3.1.3"
+    "fast-deep-equal": "^3.1.3",
+    "vue-demi": "^0.12.5"
   },
   "peerDependencies": {
-    "vue": "^3.2.0"
+    "vue": "^3.0.0-0 || ^2.6.0"
   },
   "files": [
     "dist",
@@ -65,17 +68,18 @@
     "drag-and-drop"
   ],
   "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.178",
     "@testing-library/vue": "^6.5.1",
     "@types/faker": "^5.5.9",
+	"esno": "^0.14.1",
     "faker": "^5.5.3",
     "npm-run-all": "^4.1.5",
     "react-dnd-test-backend": "^15.1.2",
     "react-dnd-test-utils": "^15.1.2",
     "shx": "^0.3.4",
-	"@swc/core": "^1.2.178",
-	"@swc/cli": "^0.1.57",
-	"typescript": "^4.6.4",
+    "typescript": "^4.6.4",
     "vitest": "^0.6.3",
-    "vue": "^3.2.33"
+    "vue": "3"
   }
 }

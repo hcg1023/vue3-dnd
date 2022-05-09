@@ -1,5 +1,5 @@
 import type { FactoryOrInstance } from './types.js'
-import { computed, ComputedRef } from 'vue'
+import { computed, ComputedRef } from 'vue-demi'
 
 export function useOptionalFactory<T>(
 	arg: FactoryOrInstance<T>

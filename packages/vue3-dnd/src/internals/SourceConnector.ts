@@ -1,5 +1,5 @@
-import { ComponentPublicInstance, Ref, isRef } from 'vue'
-import { wrapConnectorHooks } from './wrapConnectorHooks.js'
+import { ComponentPublicInstance, Ref, isRef } from 'vue-demi'
+import { wrapConnectorHooks } from './wrapConnectorHooks'
 import type { Backend, Unsubscribe, Identifier } from 'dnd-core'
 import type { DragSourceOptions, DragPreviewOptions } from '../types'
 import { shallowEqual } from '@react-dnd/shallowequal'

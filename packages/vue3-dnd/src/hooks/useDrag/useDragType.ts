@@ -1,7 +1,7 @@
 import { invariant } from '@react-dnd/invariant'
 import type { Identifier } from 'dnd-core'
-import type { DragSourceHookSpec } from '../types.js'
-import { computed, ComputedRef, Ref, unref } from 'vue'
+import type { DragSourceHookSpec } from '../types'
+import { computed, ComputedRef, Ref, unref } from 'vue-demi'
 
 export function useDragType(
 	spec: Ref<DragSourceHookSpec<any, any, any>>

@@ -1,10 +1,10 @@
 import type { DragSourceMonitor } from '../../types'
 import { registerSource, SourceConnector } from '../../internals'
-import type { DragSourceHookSpec } from '../types.js'
-import { useDragSource } from './useDragSource.js'
-import { useDragDropManager } from '../useDragDropManager.js'
-import { useDragType } from './useDragType.js'
-import { Ref, unref, watchEffect } from 'vue'
+import type { DragSourceHookSpec } from '../types'
+import { useDragSource } from './useDragSource'
+import { useDragDropManager } from '../useDragDropManager'
+import { useDragType } from './useDragType'
+import { Ref, unref, watchEffect } from 'vue-demi'
 
 export function useRegisteredDragSource<O, R, P>(
 	spec: Ref<DragSourceHookSpec<O, R, P>>,

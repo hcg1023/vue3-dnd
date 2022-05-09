@@ -1,8 +1,8 @@
 import { shallowEqual } from '@react-dnd/shallowequal'
-import { wrapConnectorHooks } from './wrapConnectorHooks.js'
+import { wrapConnectorHooks } from './wrapConnectorHooks'
 import type { Backend, Unsubscribe, Identifier } from 'dnd-core'
-import { isRef, Ref } from 'vue'
-import type { Connector } from './SourceConnector.js'
+import { isRef, Ref } from 'vue-demi'
+import type { Connector } from './SourceConnector'
 import type { DropTargetOptions } from '../types'
 import { MaybeRef } from '../types/utils'
 

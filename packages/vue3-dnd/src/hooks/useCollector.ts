@@ -1,6 +1,6 @@
 import equal from 'fast-deep-equal'
 import { MaybeRef } from '../types/utils'
-import { Ref, ref, unref, watchEffect } from 'vue'
+import { Ref, ref, unref, watchEffect } from 'vue-demi'
 
 /**
  *
