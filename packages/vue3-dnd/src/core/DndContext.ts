@@ -1,4 +1,4 @@
-import { inject, InjectionKey, provide } from 'vue'
+import { inject, InjectionKey, provide } from 'vue-demi'
 import type { DragDropManager } from 'dnd-core'
 
 export const DndContextSymbol: InjectionKey<DragDropManager> =

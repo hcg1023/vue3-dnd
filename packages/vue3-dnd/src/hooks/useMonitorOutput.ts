@@ -1,6 +1,6 @@
 import type { HandlerManager, MonitorEventEmitter } from '../types'
 import { useCollector } from './useCollector.js'
-import { Ref, unref, watchEffect } from 'vue'
+import { Ref, unref, watchEffect } from 'vue-demi'
 import { MaybeRef } from '../types/utils'
 
 export function useMonitorOutput<Monitor extends HandlerManager, Collected>(

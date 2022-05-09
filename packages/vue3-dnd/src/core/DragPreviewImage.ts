@@ -1,4 +1,4 @@
-import { defineComponent, PropType, watchEffect } from 'vue'
+import { defineComponent, PropType, watchEffect } from 'vue-demi'
 import { ConnectDragPreview } from '../types'
 
 export default defineComponent({

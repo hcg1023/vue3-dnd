@@ -1,8 +1,8 @@
-import type { DropTargetMonitor } from '../../types/index.js'
-import type { DropTargetHookSpec } from '../types.js'
-import { DropTargetImpl } from './DropTargetImpl.js'
+import type { DropTargetMonitor } from '../../types'
+import type { DropTargetHookSpec } from '../types'
+import { DropTargetImpl } from './DropTargetImpl'
 import { MaybeRef } from '../../types/utils'
-import { computed, unref, watchEffect } from 'vue'
+import { computed, unref, watchEffect } from 'vue-demi'
 
 export function useDropTarget<O, R, P>(
 	spec: MaybeRef<DropTargetHookSpec<O, R, P>>,
