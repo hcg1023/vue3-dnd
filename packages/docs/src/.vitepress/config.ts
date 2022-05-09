@@ -79,6 +79,10 @@ export default defineConfig({
 								// 	link: '/guide/testing',
 								// },
 								{
+									text: 'Vue2',
+									link: '/guide/vue2',
+								},
+								{
 									text: '常见问题',
 									link: '/guide/faq',
 								},
