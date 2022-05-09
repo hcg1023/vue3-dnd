@@ -3,7 +3,9 @@
 [website](https://hcg1023.github.io/vue3-dnd/) | 
 [China's Internet](https://haochenguang.gitee.io/vue3-dnd/)
 
-React Dnd implementation in Vue3
+React Dnd implementation in Vue Composition-api.
+
+**Supports V2 and V3**
 
 If you think this project is helpful to you, I hope you can contribute a [star⭐](https://github.com/hcg1023/vue3-dnd)
 
