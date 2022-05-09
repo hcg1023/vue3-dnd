@@ -1,7 +1,7 @@
 import { TargetConnector } from '../../internals'
 import type { DropTargetOptions } from '../../types'
-import { useDragDropManager } from '../useDragDropManager.js'
-import { computed, Ref, unref, watchEffect } from 'vue'
+import { useDragDropManager } from '../useDragDropManager'
+import { computed, Ref, unref, watchEffect } from 'vue-demi'
 import { MaybeRef } from '../../types/utils'
 
 export function useDropTargetConnector(

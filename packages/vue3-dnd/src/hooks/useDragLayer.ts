@@ -1,7 +1,7 @@
 import type { DragLayerMonitor } from '../types'
 import { useDragDropManager } from './useDragDropManager.js'
 import { useCollector } from './useCollector.js'
-import { computed, Ref, unref, watchEffect } from 'vue'
+import { computed, Ref, unref, watchEffect } from 'vue-demi'
 
 /**
  * useDragLayer Hook

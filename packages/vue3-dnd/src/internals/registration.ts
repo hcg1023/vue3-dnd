@@ -8,7 +8,7 @@ import type {
 	DragSource,
 } from 'dnd-core'
 import { MaybeRef } from '../types/utils'
-import { unref } from 'vue'
+import { unref } from 'vue-demi'
 
 export function registerTarget(
 	type: MaybeRef<TargetType>,

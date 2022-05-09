@@ -11,7 +11,7 @@
     "lint:vitepress-style": "stylelint \"packages/**/\\.vitepress/**/*.{less,css,vue}\" --fix --allow-empty-input",
     "lint:style": "stylelint \"packages/**/*.{less,css,vue}\" --fix --allow-empty-input",
     "stylelint": "run-p lint:vitepress-style lint:style",
-    "prettier": "prettier --write packages/**/*.{js,ts,jsx,tsx,vue} --no-error-on-unmatched-pattern",
+    "prettier": "prettier --write \"packages/**/*.{js,ts,jsx,tsx,vue}\" --no-error-on-unmatched-pattern",
     "ci": "run-p test lint stylelint prettier",
     "lint-staged": "lint-staged",
     "commitlint": "commitlint -e -V",
@@ -44,11 +44,12 @@
     "@changesets/cli": "^2.22.0",
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
-	"@swc/core": "^1.2.178",
-	"@swc/cli": "^0.1.57",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.178",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
-    "cross-env": "^7.0.3",
+	"@vue/composition-api": "^1.4.9",
+	"cross-env": "^7.0.3",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -72,7 +73,9 @@
     "stylelint-order": "^5.0.0",
     "typescript": "^4.6.4",
     "vitest": "^0.6.3",
-    "vue-eslint-parser": "^8.3.0"
+    "vue": "3",
+	"vue2": "npm:vue@^2.6.14",
+	"vue-eslint-parser": "^8.3.0"
   },
   "lint-staged": {
     "*.{js,js,ts,tsx,vue}": [

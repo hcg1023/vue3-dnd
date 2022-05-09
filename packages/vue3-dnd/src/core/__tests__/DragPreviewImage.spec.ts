@@ -3,7 +3,7 @@ import { DndProvider } from '../../core'
 import { TestBackend } from 'react-dnd-test-backend'
 import { render, cleanup } from '@testing-library/vue'
 import { useDrag } from '../../hooks'
-import { defineComponent, h, toRefs, Fragment } from 'vue'
+import { defineComponent, h, toRefs, Fragment } from 'vue-demi'
 import { describe, afterEach, it, vi } from 'vitest'
 
 const KNIGHT_IMAGE =

@@ -1,4 +1,4 @@
-import { defineComponent, onUnmounted, PropType } from 'vue'
+import { defineComponent, onUnmounted, PropType } from 'vue-demi'
 import { useDndContextProvider } from './DndContext'
 import {
 	BackendFactory,
