@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "pnpm -r switch:2 --filter=\"vue3-dnd\" && vite",
-    "build": "pnpm -r switch:2 --filter=\"vue3-dnd\" && tsc && vite build",
-	"postbuild": "pnpm -r switch:3 --filter=\"vue3-dnd\" ",
+    "build": "echo \"not need build\"",
     "preview": "vite preview"
   },
   "devDependencies": {
