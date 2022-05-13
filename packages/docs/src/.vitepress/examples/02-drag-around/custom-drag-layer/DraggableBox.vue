@@ -22,7 +22,7 @@ const [collect, drag, preview] = useDrag(() => ({
 }))
 
 onMounted(() => {
-	preview.value(getEmptyImage(), { captureDraggingState: true })
+	preview(getEmptyImage(), { captureDraggingState: true })
 })
 
 const { isDragging } = toRefs(collect)

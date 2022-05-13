@@ -93,7 +93,7 @@ const { isDragging } = toRefs(collect)
 const opacity = computed(() => (unref(isDragging) ? 0 : 1))
 
 const setRef = (el: HTMLDivElement) => {
-	card.value = drag.value(drop.value(el)) as HTMLDivElement
+	card.value = drag(drop(el)) as HTMLDivElement
 }
 </script>
 

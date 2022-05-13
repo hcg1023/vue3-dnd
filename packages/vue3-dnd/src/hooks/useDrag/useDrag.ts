@@ -6,7 +6,6 @@ import { useDragSourceMonitor } from './useDragSourceMonitor'
 import { useDragSourceConnector } from './useDragSourceConnector'
 import { useCollectedProps } from '../useCollectedProps'
 import { useConnectDragPreview, useConnectDragSource } from './connectors'
-import { invariant } from '@react-dnd/invariant'
 import { computed, Ref, unref } from 'vue-demi'
 import { DragPreviewOptions, DragSourceOptions } from '../../types'
 
@@ -26,15 +25,10 @@ export function useDrag<
 	>
 ): [
 	Ref<CollectedProps>,
-	Ref<ConnectDragSource<ConnectDragSourceOptions>>,
-	Ref<ConnectDragPreview<ConnectDragPreviewOption>>
+	ConnectDragSource<ConnectDragSourceOptions>,
+	ConnectDragPreview<ConnectDragPreviewOption>
 ] {
 	const spec = useOptionalFactory(specArg)
-
-	invariant(
-		!(unref(spec) as any).begin,
-		`useDrag::spec.begin was deprecated in v14. Replace spec.begin() with spec.item(). (see more here - https://react-dnd.github.io/react-dnd/docs/api/use-drag)`
-	)
 
 	const monitor = useDragSourceMonitor<DragObject, DropResult>()
 

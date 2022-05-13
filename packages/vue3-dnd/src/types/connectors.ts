@@ -5,7 +5,7 @@ export type ConnectableElement = MaybeRef<Element | null>
 export type ConnectNode<Options> = (
 	elementOrNode: ConnectableElement,
 	options?: Options
-) => Element
+) => Element | null
 
 export type ConnectDragSource<Options> = ConnectNode<Options>
 export type ConnectDropTarget<Options> = ConnectNode<Options>

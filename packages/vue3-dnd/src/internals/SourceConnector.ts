@@ -1,4 +1,4 @@
-import { ComponentPublicInstance, Ref, isRef } from 'vue-demi'
+import { ComponentPublicInstance, Ref } from 'vue-demi'
 import { wrapConnectorHooks } from './wrapConnectorHooks'
 import type { Backend, Unsubscribe, Identifier } from 'dnd-core'
 import type { DragSourceOptions, DragPreviewOptions } from '../types'
@@ -19,34 +19,22 @@ export class SourceConnector implements Connector {
 		) => {
 			this.clearDragSource()
 			this.dragSourceOptions = options || null
-			if (isRef(node)) {
-				this.dragSourceRef = node as Ref<any>
-			} else {
-				this.dragSourceNode = node
-			}
+			this.dragSourceNode = node
 			this.reconnectDragSource()
 		},
 		dragPreview: (node: any, options?: DragPreviewOptions) => {
 			this.clearDragPreview()
 			this.dragPreviewOptions = options || null
-			if (isRef(node)) {
-				this.dragPreviewRef = node
-			} else {
-				this.dragPreviewNode = node
-			}
+			this.dragPreviewNode = node
 			this.reconnectDragPreview()
 		},
 	})
 	private handlerId: Identifier | null = null
 
-	// The drop target may either be attached via ref or connect function
-	private dragSourceRef: Ref<any> | null = null
 	private dragSourceNode: any
 	private dragSourceOptionsInternal: DragSourceOptions | null = null
 	private dragSourceUnsubscribe: Unsubscribe | undefined
 
-	// The drag preview may either be attached via ref or connect function
-	private dragPreviewRef: Ref<any> | null = null
 	private dragPreviewNode: any
 	private dragPreviewOptionsInternal: DragPreviewOptions | null = null
 	private dragPreviewUnsubscribe: Unsubscribe | undefined
@@ -200,29 +188,22 @@ export class SourceConnector implements Connector {
 			this.dragPreviewUnsubscribe()
 			this.dragPreviewUnsubscribe = undefined
 			this.dragPreviewNode = null
-			this.dragPreviewRef = null
 		}
 	}
 
 	private get dragSource() {
-		return (
-			this.dragSourceNode || (this.dragSourceRef && this.dragSourceRef.value)
-		)
+		return this.dragSourceNode
 	}
 
 	private get dragPreview() {
-		return (
-			this.dragPreviewNode || (this.dragPreviewRef && this.dragPreviewRef.value)
-		)
+		return this.dragPreviewNode
 	}
 
 	private clearDragSource() {
 		this.dragSourceNode = null
-		this.dragSourceRef = null
 	}
 
 	private clearDragPreview() {
 		this.dragPreviewNode = null
-		this.dragPreviewRef = null
 	}
 }
