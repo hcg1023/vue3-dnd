@@ -22,7 +22,7 @@ export function useDrop<
 	specArg: FactoryOrInstance<
 		DropTargetHookSpec<DragObject, DropResult, CollectedProps>
 	>
-): [Ref<CollectedProps>, Ref<ConnectDropTarget<ConnectDropTargetOptions>>] {
+): [Ref<CollectedProps>, ConnectDropTarget<ConnectDropTargetOptions>] {
 	const spec = useOptionalFactory(specArg)
 	const monitor = useDropTargetMonitor<DragObject, DropResult>()
 	const connector = useDropTargetConnector(computed(() => unref(spec).options))

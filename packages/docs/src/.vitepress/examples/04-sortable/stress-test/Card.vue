@@ -33,8 +33,8 @@ const [, connectDrop] = useDrop({
 })
 
 const divRef = ref<HTMLDivElement | null>(null)
-connectDrag.value(divRef)
-connectDrop.value(divRef)
+connectDrag(divRef)
+connectDrop(divRef)
 
 const opacity = computed(() => (unref(isDragging) ? 0 : 1))
 </script>

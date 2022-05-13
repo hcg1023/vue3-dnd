@@ -1,5 +1,6 @@
 import { ConnectableElement, ConnectNode } from '../types'
-import { isRef, watch } from 'vue-demi'
+import { isRef, reactive, Ref, set, unref, watch, watchEffect } from 'vue-demi'
+import { MaybeRef } from '../types/utils'
 
 export function connectDragRef<Options>(
 	fn: ConnectNode<Options>,
@@ -35,4 +36,34 @@ export function connectDragRef<Options>(
 		}
 		return callConnect()
 	}
+}
+
+interface ConnectorState<O> {
+	el: Element | null
+	options: O | undefined
+}
+
+export function useConnector<Options>(
+	callback: (state: ConnectorState<Options>) => void,
+	defaultOptions: Ref<Options | undefined>
+) {
+	const _state = reactive<ConnectorState<Options>>({
+		el: null,
+		options: unref(defaultOptions),
+	})
+
+	watchEffect(() => {
+		callback(_state as ConnectorState<Options>)
+	})
+
+	function connector(
+		element: MaybeRef<Element | null>,
+		options: MaybeRef<Options | undefined> = unref(defaultOptions)
+	) {
+		set(_state, 'el', element)
+		set(_state, 'options', options)
+		return unref(element)
+	}
+
+	return connector
 }
