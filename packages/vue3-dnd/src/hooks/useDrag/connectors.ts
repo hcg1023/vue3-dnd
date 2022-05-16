@@ -1,7 +1,7 @@
 import type { SourceConnector } from '../../internals'
 import { computed, Ref, unref } from 'vue-demi'
 import { MaybeRef } from '../../types/utils'
-import { useConnector } from '../connectDragRef'
+import { useConnector } from '../useConnector'
 import { DragSourceHookSpec } from '../types'
 import { DragPreviewOptions, DragSourceOptions } from '../../types'
 
