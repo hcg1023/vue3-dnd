@@ -28,7 +28,7 @@ describe('The DragPreviewImage component', () => {
 			}
 			const connectPreview = (a: any, b: any) => {
 				onConnect(a, b)
-				return preview.value(a, b)
+				return preview(a, b)
 			}
 
 			return () =>
