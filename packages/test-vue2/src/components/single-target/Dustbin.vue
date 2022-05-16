@@ -26,8 +26,8 @@ const [collect, drop] = useDrop(() => ({
 	}),
 }))
 
-const element = ref()
-drop.value(element)
+const element = ref<Element | null>(null)
+drop(element)
 
 const { canDrop, isOver } = toRefs(collect)
 const isActive = computed(() => unref(canDrop) && unref(isOver))

@@ -48,8 +48,8 @@ const [collect, drag] = useDrag(() => ({
 	}),
 }))
 
-const element = ref()
-drag.value(element)
+const element = ref<Element | null>(null)
+drag(element)
 
 const { isDragging } = toRefs(collect)
 
