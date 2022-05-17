@@ -10,6 +10,7 @@ React Dnd 的 Composition-api 实现。
 如果你觉得这个项目对你有帮助，希望你能贡献一个 [star⭐](https://github.com/hcg1023/vue3-dnd)
 
 [![npm version](https://img.shields.io/npm/v/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
+[![CI](https://github.com/hcg1023/vue3-dnd/actions/workflows/ci.yml/badge.svg)](https://github.com/hcg1023/vue3-dnd/actions/workflows/ci.yml)
 [![GitHub open issues](https://img.shields.io/github/issues/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/issues?q=is%3Aopen+is%3Aissue)
 [![GitHub Stars](https://img.shields.io/github/stars/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/hcg1023/vue3-dnd)](https://github.com/hcg1023/vue3-dnd/network/members)
