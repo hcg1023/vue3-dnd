@@ -15,7 +15,7 @@ on:
       - main
 
 jobs: # 工作流
-  build:
+  lint:
     runs-on: ubuntu-latest #运行在虚拟机环境ubuntu-latest
     steps:
       - name: checkout code repository # 步骤的名字 切到对应的分支
@@ -36,6 +36,19 @@ jobs: # 工作流
 
       - name: Run Prettier
         run: pnpm run prettier
+
+  build:
+    runs-on: ubuntu-latest #运行在虚拟机环境ubuntu-latest
+    steps:
+      - name: checkout code repository # 步骤的名字 切到对应的分支
+        uses: actions/checkout@v2 # 使用actions/checkout@v2这个action
+        with: # 这个action的参数
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: ./.github/actions/pnpm
+        with:
+          cache: '.pnpm-store'
 
       - name: Run Test
         run: pnpm run test
