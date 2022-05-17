@@ -39,7 +39,12 @@ const backgroundColor = computed(() =>
 </script>
 
 <template>
-	<div :ref="drop" role="Dustbin" :style="{ ...style, backgroundColor }">
+	<div
+		:ref="drop"
+		role="Dustbin"
+		:style="{ ...style, backgroundColor }"
+		data-testid="dustbin"
+	>
 		{{
 			isActive
 				? 'Release to drop'

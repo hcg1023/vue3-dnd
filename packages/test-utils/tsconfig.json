@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+	"baseUrl": "./",
+	"outDir": "./dist/types",
+	"declarationDir": "./dist/types",
+	"rootDir": "./",
+	"skipLibCheck": true,
+	"declaration": true,
+	"emitDeclarationOnly": true
+  },
+  "include": [
+	"./src/index.ts",
+	"./**/*.ts",
+	"./**/*.d.ts",
+	"./**/*.tsx"
+  ],
+  "exclude": [
+	"node_modules/**"
+  ]
+}

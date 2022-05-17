@@ -2,7 +2,7 @@
 import Container from './Container.vue'
 import { ref } from 'vue'
 
-const hideSourceOnDrag = ref(false)
+const hideSourceOnDrag = ref(true)
 const toggle = () => (hideSourceOnDrag.value = !hideSourceOnDrag.value)
 </script>
 

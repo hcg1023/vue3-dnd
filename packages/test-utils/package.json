@@ -1,0 +1,88 @@
+{
+  "name": "vue3-dnd-test-utils",
+  "version": "1.0.0",
+  "description": "vue3-dnd test utils",
+  "scripts": {
+	"test": "vitest run --passWithNoTests",
+	"clean": "shx rm -rf dist/",
+	"build_types": "tsc",
+	"build_esm": "swc -C module.type=es6 -d dist/esm src/",
+	"build_cjs": "swc -C module.type=commonjs -d dist/cjs src/",
+	"build:swc": "run-p build_types build_esm build_cjs",
+	"build": "run-s clean build:swc",
+	"prepublishOnly": "npm run build"
+  },
+  "author": "hcg1023 <2293885211@qq.com>",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+	"import": "./src/index.ts",
+	"require": "./src/index.ts",
+	"types": "./src/index.ts"
+  },
+  "publishConfig": {
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"types": "dist/types/index.d.ts",
+	"exports": {
+	  "import": "./dist/esm/index.js",
+	  "require": "./dist/cjs/index.js",
+	  "types": "./dist/types/index.d.ts"
+	}
+  },
+  "repository": {
+	"type": "git",
+	"url": "https://github.com/hcg1023/vue3-dnd"
+  },
+  "homepage": "https://hcg1023.github.io/vue3-dnd/",
+  "bugs": "https://github.com/hcg1023/vue3-dnd/issues",
+  "license": "MIT",
+  "files": [
+	"dist",
+	"README_ZH.md"
+  ],
+  "keywords": [
+	"drag",
+	"drop",
+	"dnd",
+	"vue",
+	"vuejs",
+	"vue3",
+	"composition-api",
+	"react-dnd",
+	"draggable",
+	"droppable",
+	"drag-and-drop"
+  ],
+  "devDependencies": {
+	"@swc/cli": "^0.1.57",
+	"@swc/core": "^1.2.178",
+	"@testing-library/vue": "^6.5.1",
+	"npm-run-all": "^4.1.5",
+	"react-dnd-test-backend": "^15.1.2",
+	"shx": "^0.3.4",
+	"typescript": "^4.6.4",
+	"vitest": "^0.6.3",
+	"vue": "3",
+	"vue3-dnd": "workspace:*",
+	"dnd-core": "^15.1.2",
+	"react-dnd-html5-backend": "^15.1.3"
+  },
+  "peerDependencies": {
+	"@testing-library/vue": ">= 11",
+	"vue3-dnd": ">= 2.0.0",
+	"vue": "^3.0.0-0 || ^2.6.0"
+  },
+  "peerDependenciesMeta": {
+	"@testing-library/vue": {
+	  "optional": true
+	},
+	"react-dnd-html5-backend": {
+	  "optional": true
+	},
+	"react-dnd-test-backend": {
+	  "optional": true
+	}
+  }
+}

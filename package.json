@@ -46,8 +46,11 @@
 		"@commitlint/config-conventional": "^16.2.4",
 		"@swc/cli": "^0.1.57",
 		"@swc/core": "^1.2.178",
+		"@testing-library/jest-dom": "^5.16.4",
+		"@types/testing-library__jest-dom": "^5.14.3",
 		"@typescript-eslint/eslint-plugin": "^5.22.0",
 		"@typescript-eslint/parser": "^5.22.0",
+		"@vitejs/plugin-vue": "^2.3.3",
 		"@vue/composition-api": "^1.4.9",
 		"cross-env": "^7.0.3",
 		"eslint": "^8.15.0",
@@ -74,8 +77,8 @@
 		"typescript": "^4.6.4",
 		"vitest": "^0.6.3",
 		"vue": "3",
-		"vue2": "npm:vue@^2.6.14",
-		"vue-eslint-parser": "^8.3.0"
+		"vue-eslint-parser": "^8.3.0",
+		"vue2": "npm:vue@^2.6.14"
 	},
 	"lint-staged": {
 		"*.{js,js,ts,tsx,vue}": [
