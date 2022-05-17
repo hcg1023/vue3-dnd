@@ -1,5 +1,12 @@
 # test-vue2
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [5d8c04e]
+  - vue3-dnd@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
