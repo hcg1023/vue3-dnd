@@ -13,6 +13,7 @@ describe('The useDrag hook', () => {
 			const [, drag] = useDrag({
 				type: 'box',
 			})
+			// @ts-ignore
 			return () => h('div', { ref: drag })
 		})
 
@@ -31,6 +32,7 @@ describe('The useDrag hook', () => {
 			const [, drag] = useDrag({
 				type: null as any,
 			} as any)
+			// @ts-ignore
 			return () => h('div', { ref: drag })
 		})
 		const TestComponent = defineComponent(() => {
@@ -52,7 +54,6 @@ describe('The useDrag hook', () => {
 				return testProviderComponent
 			}).toThrow(/spec.type must be defined/)
 		} finally {
-			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-ignore
 			testProviderComponent?.unmount()
 			console.error = err
@@ -64,6 +65,7 @@ describe('The useDrag hook', () => {
 			const [, drag] = useDrag({
 				type: 'box',
 			})
+			// @ts-ignore
 			return () => h('div', { ref: drag, role: 'root' })
 		})
 		const TestComponent = defineComponent(() => {

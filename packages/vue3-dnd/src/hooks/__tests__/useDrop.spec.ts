@@ -13,6 +13,7 @@ describe('The useDrop hook', () => {
 			const [, drag] = useDrop(() => ({
 				accept: 'box',
 			}))
+			// @ts-ignore
 			return () => h('div', { ref: drag })
 		})
 
@@ -34,6 +35,7 @@ describe('The useDrop hook', () => {
 						accept: null,
 					} as any)
 			)
+			// @ts-ignore
 			return () => h('div', { ref: drag })
 		})
 		const TestComponent = defineComponent(() => {
@@ -60,6 +62,7 @@ describe('The useDrop hook', () => {
 			const [, drag] = useDrop(() => ({
 				accept: 'box',
 			}))
+			// @ts-ignore
 			return () => h('div', { ref: drag, role: 'root' })
 		})
 		const TestComponent = defineComponent(() => {

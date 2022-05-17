@@ -35,6 +35,7 @@ describe('The DragPreviewImage component', () => {
 				h(Fragment, [
 					h(DragPreviewImage, { connect: connectPreview, src: KNIGHT_IMAGE }),
 					h(
+						// @ts-ignore
 						'div',
 						{
 							ref: drag,
@@ -43,7 +44,7 @@ describe('The DragPreviewImage component', () => {
 								opacity: isDragging.value ? 0.5 : 1,
 							},
 						},
-						['♘']
+						'♘'
 					),
 				])
 		})

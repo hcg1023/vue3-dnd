@@ -36,6 +36,7 @@ const Box = defineComponent(() => {
 	const [, drag] = useDrag({
 		type: 'box',
 	})
+	// @ts-ignore
 	return () => h('div', { role: 'box', ref: drag })
 })
 
