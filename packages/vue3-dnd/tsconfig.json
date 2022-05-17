@@ -4,18 +4,19 @@
 	"baseUrl": "./",
 	"outDir": "./dist/types",
 	"declarationDir": "./dist/types",
-	"rootDir": "./",
+	"rootDir": "./src",
 	"skipLibCheck": true,
 	"declaration": true,
 	"emitDeclarationOnly": true
   },
   "include": [
-	"./src/index.ts",
+	"./index.ts",
 	"./**/*.ts",
 	"./**/*.d.ts",
 	"./**/*.tsx"
   ],
   "exclude": [
-	"node_modules/**"
+	"node_modules/**",
+	"scripts/**"
   ]
 }
