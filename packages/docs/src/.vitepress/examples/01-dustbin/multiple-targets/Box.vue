@@ -35,6 +35,7 @@ const { opacity } = toRefs(collect)
 			...style,
 			opacity,
 		}"
+		data-testid="box"
 	>
 		<s v-if="isDropped">{{ name }}</s>
 		<template v-else>{{ name }}</template>

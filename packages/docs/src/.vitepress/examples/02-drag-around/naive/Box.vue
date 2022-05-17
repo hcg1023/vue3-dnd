@@ -28,6 +28,7 @@ const { isDragging } = toRefs(collect)
 		class="box"
 		:style="{ left: `${left}px`, top: `${top}px` }"
 		role="Box"
+		data-testid="box"
 	>
 		<slot></slot>
 	</div>
