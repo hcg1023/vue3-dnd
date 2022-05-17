@@ -71,7 +71,7 @@
   },
   "peerDependencies": {
 	"@testing-library/vue": ">= 11",
-	"vue3-dnd": ">= 2.0.0",
+	"vue3-dnd": ">= 1.0.1",
 	"vue": "^3.0.0-0 || ^2.6.0"
   },
   "peerDependenciesMeta": {
