@@ -97,9 +97,9 @@ const [, drop] = useDrop(() => ({
 
 // You can also set the value to it using a new function
 const setDrop = (el: HTMLDivElement | null) => {
-	drop.value(el)
+	drop(el)
     // or
-	drop.value(el?.querySelector('section') || null)
+	drop(el?.querySelector('section') || null)
 }
 
 
