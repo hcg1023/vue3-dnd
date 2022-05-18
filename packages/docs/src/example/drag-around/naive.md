@@ -16,3 +16,5 @@ import Naive from '../../.vitepress/examples/02-drag-around/naive'
 </script>
 
 <Naive></Naive>
+
+[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/02-drag-around/naive)

@@ -1,4 +1,6 @@
-import { defineConfig, withBase } from 'vitepress'
+import { defineConfig } from 'vitepress'
+// @ts-ignore
+import markdownCopy from 'markdown-it-copy'
 import path from 'path'
 
 const BASE_URL = process.env.BASE_URL || '/'
@@ -42,7 +44,7 @@ export default defineConfig({
 				label: '简体中文',
 				repo: 'https://github.com/hcg1023/vue3-dnd',
 				repoLabel: 'GitHub',
-				docsDir: 'docs',
+				docsDir: 'packages/docs/src',
 				docsBranch: 'main',
 				editLinks: true,
 				editLinkText: '帮助我们改善此页面！',
@@ -283,6 +285,11 @@ export default defineConfig({
 				],
 				sidebar: 'auto',
 			},
+		},
+	},
+	markdown: {
+		config(md) {
+			md.use(markdownCopy)
 		},
 	},
 })

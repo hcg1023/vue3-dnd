@@ -10,3 +10,5 @@ import MultipleTargets from '../../.vitepress/examples/01-dustbin/multiple-targe
 </script>
 
 <MultipleTargets></MultipleTargets>
+
+[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/01-dustbin/multiple-targets)

@@ -6,7 +6,7 @@
 2. 由于Vue2不支持dom ref函数，所以我们必须额外定义一个ref，用于承载dom节点，并将这个ref传递给我们的connect函数。
 
 ## 示例
-```vue
+```vue{3,26-27}
 <template>
     <div
         ref="element"

@@ -12,3 +12,5 @@ import HandlesAndPreviews from '../../.vitepress/examples/05-customize/handles-a
 </script>
 
 <HandlesAndPreviews></HandlesAndPreviews>
+
+[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/05-customize/handles-and-previews)
