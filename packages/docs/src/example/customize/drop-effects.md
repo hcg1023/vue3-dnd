@@ -10,3 +10,5 @@ import DropEffects from '../../.vitepress/examples/05-customize/drop-effects'
 </script>
 
 <DropEffects></DropEffects>
+
+[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/05-customize/drop-effects)

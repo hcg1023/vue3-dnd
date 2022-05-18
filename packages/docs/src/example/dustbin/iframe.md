@@ -15,3 +15,5 @@ import SingleTargetInIframe from '../../.vitepress/examples/01-dustbin/single-ta
 </script>
 
 <SingleTargetInIframe></SingleTargetInIframe>
+
+[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/01-dustbin/single-target-in-iframe)
