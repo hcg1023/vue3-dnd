@@ -33,10 +33,10 @@ const [collect, drag, dragPreview] = useDrag(() => ({
 }))
 
 const element = ref()
-drag.value(element)
+drag(element)
 // 可选的，默认与drag一致
-dragPreview.value(element)
+// dragPreview(element)
 // 如果是useDrop，也是一样的
-// drop.value(element)
+// drop(element)
 </script>
 ```

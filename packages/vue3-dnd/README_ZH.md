@@ -97,9 +97,9 @@ const [, drop] = useDrop(() => ({
 
 // 你还可以使用新函数为其设置值
 const setDrop = (el: HTMLDivElement | null) => {
-	drop.value(el)
+	drop(el)
     // or
-	drop.value(el?.querySelector('section') || null)
+	drop(el?.querySelector('section') || null)
 }
 
 
