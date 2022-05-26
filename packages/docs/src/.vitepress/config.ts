@@ -10,7 +10,14 @@ export default defineConfig({
   outDir: path.resolve(__dirname, '../../dist'),
   lang: 'zh-CN',
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: './vue3-dnd.svg' }],
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/svg+xml',
+        href: path.join(BASE_URL, '/vue3-dnd.svg').replace('\\', '/'),
+      },
+    ],
   ],
   vite: {
     // @ts-ignore vite的内置类型中没有ssr，所以暂时可以通过这个去配置
