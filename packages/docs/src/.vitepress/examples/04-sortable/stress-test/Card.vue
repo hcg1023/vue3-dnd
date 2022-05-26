@@ -5,31 +5,31 @@ import { computed, ref, unref } from 'vue'
 import { toRefs } from '@vueuse/core'
 
 const props = defineProps<{
-	id: any
-	text: string
-	moveCard: (draggedId: string, id: string) => void
+  id: any
+  text: string
+  moveCard: (draggedId: string, id: string) => void
 }>()
 
 const [collect, connectDrag] = useDrag({
-	type: ItemTypes.CARD,
-	item: () => ({ id: props.id }),
-	collect: monitor => {
-		const result = {
-			handlerId: monitor.getHandlerId(),
-			isDragging: monitor.isDragging(),
-		}
-		return result
-	},
+  type: ItemTypes.CARD,
+  item: () => ({ id: props.id }),
+  collect: monitor => {
+    const result = {
+      handlerId: monitor.getHandlerId(),
+      isDragging: monitor.isDragging(),
+    }
+    return result
+  },
 })
 const { isDragging, handlerId } = toRefs(collect)
 
 const [, connectDrop] = useDrop({
-	accept: ItemTypes.CARD,
-	hover({ id: draggedId }: { id: string; type: string }) {
-		if (draggedId !== props.id) {
-			props.moveCard(draggedId, props.id)
-		}
-	},
+  accept: ItemTypes.CARD,
+  hover({ id: draggedId }: { id: string; type: string }) {
+    if (draggedId !== props.id) {
+      props.moveCard(draggedId, props.id)
+    }
+  },
 })
 
 const divRef = ref<HTMLDivElement | null>(null)
@@ -40,22 +40,22 @@ const opacity = computed(() => (unref(isDragging) ? 0 : 1))
 </script>
 
 <template>
-	<div
-		ref="divRef"
-		class="card"
-		:style="{ opacity }"
-		:data-handler-id="handlerId"
-	>
-		{{ text }}
-	</div>
+  <div
+    ref="divRef"
+    class="card"
+    :style="{ opacity }"
+    :data-handler-id="handlerId"
+  >
+    {{ text }}
+  </div>
 </template>
 
 <style lang="less" scoped>
 .card {
-	margin-bottom: 0.5rem;
-	padding: 0.5rem 1rem;
-	background-color: white;
-	border: 1px dashed gray;
-	cursor: move;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border: 1px dashed gray;
+  cursor: move;
 }
 </style>

@@ -4,6 +4,6 @@ import 'markdown-it-copy/theme/default.css'
 import './override.css'
 
 export default {
-	...DefaultTheme,
-	Layout,
+  ...DefaultTheme,
+  Layout,
 }

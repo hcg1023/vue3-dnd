@@ -1,7 +1,7 @@
 <template>
-	<DndProvider :backend="HTML5Backend">
-		<SingleTarget></SingleTarget>
-	</DndProvider>
+  <DndProvider :backend="HTML5Backend">
+    <SingleTarget></SingleTarget>
+  </DndProvider>
 </template>
 
 <script lang="ts" setup>

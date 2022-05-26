@@ -7,26 +7,26 @@ import DefaultTheme from 'vitepress/theme'
 const { Layout } = DefaultTheme
 
 const isMobile = computed(() => {
-	const toMatch = [
-		/Android/i,
-		/webOS/i,
-		/iPhone/i,
-		/iPad/i,
-		/iPod/i,
-		/BlackBerry/i,
-		/Windows Phone/i,
-	]
+  const toMatch = [
+    /Android/i,
+    /webOS/i,
+    /iPhone/i,
+    /iPad/i,
+    /iPod/i,
+    /BlackBerry/i,
+    /Windows Phone/i,
+  ]
 
-	if (typeof window === 'undefined') return false
+  if (typeof window === 'undefined') return false
 
-	return toMatch.some(toMatchItem => {
-		return navigator.userAgent.match(toMatchItem)
-	})
+  return toMatch.some(toMatchItem => {
+    return navigator.userAgent.match(toMatchItem)
+  })
 })
 </script>
 
 <template>
-	<DndProvider :backend="isMobile ? TouchBackend : HTML5Backend">
-		<Layout></Layout>
-	</DndProvider>
+  <DndProvider :backend="isMobile ? TouchBackend : HTML5Backend">
+    <Layout></Layout>
+  </DndProvider>
 </template>

@@ -6,9 +6,9 @@ const handleDrop = (color: string) => (lastDroppedColor.value = color)
 </script>
 
 <template>
-	<TargetBox
-		v-bind="$attrs"
-		:last-dropped-color="lastDroppedColor"
-		:on-drop="handleDrop"
-	/>
+  <TargetBox
+    v-bind="$attrs"
+    :last-dropped-color="lastDroppedColor"
+    :on-drop="handleDrop"
+  />
 </template>

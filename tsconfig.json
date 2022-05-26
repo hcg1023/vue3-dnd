@@ -13,6 +13,7 @@
     "lib": ["esnext", "dom"]
   },
   "include": [
+    "packages/**/src/.vitepress/**/*.ts",
     "packages/**/src/**/*.ts",
     "packages/**/test/**/*.ts",
     "packages/**/src/**/*.vue",

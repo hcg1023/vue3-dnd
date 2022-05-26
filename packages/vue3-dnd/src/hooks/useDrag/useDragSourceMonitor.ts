@@ -4,11 +4,11 @@ import { useDragDropManager } from '../useDragDropManager'
 import { computed, ComputedRef, unref } from 'vue-demi'
 
 export function useDragSourceMonitor<O, R>(): ComputedRef<
-	DragSourceMonitor<O, R>
+  DragSourceMonitor<O, R>
 > {
-	const manager = useDragDropManager()
+  const manager = useDragDropManager()
 
-	return computed<DragSourceMonitor<O, R>>(
-		() => new DragSourceMonitorImpl(unref(manager))
-	)
+  return computed<DragSourceMonitor<O, R>>(
+    () => new DragSourceMonitorImpl(unref(manager))
+  )
 }
