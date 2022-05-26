@@ -16,7 +16,7 @@
     "lint-staged": "lint-staged",
     "commitlint": "commitlint -e -V",
     "pack-version": "changeset version",
-    "release": "pnpm -r publish && changeset tag",
+    "release": "esno ./scripts/release.ts && changeset tag",
     "publish-success": "echo \"publish success\""
   },
   "author": "hcg1023 <2293885211@qq.com>",
@@ -42,6 +42,9 @@
   ],
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
+    "@changesets/pre": "^1.0.11",
+    "@changesets/read": "^0.5.5",
+    "@changesets/types": "^5.0.0",
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
     "@swc/cli": "^0.1.57",
@@ -58,6 +61,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.7.1",
+    "esno": "^0.14.1",
     "fast-glob": "^3.2.11",
     "husky": "^7.0.4",
     "jsdom": "^19.0.0",
@@ -76,7 +80,7 @@
     "stylelint-less": "^1.0.5",
     "stylelint-order": "^5.0.0",
     "typescript": "^4.6.4",
-    "vitest": "^0.6.3",
+    "vitest": "^0.12.9",
     "vue": "3",
     "vue-eslint-parser": "^8.3.0",
     "vue2": "npm:vue@2"

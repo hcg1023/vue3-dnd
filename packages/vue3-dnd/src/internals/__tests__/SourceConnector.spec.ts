@@ -1,9 +1,9 @@
 import { SourceConnector } from '../SourceConnector'
 import type { Backend } from 'dnd-core'
-import { vi, describe, beforeEach, it, expect, MaybeMocked } from 'vitest'
+import { vi, describe, beforeEach, it, expect, MockedObject } from 'vitest'
 
 describe('SourceConnector', () => {
-  let backend: MaybeMocked<Backend>
+  let backend: MockedObject<Backend>
   let connector: SourceConnector
 
   beforeEach(() => {
@@ -14,7 +14,7 @@ describe('SourceConnector', () => {
       connectDragPreview: vi.fn(),
       connectDropTarget: vi.fn(),
       profile: vi.fn(),
-    } as MaybeMocked<Backend>
+    } as MockedObject<Backend>
     connector = new SourceConnector(backend)
   })
 

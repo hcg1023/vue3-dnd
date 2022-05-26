@@ -1,6 +1,6 @@
 import { TargetConnector } from '../TargetConnector'
 import type { Backend } from 'dnd-core'
-import { vi, describe, it, expect, MaybeMocked } from 'vitest'
+import { vi, describe, it, expect, MockedObject } from 'vitest'
 
 describe('TargetConnector', () => {
   it('unsubscribes drop target when clearing handler id', () => {
@@ -10,7 +10,7 @@ describe('TargetConnector', () => {
       connectDragSource: vi.fn(),
       connectDragPreview: vi.fn(),
       connectDropTarget: vi.fn(),
-    } as MaybeMocked<Backend>
+    } as MockedObject<Backend>
     const connector = new TargetConnector(backend)
     const unsubscribeDropTarget = vi.fn()
     backend.connectDropTarget.mockReturnValueOnce(unsubscribeDropTarget)
