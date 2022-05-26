@@ -6,9 +6,9 @@ import { useDndContextInjector } from '../core'
  * A hook to retrieve the DragDropManager from Context
  */
 export function useDragDropManager(): DragDropManager {
-	const dragDropManager = useDndContextInjector()
+  const dragDropManager = useDndContextInjector()
 
-	invariant(dragDropManager != null, 'Expected drag drop context')
+  invariant(dragDropManager != null, 'Expected drag drop context')
 
-	return dragDropManager as DragDropManager
+  return dragDropManager as DragDropManager
 }

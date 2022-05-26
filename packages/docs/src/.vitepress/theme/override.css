@@ -1,0 +1,19 @@
+.m-mdic-copy-wrapper {
+	top: 2em;
+	right: 0.2em;
+}
+
+.m-mdic-copy-wrapper button.u-mdic-copy-btn {
+	color: #888;
+	font-size: 0.8rem;
+	opacity: 1;
+}
+
+.m-mdic-copy-wrapper button.u-mdic-copy-btn:hover {
+	color: #f1f1f1;
+}
+
+.m-mdic-copy-wrapper div.u-mdic-copy-notify {
+	color: var(--c-brand);
+	font-size: 0.8rem;
+}

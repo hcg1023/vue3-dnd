@@ -1,31 +1,32 @@
 {
-	"parser": "vue-eslint-parser",
-	"parserOptions": {
-	  "parser": "@typescript-eslint/parser",
-	  "ecmaVersion": 2020,
-	  "sourceType": "module",
-	  "jsxPragma": "React",
-	  "ecmaFeatures": {
-		"jsx": true
-	  }
-	},
-	"plugins": ["@typescript-eslint"],
-	"extends": [
-	  "plugin:vue/vue3-recommended",
-	  "eslint:recommended",
-	  "plugin:@typescript-eslint/recommended",
-	  "prettier"
-	],
-	"env": {
-		"browser": true,
-		"es6": true,
-		"node": true,
-		"vue/setup-compiler-macros": true
-	},
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "jsxPragma": "React",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "vue/setup-compiler-macros": true
+  },
   "rules": {
-	"vue/multi-word-component-names": 0,
-	"@typescript-eslint/no-explicit-any": 0,
-	"vue/require-default-prop": 0,
-	"@typescript-eslint/no-non-null-assertion": 0
+    "vue/multi-word-component-names": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "vue/require-default-prop": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/ban-ts-comment": 0
   }
 }

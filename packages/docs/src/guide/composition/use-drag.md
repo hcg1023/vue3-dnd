@@ -28,14 +28,25 @@ const [collectedProps, dragSource, dragPreview] = useDrag(() => ({
 
 `useDrag`返回一个数组，包含三个值：`collect`函数的返回值，`dragSource`和`dragPreview`的连接器函数
 
-- `[0] - Collected Props - Ref<object>` 
+- `[0] - Collected Props`
+  - ```ts
+    Ref<object>
+    ``` 
   - 它是一个`Ref`对象，它的`value`指向`collect`函数的返回值，如果没有定义`collect`函数，它的`value`就是一个空对象
 
-- `[1] - DragSource Connector - Ref<(el: Ref<HTMLElement> | HTMLElement) => HTMLElement>` 
-  - 拖拽源的连接器函数。**它必须被调用**，并且传入一个 `Ref<HTMLElement> | HTMLElement`的可拖拽 DOM 元素。
+- `[1] - DragSource Connector`
+  - ```ts
+    (el: Ref<HTMLElement> | HTMLElement, options?: DragSourceOptions) => HTMLElement
+    ``` 
+  - 拖拽源的连接器函数。**它必须被调用**，并且传入一个 `Ref<HTMLElement> | HTMLElement`的可拖拽 DOM 元素；
+  - 第二个参数是一个options对象，与Specification对象的options一致
 
-- `[2] - DragPreview Connector - Ref<(el: Ref<HTMLElement> | HTMLElement) => HTMLElement>` 
-  - 拖拽预览的连接器函数。它是可选的，**默认使用 dragSource 作为预览元素**，接收一个 `Ref<HTMLElement> | HTMLElement`的可拖拽 DOM 元素。
+- `[2] - DragPreview Connector` 
+  - ```ts
+    (el: Ref<HTMLElement> | HTMLElement, options?: DragPreviewOptions) => HTMLElement
+    ``` 
+  - 拖拽预览的连接器函数。它是可选的，**默认使用 dragSource 作为预览元素**，接收一个 `Ref<HTMLElement> | HTMLElement`的可拖拽 DOM 元素；
+  - 第二个参数是一个options对象，与Specification对象的previewOptions一致
 
 ### Specification 对象
 

@@ -3,6 +3,7 @@
     "composite": true,
     "module": "esnext",
     "moduleResolution": "node",
-	"allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "types": ["testing-library__jest-dom", "vitest/globals"]
   }
 }

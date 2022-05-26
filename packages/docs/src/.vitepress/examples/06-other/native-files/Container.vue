@@ -6,13 +6,13 @@ import FileList from './FileList.vue'
 const droppedFiles = ref<File[]>([])
 
 const handleFileDrop = (item: any) => {
-	if (item) {
-		droppedFiles.value = item.files
-	}
+  if (item) {
+    droppedFiles.value = item.files
+  }
 }
 </script>
 
 <template>
-	<TargetBox :on-drop="handleFileDrop" />
-	<FileList :files="droppedFiles" />
+  <TargetBox :on-drop="handleFileDrop" />
+  <FileList :files="droppedFiles" />
 </template>

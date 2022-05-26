@@ -10,3 +10,5 @@ import StressTest from '../../.vitepress/examples/01-dustbin/stress-test'
 </script>
 
 <StressTest></StressTest>
+
+[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/01-dustbin/stress-test)

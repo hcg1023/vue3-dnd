@@ -10,3 +10,5 @@ import DragSources from '../../.vitepress/examples/03-nesting/drag-sources'
 </script>
 
 <DragSources></DragSources>
+
+[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/03-nesting/drag-sources)

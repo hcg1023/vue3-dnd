@@ -5,16 +5,16 @@ import HTMLContent from './HTMLContent.vue'
 
 const droppedHTML = ref('')
 const handleHTMLDrop = (item: { html: string }) => {
-	if (item) {
-		droppedHTML.value = item.html
-	}
+  if (item) {
+    droppedHTML.value = item.html
+  }
 }
 </script>
 
 <template>
-	<iframe
-		srcdoc="<img src='https://react-dnd.github.io/react-dnd/favicon-32x32.png' />"
-	/>
-	<TargetBox :on-drop="handleHTMLDrop" />
-	<HTMLContent :html="droppedHTML" />
+  <iframe
+    srcdoc="<img src='https://react-dnd.github.io/react-dnd/favicon-32x32.png' />"
+  />
+  <TargetBox :on-drop="handleHTMLDrop" />
+  <HTMLContent :html="droppedHTML" />
 </template>
