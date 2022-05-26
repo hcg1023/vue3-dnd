@@ -6,25 +6,25 @@ import { DragSourceHookSpec } from '../types'
 import { DragPreviewOptions, DragSourceOptions } from '../../types'
 
 export function useConnectDragSource<O, R, P>(
-	connector: MaybeRef<SourceConnector>,
-	spec: Ref<DragSourceHookSpec<O, R, P>>
+  connector: MaybeRef<SourceConnector>,
+  spec: Ref<DragSourceHookSpec<O, R, P>>
 ) {
-	return useConnector<DragSourceOptions>(
-		state => {
-			unref(connector).hooks.dragSource()(state.el, state.options)
-		},
-		computed(() => unref(spec).options)
-	)
+  return useConnector<DragSourceOptions>(
+    state => {
+      unref(connector).hooks.dragSource()(state.el, state.options)
+    },
+    computed(() => unref(spec).options)
+  )
 }
 
 export function useConnectDragPreview<O, R, P>(
-	connector: MaybeRef<SourceConnector>,
-	spec: Ref<DragSourceHookSpec<O, R, P>>
+  connector: MaybeRef<SourceConnector>,
+  spec: Ref<DragSourceHookSpec<O, R, P>>
 ) {
-	return useConnector<DragPreviewOptions>(
-		state => {
-			unref(connector).hooks.dragPreview()(state.el, state.options)
-		},
-		computed(() => unref(spec).previewOptions)
-	)
+  return useConnector<DragPreviewOptions>(
+    state => {
+      unref(connector).hooks.dragPreview()(state.el, state.options)
+    },
+    computed(() => unref(spec).previewOptions)
+  )
 }

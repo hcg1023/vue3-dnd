@@ -14,37 +14,37 @@ import { DragPreviewOptions, DragSourceOptions } from '../../types'
  * @param specArg The drag source specification (object or function, function preferred)
  */
 export function useDrag<
-	DragObject = unknown,
-	DropResult = unknown,
-	CollectedProps = unknown,
-	ConnectDragSourceOptions extends DragSourceOptions = DragSourceOptions,
-	ConnectDragPreviewOption extends DragPreviewOptions = DragPreviewOptions
+  DragObject = unknown,
+  DropResult = unknown,
+  CollectedProps = unknown,
+  ConnectDragSourceOptions extends DragSourceOptions = DragSourceOptions,
+  ConnectDragPreviewOption extends DragPreviewOptions = DragPreviewOptions
 >(
-	specArg: FactoryOrInstance<
-		DragSourceHookSpec<DragObject, DropResult, CollectedProps>
-	>
+  specArg: FactoryOrInstance<
+    DragSourceHookSpec<DragObject, DropResult, CollectedProps>
+  >
 ): [
-	Ref<CollectedProps>,
-	ConnectDragSource<ConnectDragSourceOptions>,
-	ConnectDragPreview<ConnectDragPreviewOption>
+  Ref<CollectedProps>,
+  ConnectDragSource<ConnectDragSourceOptions>,
+  ConnectDragPreview<ConnectDragPreviewOption>
 ] {
-	const spec = useOptionalFactory(specArg)
+  const spec = useOptionalFactory(specArg)
 
-	const monitor = useDragSourceMonitor<DragObject, DropResult>()
+  const monitor = useDragSourceMonitor<DragObject, DropResult>()
 
-	const connector = useDragSourceConnector(
-		computed(() => unref(spec).options),
-		computed(() => unref(spec).previewOptions)
-	)
-	useRegisteredDragSource(spec, monitor, connector)
+  const connector = useDragSourceConnector(
+    computed(() => unref(spec).options),
+    computed(() => unref(spec).previewOptions)
+  )
+  useRegisteredDragSource(spec, monitor, connector)
 
-	return [
-		useCollectedProps(
-			computed(() => unref(spec).collect || (() => ({} as any))),
-			monitor,
-			connector
-		),
-		useConnectDragSource(connector, spec),
-		useConnectDragPreview(connector, spec),
-	]
+  return [
+    useCollectedProps(
+      computed(() => unref(spec).collect || (() => ({} as any))),
+      monitor,
+      connector
+    ),
+    useConnectDragSource(connector, spec),
+    useConnectDragPreview(connector, spec),
+  ]
 }

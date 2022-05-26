@@ -1,4 +1,4 @@
 export const Colors = {
-	YELLOW: 'yellow',
-	BLUE: 'blue',
+  YELLOW: 'yellow',
+  BLUE: 'blue',
 }

@@ -10,11 +10,11 @@ import { computed, ComputedRef, unref } from 'vue-demi'
  * @param spec
  */
 export function useAccept<O, R, P>(
-	spec: MaybeRef<DropTargetHookSpec<O, R, P>>
+  spec: MaybeRef<DropTargetHookSpec<O, R, P>>
 ): ComputedRef<Identifier[]> {
-	return computed(() => {
-		const accept = unref(spec).accept
-		invariant(accept != null, 'accept must be defined')
-		return Array.isArray(accept) ? accept : [accept]
-	})
+  return computed(() => {
+    const accept = unref(spec).accept
+    invariant(accept != null, 'accept must be defined')
+    return Array.isArray(accept) ? accept : [accept]
+  })
 }

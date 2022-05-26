@@ -1,8 +1,8 @@
 import { h, defineComponent, DefineComponent } from 'vue'
 import {
-	TestBackend,
-	ITestBackend,
-	TestBackendOptions,
+  TestBackend,
+  ITestBackend,
+  TestBackendOptions,
 } from 'react-dnd-test-backend'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'vue3-dnd'
@@ -17,20 +17,20 @@ import type { BackendFactory } from 'dnd-core'
  * to get the test backend instance.
  */
 export function wrapWithTestBackend(
-	DecoratedComponent: DefineComponent,
-	backendOptions?: unknown
+  DecoratedComponent: DefineComponent,
+  backendOptions?: unknown
 ): [DefineComponent, () => ITestBackend | undefined] {
-	let backend: ITestBackend | undefined
-	const opts: TestBackendOptions = Object.assign(
-		{
-			onCreate(be: ITestBackend) {
-				backend = be
-			},
-		},
-		backendOptions
-	)
-	const result = wrapWithBackend(DecoratedComponent, TestBackend, opts)
-	return [result, () => backend]
+  let backend: ITestBackend | undefined
+  const opts: TestBackendOptions = Object.assign(
+    {
+      onCreate(be: ITestBackend) {
+        backend = be
+      },
+    },
+    backendOptions
+  )
+  const result = wrapWithBackend(DecoratedComponent, TestBackend, opts)
+  return [result, () => backend]
 }
 
 /**
@@ -41,19 +41,19 @@ export function wrapWithTestBackend(
  * @param backendOptions The optional backend options
  */
 export function wrapWithBackend(
-	DecoratedComponent: DefineComponent,
-	Backend: BackendFactory = HTML5Backend,
-	backendOptions?: unknown
+  DecoratedComponent: DefineComponent,
+  Backend: BackendFactory = HTML5Backend,
+  backendOptions?: unknown
 ): DefineComponent {
-	return defineComponent({
-		render() {
-			return h(
-				DndProvider,
-				{ backend: Backend, options: backendOptions },
-				{
-					default: () => h(DecoratedComponent, { ...this.$attrs }),
-				}
-			)
-		},
-	})
+  return defineComponent({
+    render() {
+      return h(
+        DndProvider,
+        { backend: Backend, options: backendOptions },
+        {
+          default: () => h(DecoratedComponent, { ...this.$attrs }),
+        }
+      )
+    },
+  })
 }
