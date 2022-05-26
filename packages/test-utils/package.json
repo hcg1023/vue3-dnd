@@ -1,6 +1,6 @@
 {
   "name": "vue3-dnd-test-utils",
-  "version": "2.0.0-next.0",
+  "version": "2.0.0",
   "description": "vue3-dnd test utils",
   "scripts": {
     "test": "vitest run --passWithNoTests",
@@ -72,7 +72,7 @@
   "peerDependencies": {
     "@testing-library/vue": ">= 11",
     "vue": "^3.0.0-0 || ^2.6.0",
-    "vue3-dnd": ">=2.0.0-next.0"
+    "vue3-dnd": ">=2.0.0"
   },
   "peerDependenciesMeta": {
     "@testing-library/vue": {
