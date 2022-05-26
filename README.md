@@ -5,6 +5,8 @@
 
 React Dnd implementation in Vue Composition-api.
 
+**Supports Vue2 and Vue3**
+
 If you think this project is helpful to you, I hope you can contribute a [star⭐](https://github.com/hcg1023/vue3-dnd)
 
 [![npm version](https://img.shields.io/npm/v/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
