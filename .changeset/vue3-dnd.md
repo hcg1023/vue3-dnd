@@ -4,4 +4,4 @@
 'vue3-dnd': major
 ---
 
-Connector function API changed from 'Ref< connector >' to 'connector'
+Connector function API changed from 'Ref< Connector >' to 'Connector'
