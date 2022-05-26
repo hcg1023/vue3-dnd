@@ -27,11 +27,18 @@ const [collectedProps, drop] = useDrop(() => ({
 
 `useDrop`返回一个数组，包含两个值：`collect`函数的返回值，`dropTarget`的连接器函数
 
-- `[0] - Collected Props - Ref<object>` 
+- `[0] - Collected Props` 
+  - ```ts
+    Ref<object>
+    ``` 
   - 它是一个`Ref`对象，它的`value`指向`collect`函数的返回值，如果没有定义`collect`函数，它的`value`就是一个空对象
 
-- `[1] - DragTarget Connector - Ref<(el: Ref<HTMLElement> | HTMLElement) => HTMLElement>` 
-  - 放置目标的连接器函数。**它必须被调用**，并且传入一个 `Ref<HTMLElement> | HTMLElement`的可被拖放 DOM 元素。
+- `[1] - DragTarget Connector` 
+  - ```ts
+    Ref<(el: Ref<HTMLElement> | HTMLElement) => HTMLElement>
+    ```
+  - 放置目标的连接器函数。**它必须被调用**，并且传入一个 `Ref<HTMLElement> | HTMLElement`的可被拖放 DOM 元素；
+  - 第二个参数是一个options对象，与Specification对象的options一致
 
 ### Specification 对象
 

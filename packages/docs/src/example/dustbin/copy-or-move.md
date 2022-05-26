@@ -12,3 +12,5 @@ import CopyOrMove from '../../.vitepress/examples/01-dustbin/copy-or-move'
 </script>
 
 <CopyOrMove></CopyOrMove>
+
+[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/01-dustbin/copy-or-move)

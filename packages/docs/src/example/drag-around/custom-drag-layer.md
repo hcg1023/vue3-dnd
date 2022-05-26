@@ -12,3 +12,5 @@ import CustomDragLayer from '../../.vitepress/examples/02-drag-around/custom-dra
 </script>
 
 <CustomDragLayer></CustomDragLayer>
+
+[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/02-drag-around/custom-drag-layer)

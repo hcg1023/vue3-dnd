@@ -4,10 +4,10 @@ import { onMounted, ref } from 'vue'
 
 const shouldRender = ref(false)
 onMounted(() => {
-	shouldRender.value = true
+  shouldRender.value = true
 })
 </script>
 
 <template>
-	<Container v-if="shouldRender"></Container>
+  <Container v-if="shouldRender"></Container>
 </template>

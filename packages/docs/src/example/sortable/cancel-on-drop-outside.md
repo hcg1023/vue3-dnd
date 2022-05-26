@@ -12,3 +12,5 @@ import CancelOnDropOutside from '../../.vitepress/examples/04-sortable/cancel-on
 </script>
 
 <CancelOnDropOutside></CancelOnDropOutside>
+
+[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/04-sortable/cancel-on-drop-outside)
