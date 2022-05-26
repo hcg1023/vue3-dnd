@@ -1,1 +1,0 @@
-import{_ as n,c as a,o as s,M as t}from"./app.e3545364.js";const m='{"title":"\u652F\u6301Vue2","description":"","frontmatter":{},"headers":[{"level":2,"title":"\u793A\u4F8B","slug":"\u793A\u4F8B"}],"relativePath":"guide/vue2.md"}',p={},e=t("",5),o=[e];function c(l,u,r,k,i,d){return s(),a("div",null,o)}var _=n(p,[["render",c]]);export{m as __pageData,_ as default};
