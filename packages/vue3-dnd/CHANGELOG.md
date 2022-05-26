@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0
+
+### Major Changes
+
+- 9e150f6: Connector function API changed from 'Ref< Connector >' to 'Connector'
+
 ## 2.0.0-next.0
 
 ### Major Changes
