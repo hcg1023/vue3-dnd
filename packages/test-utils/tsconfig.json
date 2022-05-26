@@ -1,21 +1,14 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-	"baseUrl": "./",
-	"outDir": "./dist/types",
-	"declarationDir": "./dist/types",
-	"rootDir": "./src",
-	"skipLibCheck": true,
-	"declaration": true,
-	"emitDeclarationOnly": true
+    "baseUrl": "./",
+    "outDir": "./dist/types",
+    "declarationDir": "./dist/types",
+    "rootDir": "./src",
+    "skipLibCheck": true,
+    "declaration": true,
+    "emitDeclarationOnly": true
   },
-  "include": [
-	"./index.ts",
-	"./**/*.ts",
-	"./**/*.d.ts",
-	"./**/*.tsx"
-  ],
-  "exclude": [
-	"node_modules/**"
-  ]
+  "include": ["./index.ts", "./**/*.ts", "./**/*.d.ts", "./**/*.tsx"],
+  "exclude": ["node_modules/**"]
 }
