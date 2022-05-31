@@ -18,6 +18,7 @@ If you think this project is helpful to you, I hope you can contribute a [star�
 [![GitHub contributors](https://img.shields.io/github/contributors/hcg1023/vue3-dnd?color=2b9348)](https://github.com/hcg1023/vue3-dnd/graphs/contributors)
 [![npm download](https://img.shields.io/npm/dt/vue3-dnd.svg?maxAge=30)](https://www.npmjs.com/package/vue3-dnd)
 [![npm download per month](https://img.shields.io/npm/dm/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
+[![Featured on Openbase](https://badges.openbase.com/js/featured/vue3-dnd.svg?token=DweDwkc7YaNcSSwPw5ToxjJyG/CPuAX7J7sZFXKUg9c=)](https://openbase.com/js/vue3-dnd?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
 [![MIT License](https://img.shields.io/github/license/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/blob/main/LICENSE)
 
 **[中文](README_ZH.md)** | **[English](README.md)**
