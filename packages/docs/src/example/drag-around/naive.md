@@ -6,15 +6,6 @@
 
 如果我们想添加自定义逻辑，例如对齐网格或边界检查，我们只能在放置时执行此操作。一旦浏览器绘制了拖动预览，我们就无法控制它会发生什么。 如果您想用更多的控制权换取更多的工作，请查看[自定义渲染示例](./custom-drag-layer)。
 
-----
-<br>
-<br>
-<br>
+---
 
-<script setup>
-import Naive from '../../.vitepress/examples/02-drag-around/naive'
-</script>
-
-<Naive></Naive>
-
-[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/02-drag-around/naive)
++++ @/.vitepress/examples/02-drag-around/naive

@@ -1,7 +1,11 @@
 import { defineConfig } from 'vitepress'
 // @ts-ignore
 import markdownCopy from 'markdown-it-copy'
+import { transformDemo } from './plugins/markdown-it/transform-demo'
 import path from 'path'
+import { mdTransform } from './plugins/vite/md-transform'
+import Components from 'unplugin-vue-components/vite'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 
 const BASE_URL = process.env.BASE_URL || '/'
 
@@ -20,10 +24,27 @@ export default defineConfig({
     ],
   ],
   vite: {
+    resolve: {
+      alias: {
+        '@': path.resolve(process.cwd(), './src'),
+      },
+    },
     // @ts-ignore vite的内置类型中没有ssr，所以暂时可以通过这个去配置
     ssr: {
-      noExternal: [/^react-dnd-/, 'dnd-core'],
+      noExternal: [
+        /^react-dnd-/,
+        'dnd-core',
+        /^prismjs/,
+        'ant-design-vue',
+        '@ant-design/icons-vue',
+      ],
     },
+    plugins: [
+      Components({
+        resolvers: [AntDesignVueResolver()],
+      }),
+      mdTransform(),
+    ],
   },
   locales: {
     '/': {
@@ -301,6 +322,7 @@ export default defineConfig({
   markdown: {
     config(md) {
       md.use(markdownCopy)
+      md.use(transformDemo, path.resolve(process.cwd(), './src'))
     },
   },
 })
