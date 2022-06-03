@@ -2,4 +2,4 @@
 'docs': minor
 ---
 
-示例添加查看源代码功能
+example add view source code function
