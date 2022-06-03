@@ -5,15 +5,6 @@
 
 在 iframe 中使用 react-dnd 需要在 iframe 中使用DndProvider。
 
-----
-<br>
-<br>
-<br>
+---
 
-<script setup>
-import SingleTargetInIframe from '../../.vitepress/examples/01-dustbin/single-target-in-iframe'
-</script>
-
-<SingleTargetInIframe></SingleTargetInIframe>
-
-[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/01-dustbin/single-target-in-iframe)
++++ @/.vitepress/examples/01-dustbin/single-target-in-iframe
