@@ -5,15 +5,6 @@
 
 请注意，它具有未激活、激活中和悬停状态。拖动的项目本身会在拖动时更改不透明度。
 
-----
-<br>
-<br>
-<br>
+---
 
-<script setup>
-import SingleTarget from '../../.vitepress/examples/01-dustbin/single-target';
-</script>
-
-<SingleTarget></SingleTarget>
-
-[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/01-dustbin/single-target)
++++ @/.vitepress/examples/01-dustbin/single-target

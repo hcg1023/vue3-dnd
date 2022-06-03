@@ -2,15 +2,6 @@
 
 使用这种方法，我们在离开容器时错过了默认的“返回”动画。但是，我们在自定义拖动反馈和零闪烁方面获得了极大的灵活性。
 
-----
-<br>
-<br>
-<br>
+---
 
-<script setup>
-import CustomDragLayer from '../../.vitepress/examples/02-drag-around/custom-drag-layer'
-</script>
-
-<CustomDragLayer></CustomDragLayer>
-
-[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/02-drag-around/custom-drag-layer)
++++ @/.vitepress/examples/02-drag-around/custom-drag-layer

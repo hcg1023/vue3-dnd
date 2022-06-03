@@ -2,15 +2,6 @@ Vue DnD 可以同时处理多少个项目？此列表中有一千个项目。通
 
 幸运的是，Vue DnD 旨在与任何虚拟 Vue 数据列表组件一起工作，因为它不会在 DOM 中保留任何状态。
 
-----
-<br>
-<br>
-<br>
+---
 
-<script setup>
-import StressTest from '../../.vitepress/examples/04-sortable/stress-test'
-</script>
-
-<StressTest></StressTest>
-
-[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/04-sortable/stress-test)
++++ @/.vitepress/examples/04-sortable/stress-test
