@@ -2,15 +2,6 @@
 
 例如，在待办事项列表应用程序中，可以使用默认的拖放操作对列表进行排序，而在拖放时按住 alt 键可以将待办事项复制到放置目标而不是移动它。
 
-----
-<br>
-<br>
-<br>
+---
 
-<script setup>
-import CopyOrMove from '../../.vitepress/examples/01-dustbin/copy-or-move'
-</script>
-
-<CopyOrMove></CopyOrMove>
-
-[查看源码](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples/01-dustbin/copy-or-move)
++++ @/.vitepress/examples/01-dustbin/copy-or-move
