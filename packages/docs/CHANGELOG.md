@@ -1,5 +1,11 @@
 # docs
 
+## 2.1.0
+
+### Minor Changes
+
+- 4b9804d: example add view source code function
+
 ## 2.0.0
 
 ### Major Changes
