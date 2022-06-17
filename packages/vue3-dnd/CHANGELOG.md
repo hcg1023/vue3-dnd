@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.1
+
+### Patch Changes
+
+- 1e00c52: fixed type error caused by ref type change after vue@3.2.35
+
 ## 2.0.0
 
 ### Major Changes
