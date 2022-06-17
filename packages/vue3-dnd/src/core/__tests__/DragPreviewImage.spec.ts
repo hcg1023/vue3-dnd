@@ -33,6 +33,7 @@ describe('The DragPreviewImage component', () => {
 
       return () =>
         h(Fragment, [
+          // @ts-ignore
           h(DragPreviewImage, { connect: connectPreview, src: KNIGHT_IMAGE }),
           h(
             // @ts-ignore
