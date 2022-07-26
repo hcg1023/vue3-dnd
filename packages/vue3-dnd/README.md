@@ -1,7 +1,7 @@
 # Vue3 Dn<img src="http://image.haochenguang.cn/pictures/vue3-dnd.svg" width="28">
 
-[website](https://hcg1023.github.io/vue3-dnd/) | 
-[China's Internet](https://haochenguang.gitee.io/vue3-dnd/)
+[website](https://hcg1023.github.io/vue3-dnd/) |
+[中文官网](https://haochenguang.gitee.io/vue3-dnd/)
 
 React Dnd implementation in Vue Composition-api.
 
@@ -21,7 +21,7 @@ If you think this project is helpful to you, I hope you can contribute a [star�
 [![Featured on Openbase](https://badges.openbase.com/js/featured/vue3-dnd.svg?token=DweDwkc7YaNcSSwPw5ToxjJyG/CPuAX7J7sZFXKUg9c=)](https://openbase.com/js/vue3-dnd?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
 [![MIT License](https://img.shields.io/github/license/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/blob/main/LICENSE)
 
-**[中文](README_ZH.md)** | **[English](README.md)**
+**[中文](./README_ZH.md)** | **[English](README.md)**
 
 ## Using
 ```
@@ -234,8 +234,12 @@ const [collect, connectDrag] = useDrag(() => ({
 }))
 ```
 
-## ⭐Stargazers
-[![Stargazers repo roster for vue3-dnd](https://reporoster.com/stars/hcg1023/vue3-dnd)](https://github.com/hcg1023/vue3-dnd/stargazers)
+## Contributors
+<a href="https://github.com/hcg1023/vue3-dnd/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=hcg1023/vue3-dnd" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
 
 ## Thanks
 

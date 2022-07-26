@@ -234,6 +234,12 @@ const [collect, connectDrag] = useDrag(() => ({
 }))
 ```
 
+## 贡献者
+<a href="https://github.com/hcg1023/vue3-dnd/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=hcg1023/vue3-dnd" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
 
 ## 感谢
 
