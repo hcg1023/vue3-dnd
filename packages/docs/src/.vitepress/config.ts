@@ -248,7 +248,7 @@ export default defineConfig({
                   link: '/example/nesting/drag-sources',
                 },
                 {
-                  text: '嵌套的放置目镖',
+                  text: '嵌套的放置目标',
                   link: '/example/nesting/drop-targets',
                 },
               ],
