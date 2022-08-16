@@ -30,7 +30,7 @@ import{_ as a,c as s,o as e,O as o,a as n,b as t}from"./app.22a6afb5.js";const h
 `),n("span",{class:"token comment"},"// \u5982\u679C\u662FuseDrop\uFF0C\u4E5F\u662F\u4E00\u6837\u7684"),t(`
 `),n("span",{class:"token comment"},"// drop(element)"),t(`
 `)])]),n("span",{class:"token tag"},[n("span",{class:"token tag"},[n("span",{class:"token punctuation"},"</"),t("script")]),n("span",{class:"token punctuation"},">")]),t(`
-`)]),n("div",{class:"m-mdic-copy-wrapper"},[n("div",{class:"u-mdic-copy-notify",id:"j-notify-1660611521124-61818"},"copy success"),n("button",{class:"u-mdic-copy-btn j-mdic-copy-btn","data-mdic-content":`<template>
+`)]),n("div",{class:"m-mdic-copy-wrapper"},[n("div",{class:"u-mdic-copy-notify",id:"j-notify-1660621087346-70417"},"copy success"),n("button",{class:"u-mdic-copy-btn j-mdic-copy-btn","data-mdic-content":`<template>
     <div
         ref="element"
         role="Box"
@@ -62,4 +62,4 @@ drag(element)
 // \u5982\u679C\u662FuseDrop\uFF0C\u4E5F\u662F\u4E00\u6837\u7684
 // drop(element)
 <\/script>
-`,"data-mdic-attach-content":"","data-mdic-notify-id":"j-notify-1660611521124-61818","data-mdic-notify-delay":"2000","data-mdic-copy-fail-text":"copy fail",onclick:"!function(t){const e={copy:(t='',e='')=>new Promise((c,o)=>{const n=document.createElement('textarea'),d=e?`\\n\\n${e}`:e;n.value=`${t}${d}`,document.body.appendChild(n),n.select();try{const t=document.execCommand('copy');document.body.removeChild(n),t?c():o()}catch(t){document.body.removeChild(n),o()}}),btnClick(t){const c=t&&t.dataset?t.dataset:{},o=c.mdicNotifyId,n=document.getElementById(o),d=c.mdicNotifyDelay,i=c.mdicCopyFailText;e.copy(c.mdicContent,c.mdicAttachContent).then(()=>{n.style.display='block',setTimeout(()=>{n.style.display='none'},d)}).catch(()=>{alert(i)})}};e.btnClick(t)}(this);"},"copy")])])],-1),r=[p,l];function i(u,k,d,m,g,y){return e(),s("div",null,r)}var f=a(c,[["render",i]]);export{h as __pageData,f as default};
+`,"data-mdic-attach-content":"","data-mdic-notify-id":"j-notify-1660621087346-70417","data-mdic-notify-delay":"2000","data-mdic-copy-fail-text":"copy fail",onclick:"!function(t){const e={copy:(t='',e='')=>new Promise((c,o)=>{const n=document.createElement('textarea'),d=e?`\\n\\n${e}`:e;n.value=`${t}${d}`,document.body.appendChild(n),n.select();try{const t=document.execCommand('copy');document.body.removeChild(n),t?c():o()}catch(t){document.body.removeChild(n),o()}}),btnClick(t){const c=t&&t.dataset?t.dataset:{},o=c.mdicNotifyId,n=document.getElementById(o),d=c.mdicNotifyDelay,i=c.mdicCopyFailText;e.copy(c.mdicContent,c.mdicAttachContent).then(()=>{n.style.display='block',setTimeout(()=>{n.style.display='none'},d)}).catch(()=>{alert(i)})}};e.btnClick(t)}(this);"},"copy")])])],-1),r=[p,l];function i(u,k,d,m,g,y){return e(),s("div",null,r)}var f=a(c,[["render",i]]);export{h as __pageData,f as default};
