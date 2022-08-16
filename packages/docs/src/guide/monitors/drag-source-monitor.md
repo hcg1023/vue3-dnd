@@ -17,4 +17,21 @@
 | `getClientOffset()` | `() => { x: number, y: number }` | 返回拖动起始点的鼠标指针相对于客户端的偏移量`{x, y}`。<br>如果没有项目被拖动，则返回`null`。                                                                                     |
 | `getDifferenceFromInitialOffset()` | `() => { x: number, y: number }` | 返回当前拖动中鼠标指针相对于开始拖动时的鼠标指针位置的偏移量`{x, y}`。<br>如果没有项目被拖动，则返回`null`。                                                                            |
 | `getSourceClientOffset()` | `() => { x: number, y: number }` | 返回当前拖动源的根DOM节点相对于客户端的偏移量`{x, y}`。<br>如果没有项目被拖动，则返回`null`。                                                                                   |
-注意 ，如果需要获取鼠标的 **实时轨迹** （实时的Offset），应该关注一下 DropTargetMonitor 中的回调，比如 hover
+
+注意 ，如果需要获取鼠标的 **实时轨迹** （实时的Offset），应该关注一下 DropTargetMonitor 而不是 DragSourceMonitor， 比如，你可以在 useDrop 的回调 hover: (item, monitor) => {...} 的参数中获取 DropTargetMonitor ：
+
+```
+let dropPointNow = ref({x:0,y:0})
+const [collect, drop] = useDrop(() => ({
+  accept: ItemTypes.BOX,
+  drop: () => ({ name: 'Dustbin' }),
+  hover: (item, monitor) => {
+    const offset = monitor. getClientOffset();
+    if(offset !== null){
+      dropPointNow.value.x = offset.x;
+      dropPointNow.value.y = offset.y;
+    }
+    console.log(' useDrop hover >>> ',JSON.stringify(dropPointNow.value));
+  },
+}))
+```
