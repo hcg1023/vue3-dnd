@@ -1,5 +1,11 @@
 # docs
 
+## 2.1.2
+
+### Patch Changes
+
+- af201a9: 添加如何获得实时坐标偏移的说明
+
 ## 2.1.1
 
 ### Patch Changes
