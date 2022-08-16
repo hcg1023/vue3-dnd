@@ -14,6 +14,7 @@
 | `didDrop()` | `() => boolean`                  | 如果某个拖放目标已经处理了拖放事件则返回`true`，否则返回`false`。即使目标没有返回放置结果，`didDrop()`也会返回`true`。<br>可以在`end()`中使用它来检查是否有放置目标已经处理了这次拖拽。如果在`end()`外部调用，则返回`false`。 |
 | `getInitialClientOffset()` | `() => { x: number, y: number }` | 返回当前拖动开始时鼠标指针相对于客户端的初始位置`{x, y}`。<br>如果没有项目被拖动，则返回`null`。                                                                                  |
 | `getInitialSourceClientOffset()` | `() => { x: number, y: number }` | 返回当前拖动开始时，拖动源的根DOM节点相对于客户端的初始位置`{x, y}`。<br>如果没有项目被拖动，则返回`null`。                                                                           |
-| `getClientOffset()` | `() => { x: number, y: number }` | 返回当前拖动中鼠标指针相对于客户端的偏移量`{x, y}`。<br>如果没有项目被拖动，则返回`null`。                                                                                     |
+| `getClientOffset()` | `() => { x: number, y: number }` | 返回拖动起始点的鼠标指针相对于客户端的偏移量`{x, y}`。<br>如果没有项目被拖动，则返回`null`。                                                                                     |
 | `getDifferenceFromInitialOffset()` | `() => { x: number, y: number }` | 返回当前拖动中鼠标指针相对于开始拖动时的鼠标指针位置的偏移量`{x, y}`。<br>如果没有项目被拖动，则返回`null`。                                                                            |
 | `getSourceClientOffset()` | `() => { x: number, y: number }` | 返回当前拖动源的根DOM节点相对于客户端的偏移量`{x, y}`。<br>如果没有项目被拖动，则返回`null`。                                                                                   |
+注意 ，如果需要获取鼠标的 **实时轨迹** （实时的Offset），应该关注一下 DropTargetMonitor 中的回调，比如 hover
