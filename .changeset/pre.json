@@ -1,0 +1,11 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "docs": "2.1.2",
+    "vue3-dnd-test-utils": "2.0.0",
+    "test-vue2": "2.0.1",
+    "vue3-dnd": "2.0.1"
+  },
+  "changesets": []
+}
