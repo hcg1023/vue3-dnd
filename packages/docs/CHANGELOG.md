@@ -1,5 +1,13 @@
 # docs
 
+## 2.1.3-beta.0
+
+### Patch Changes
+
+- Updated dependencies [406ee2f]
+  - vue3-dnd@2.0.2-beta.0
+  - vue3-dnd-test-utils@2.0.1-beta.0
+
 ## 2.1.2
 
 ### Patch Changes
