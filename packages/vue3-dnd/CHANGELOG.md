@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.2-beta.0
+
+### Patch Changes
+
+- 406ee2f: feat: change vue-demi version support vue@2.7
+
 ## 2.0.1
 
 ### Patch Changes
