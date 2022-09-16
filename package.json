@@ -2,7 +2,7 @@
   "name": "root",
   "version": "0.0.0",
   "private": true,
-  "description": "Drag and Drop for Vue3",
+  "description": "Drag and Drop for Vue Composition API",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",

@@ -21,7 +21,7 @@ If you think this project is helpful to you, I hope you can contribute a [star�
 [![Featured on Openbase](https://badges.openbase.com/js/featured/vue3-dnd.svg?token=DweDwkc7YaNcSSwPw5ToxjJyG/CPuAX7J7sZFXKUg9c=)](https://openbase.com/js/vue3-dnd?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
 [![MIT License](https://img.shields.io/github/license/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/blob/main/LICENSE)
 
-**[中文](./README_ZH.md)** | **[English](README.md)**
+**[中文](https://github.com/hcg1023/vue3-dnd/blob/main/packages/vue3-dnd/README_ZH.md)** | **[English](README.md)**
 
 ## Using
 ```
@@ -51,7 +51,7 @@ import { useDrag, useDrop, useDragLayer } from 'vue3-dnd'
 
 ## Docs
 [https://hcg1023.github.io/vue3-dnd/](https://hcg1023.github.io/vue3-dnd/)
-This document is now in Chinese, if you need English, Please refer to the [react-dnd](https://react-dnd.github.io/react-dnd/docs/overview) documentation and [github example](https://github.com/hcg1023/vue3-dnd/tree/main/src/examples), and we will supplement our documentation later.
+This document is now in Chinese, if you need English, Please refer to the [react-dnd](https://react-dnd.github.io/react-dnd/docs/overview) documentation and [github example](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples), and we will supplement our documentation later.
 
 ## Notice
 1. **Because of composition-API limitations, please do not attempt to deconstruct assignment for the collect parameter from hooks such as useDrag and useDrop, otherwise it will lose its responsiveness, Such as:**

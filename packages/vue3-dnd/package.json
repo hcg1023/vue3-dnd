@@ -1,7 +1,7 @@
 {
   "name": "vue3-dnd",
   "version": "2.0.2",
-  "description": "Drag and Drop for Vue3",
+  "description": "Drag and Drop for Vue Composition API",
   "scripts": {
     "test": "vitest run",
     "clean": "shx rm -rf dist/",
