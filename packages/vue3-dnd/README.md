@@ -49,10 +49,6 @@ import { useDrag, useDrop, useDragLayer } from 'vue3-dnd'
 </script>
 ```
 
-## Docs
-[https://hcg1023.github.io/vue3-dnd/](https://hcg1023.github.io/vue3-dnd/)
-This document is now in Chinese, if you need English, Please refer to the [react-dnd](https://react-dnd.github.io/react-dnd/docs/overview) documentation and [github example](https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs/src/.vitepress/examples), and we will supplement our documentation later.
-
 ## Notice
 1. **Because of composition-API limitations, please do not attempt to deconstruct assignment for the collect parameter from hooks such as useDrag and useDrop, otherwise it will lose its responsiveness, Such as:**
 
