@@ -68,7 +68,7 @@ export default defineConfig({
     locales: {
       '/': {
         // 多语言下拉菜单的标题
-        selectText: '选择语言',
+        selectText: 'English',
         label: '简体中文',
         repo: 'https://github.com/hcg1023/vue3-dnd',
         repoLabel: 'GitHub',
@@ -300,7 +300,7 @@ export default defineConfig({
         },
       },
       '/en/': {
-        selectText: 'Languages',
+        selectText: '简体中文',
         label: 'English',
         nav: [
           { text: 'Home', link: '/en/', activeMatch: '^/$' },
@@ -315,7 +315,210 @@ export default defineConfig({
             activeMatch: '^/en/example/',
           },
         ],
-        sidebar: 'auto',
+        sidebar: {
+          '/en/guide/': [
+            {
+              text: 'Guide',
+              link: '/en/guide/',
+              children: [
+                {
+                  text: 'Overview',
+                  link: '/en/guide/overview',
+                },
+                // {
+                // 	text: '测试',
+                // 	link: '/guide/testing',
+                // },
+                {
+                  text: 'Vue2',
+                  link: '/en/guide/vue2',
+                },
+                {
+                  text: 'FAQ',
+                  link: '/en/guide/faq',
+                },
+                {
+                  text: 'v1-to-v2',
+                  link: '/en/guide/v1-to-v2',
+                },
+                {
+                  text: 'Example',
+                  link: '/en/example/',
+                },
+              ],
+            },
+            {
+              text: 'Components',
+              children: [
+                {
+                  text: 'DndProvider',
+                  link: '/en/guide/components/dnd-provider',
+                },
+                {
+                  text: 'DragPreviewImage',
+                  link: '/en/guide/components/drag-preview-image',
+                },
+              ],
+            },
+            {
+              text: 'Composition API',
+              link: '/en/guide/composition/',
+              children: [
+                {
+                  text: 'useDrag',
+                  link: '/en/guide/composition/use-drag',
+                },
+                {
+                  text: 'useDrop',
+                  link: '/en/guide/composition/use-drop',
+                },
+                {
+                  text: 'useDragLayer',
+                  link: '/en/guide/composition/use-drag-layer',
+                },
+              ],
+            },
+            {
+              text: 'Monitors',
+              children: [
+                {
+                  text: 'DragSourceMonitor',
+                  link: '/en/guide/monitors/drag-source-monitor',
+                },
+                {
+                  text: 'DropTargetMonitor',
+                  link: '/en/guide/monitors/drop-target-monitor',
+                },
+                {
+                  text: 'DragLayerMonitor',
+                  link: '/en/guide/monitors/drag-layer-monitor',
+                },
+              ],
+            },
+            {
+              text: 'Backends',
+              children: [
+                {
+                  text: 'HTML5',
+                  link: '/en/guide/backend/html5',
+                },
+                {
+                  text: 'Touch',
+                  link: '/en/guide/backend/touch',
+                },
+                {
+                  text: 'Test',
+                  link: '/en/guide/backend/test',
+                },
+              ],
+            },
+          ],
+          '/en/example/': [
+            {
+              text: 'Examples',
+              children: [
+                {
+                  text: 'About',
+                  link: '/en/example/',
+                },
+              ],
+            },
+            {
+              text: 'Dustbin',
+              children: [
+                {
+                  text: 'Single Target',
+                  link: '/en/example/dustbin/single-target',
+                },
+                {
+                  text: 'Within an iframe',
+                  link: '/en/example/dustbin/iframe',
+                },
+                {
+                  text: 'Copy or Move',
+                  link: '/en/example/dustbin/copy-or-move',
+                },
+                {
+                  text: 'Multiple Targets',
+                  link: '/en/example/dustbin/multiple-targets',
+                },
+                {
+                  text: 'Stress Test',
+                  link: '/en/example/dustbin/stress-test',
+                },
+              ],
+            },
+            {
+              text: 'Drag Around',
+              children: [
+                {
+                  text: 'Naive',
+                  link: '/en/example/drag-around/naive',
+                },
+                {
+                  text: 'Custom Drag Layer',
+                  link: '/en/example/drag-around/custom-drag-layer',
+                },
+              ],
+            },
+            {
+              text: 'Nesting',
+              children: [
+                {
+                  text: 'Drag Sources',
+                  link: '/en/example/nesting/drag-sources',
+                },
+                {
+                  text: 'Drop Targets',
+                  link: '/en/example/nesting/drop-targets',
+                },
+              ],
+            },
+            {
+              text: 'Sortable',
+              children: [
+                {
+                  text: 'Simple',
+                  link: '/en/example/sortable/simple',
+                },
+                {
+                  text: 'Cancel on Drop Outside',
+                  link: '/en/example/sortable/cancel-on-drop-outside',
+                },
+                {
+                  text: 'Stress Test',
+                  link: '/en/example/sortable/stress-test',
+                },
+              ],
+            },
+            {
+              text: 'Customize',
+              children: [
+                {
+                  text: 'Handles and Previews',
+                  link: '/en/example/customize/handles-and-previews',
+                },
+                {
+                  text: 'Drop Effects',
+                  link: '/en/example/customize/drop-effects',
+                },
+              ],
+            },
+            {
+              text: 'Other',
+              children: [
+                {
+                  text: 'Native Files',
+                  link: '/en/example/other/native-files',
+                },
+                {
+                  text: 'Native HTML',
+                  link: '/en/example/other/native-html',
+                },
+              ],
+            },
+          ],
+        },
       },
     },
   },

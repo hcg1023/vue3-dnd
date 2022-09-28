@@ -5,6 +5,8 @@ import {
   FolderOpenOutlined,
   GithubOutlined,
 } from '@ant-design/icons-vue'
+import {useLang} from "../composables/lang";
+
 
 const props = defineProps<{
   demo: object
@@ -52,6 +54,21 @@ const handlerSourceCodeVisible = (visible: boolean) => {
 const handlerOpenGitHub = () => {
   console.log(props.path)
 }
+
+const locale = useLang()
+const langs = {
+  'zh-CN': {
+    receiveSourceCode: '收起源代码',
+    expandTheSourceCode: '展开源代码',
+    viewWithGitHub: '使用 GitHub 查看'
+  },
+  'en-US': {
+    receiveSourceCode: 'receive source code',
+    expandTheSourceCode: 'expand the source code',
+    viewWithGitHub: 'view with GitHub'
+  }
+}
+const langObject = computed(() => langs[unref(locale) as keyof typeof langs])
 </script>
 
 <template>
@@ -60,7 +77,7 @@ const handlerOpenGitHub = () => {
       <component :is="demo"></component>
     </div>
     <div class="demo-toolbar">
-      <a-tooltip title="使用 GitHub 查看">
+      <a-tooltip :title="langObject.viewWithGitHub">
         <a
           class="demo-toolbar-link"
           :href="decodeURIComponent(path)"
@@ -69,7 +86,7 @@ const handlerOpenGitHub = () => {
           <github-outlined class="icon" @click="handlerOpenGitHub" />
         </a>
       </a-tooltip>
-      <a-tooltip :title="showSourceCode ? '收起源代码' : '展开源代码'">
+      <a-tooltip :title="showSourceCode ? langObject.receiveSourceCode : langObject.expandTheSourceCode">
         <folder-outlined
           v-if="!showSourceCode"
           class="icon"
