@@ -1,5 +1,7 @@
 # 关于
-[Vue3 DnD](https://github.com/hcg1023/vue3-dnd)是基于[React DnD](https://react-dnd.github.io/react-dnd/about) 开发的Vue3版本。我们会尽可能的保证它与React DnD的功能一致，甚至于你可以把该文档看作是React DnD的部分文档（当然，react hooks api的依赖部分除外）。
+[Vue3 DnD](https://github.com/hcg1023/vue3-dnd)是基于[React DnD](https://react-dnd.github.io/react-dnd/about) 开发的Vue 
+Composition-api
+版本。我们会尽可能的保证它与React DnD的功能一致，甚至于你可以把该文档看作是React DnD的部分文档（当然，react hooks api的依赖部分除外）。
 
 # 安装
 ```bash
@@ -17,6 +19,8 @@ yarn add vue3-dnd react-dnd-html5-backend
 基于Vue的组合式API，你可以在任何组件中使用拖拽。
 ### 双向数据绑定
 基于Vue的双向数据绑定，你可以在数据更新时自动更新UI。
+### 支持Vue2和Vue3
+同时支持Vue2和Vue3两个版本
 ### 扩展和测试
 受益于React DnD的backend设计，你可以自定义一个DnD backend，并且可以使用 [react-dnd-test-backend](https://www.npmjs.com/package/react-dnd-test-backend) 测试你的拖拽组件。
 
