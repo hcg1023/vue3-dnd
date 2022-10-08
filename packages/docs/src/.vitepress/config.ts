@@ -265,6 +265,10 @@ export default defineConfig({
                   link: '/example/sortable/cancel-on-drop-outside',
                 },
                 {
+                  text: '指示器',
+                  link: '/example/sortable/indicator',
+                },
+                {
                   text: '压力测试',
                   link: '/example/sortable/stress-test',
                 },
@@ -484,6 +488,10 @@ export default defineConfig({
                 {
                   text: 'Cancel on Drop Outside',
                   link: '/en/example/sortable/cancel-on-drop-outside',
+                },
+                {
+                  text: 'Indicator',
+                  link: '/example/sortable/indicator',
                 },
                 {
                   text: 'Stress Test',
