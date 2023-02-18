@@ -17,9 +17,9 @@ runs:
       with:
         version: 6.15.1
 
-    - name: setup pnpm config
-      run: pnpm config set store-dir ${{ inputs.cache }}
-      shell: bash
+    # - name: setup pnpm config
+    #  run: pnpm config set store-dir ${{ inputs.cache }}
+    #  shell: bash
 
     - name: Set node version to 16
       uses: actions/setup-node@v2
