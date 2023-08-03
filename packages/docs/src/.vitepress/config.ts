@@ -491,7 +491,7 @@ export default defineConfig({
                 },
                 {
                   text: 'Indicator',
-                  link: '/example/sortable/indicator',
+                  link: '/en/example/sortable/indicator',
                 },
                 {
                   text: 'Stress Test',
