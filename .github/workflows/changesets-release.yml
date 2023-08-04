@@ -3,7 +3,7 @@ name: changesets-release
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 env:
-  BASE_URL: /vue3-dnd
+  BASE_URL: /
   BUILD_PACKAGE_NAME: "docs"
   PUBLISH_DIR: ./packages/docs/dist
 
