@@ -31,3 +31,4 @@ runs:
         publish_dir: ${{ inputs.publish_dir }}
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
+        cname: www.vue3-dnd.com
