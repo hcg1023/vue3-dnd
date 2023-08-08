@@ -1,7 +1,7 @@
 # Vue3 Dn<img src="http://image.haochenguang.cn/pictures/vue3-dnd.svg" width="28">
 
-[website](https://hcg1023.github.io/vue3-dnd/) |
-[中文官网](https://haochenguang.gitee.io/vue3-dnd/)
+## Document
+[vue3-dnd.com](https://www.vue3-dnd.com)
 
 React Dnd implementation in Vue Composition-api.
 
