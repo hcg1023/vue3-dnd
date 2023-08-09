@@ -1,8 +1,5 @@
 # Vue3 Dn<img src="http://image.haochenguang.cn/pictures/vue3-dnd.svg" width="28">
 
-[website](https://hcg1023.github.io/vue3-dnd/) | 
-[中文官网](https://haochenguang.gitee.io/vue3-dnd/)
-
 React Dnd implementation in Vue Composition-api.
 
 **Supports Vue2 and Vue3**
@@ -22,9 +19,7 @@ If you think this project is helpful to you, I hope you can contribute a [star�
 [![MIT License](https://img.shields.io/github/license/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/blob/main/LICENSE)
 
 ## Docs
-点击查看包中的文档(Click look the documentation in the package)
-
-**[中文](packages/vue3-dnd/README_ZH.md)** | **[English](packages/vue3-dnd/README.md)**
+[vue3-dnd.com](https://www.vue3-dnd.com)
 
 ## Contributors
 <a href="https://github.com/hcg1023/vue3-dnd/graphs/contributors">

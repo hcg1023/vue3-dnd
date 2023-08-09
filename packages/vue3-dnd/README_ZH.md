@@ -1,7 +1,7 @@
 # Vue3 Dn<img src="http://image.haochenguang.cn/pictures/vue3-dnd.svg" width="28">
 
-[官网](https://hcg1023.github.io/vue3-dnd/) | 
-[国内镜像](https://haochenguang.gitee.io/vue3-dnd/)
+## 文档
+[vue3-dnd.com](https://www.vue3-dnd.com)
 
 React Dnd 的 Composition-api 实现。
 
@@ -49,9 +49,6 @@ import { useDrag, useDrop, useDragLayer } from 'vue3-dnd'
 // 开始你的杰作
 </script>
 ```
-
-## 文档
-[https://hcg1023.github.io/vue3-dnd/](https://hcg1023.github.io/vue3-dnd/)
 
 ## 注意
 1. **由于 composition-api 的限制，请不要尝试从 useDrag 和 useDrop 等钩子中解构 collect 参数，这样会失去响应性，例如：**
