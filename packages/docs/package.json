@@ -36,7 +36,7 @@
     "markdown-it": "^13.0.1",
     "prismjs": "^1.28.0",
     "unplugin-vue-components": "^0.19.6",
-    "vite": "^2.9.7"
+    "vite": "^2.9.16"
   },
   "keywords": [],
   "author": "hcg1023 <2293885211@qq.com>",
