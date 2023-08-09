@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.3
+
+### Patch Changes
+
+- d01c69da6: update readme and npm homepage
+
 ## 2.0.2
 
 ### Patch Changes
