@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as d,Q as o}from"./app.32a3f66d.js";const m='{"title":"DragLayerMonitor","description":"","frontmatter":{},"headers":[{"level":2,"title":"method","slug":"method"}],"relativePath":"en/guide/monitors/drag-layer-monitor.md"}',r={},n=o("",4),a=[n];function i(c,s,l,g,h,u){return d(),t("div",null,a)}var p=e(r,[["render",i]]);export{m as __pageData,p as default};
