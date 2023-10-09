@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.4
+
+### Patch Changes
+
+- a20213844: fix: update DndContextSymbol to Symbol.for
+
+  fix: fix equal collected code error
+
 ## 2.0.3
 
 ### Patch Changes
