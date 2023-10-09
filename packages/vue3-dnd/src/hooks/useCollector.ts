@@ -19,7 +19,7 @@ export function useCollector<T, S>(
     const nextValue = unref(collect)(unref(monitor))
     // This needs to be a deep-equality check because some monitor-collected values
     // include XYCoord objects that may be equivalent, but do not have instance equality.
-    if (!equal(collected, nextValue)) {
+    if (!equal(collected.value, nextValue)) {
       collected.value = nextValue
       if (onUpdate) {
         onUpdate()
@@ -27,9 +27,6 @@ export function useCollector<T, S>(
     }
   }
 
-  // update the collected properties after react renders.
-  // Note that the "Dustbin Stress Test" fails if this is not
-  // done when the component updates
   watchEffect(updateCollected)
 
   return [collected, updateCollected]
