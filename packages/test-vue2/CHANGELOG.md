@@ -1,5 +1,12 @@
 # test-vue2
 
+## 2.0.4
+
+### Patch Changes
+
+- Updated dependencies [a20213844]
+  - vue3-dnd@2.0.4
+
 ## 2.0.3
 
 ### Patch Changes
