@@ -8,6 +8,8 @@ If you think this project is helpful to you, I hope you can contribute a [starâ­
 
 [![npm version](https://img.shields.io/npm/v/vue3-dnd.svg?style=flat-square)](https://www.npmjs.com/package/vue3-dnd)
 [![CI](https://github.com/hcg1023/vue3-dnd/actions/workflows/ci.yml/badge.svg)](https://github.com/hcg1023/vue3-dnd/actions/workflows/ci.yml)
+[![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=vue3-dnd&query=$.install.pretty&label=install%20size&style=flat-square)](https://packagephobia.now.sh/result?p=vue3-dnd)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/vue3-dnd?style=flat-square)](https://bundlephobia.com/package/vue3-dnd@latest)
 [![GitHub open issues](https://img.shields.io/github/issues/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/issues?q=is%3Aopen+is%3Aissue)
 [![GitHub Stars](https://img.shields.io/github/stars/hcg1023/vue3-dnd.svg)](https://github.com/hcg1023/vue3-dnd/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/hcg1023/vue3-dnd)](https://github.com/hcg1023/vue3-dnd/network/members)
