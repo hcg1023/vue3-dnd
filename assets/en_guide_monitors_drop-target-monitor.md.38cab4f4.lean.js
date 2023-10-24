@@ -1,0 +1,1 @@
+import{_ as e,c as t,o,Q as d}from"./app.84d2bec0.js";const f='{"title":"DropTargetMonitor","description":"","frontmatter":{},"headers":[{"level":2,"title":"method","slug":"method"}],"relativePath":"en/guide/monitors/drop-target-monitor.md"}',r={},n=d("",4),c=[n];function a(i,s,h,l,u,g){return o(),t("div",null,c)}var m=e(r,[["render",a]]);export{f as __pageData,m as default};
