@@ -1,0 +1,1 @@
+import{_ as e,c as t,o,Q as d}from"./app.0d018173.js";const m='{"title":"DragSourceMonitor","description":"","frontmatter":{},"headers":[{"level":2,"title":"method","slug":"method"}],"relativePath":"en/guide/monitors/drag-source-monitor.md"}',r={},c=d("",4),n=[c];function a(i,s,u,h,l,g){return o(),t("div",null,n)}var p=e(r,[["render",a]]);export{m as __pageData,p as default};
