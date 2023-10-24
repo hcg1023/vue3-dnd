@@ -62,7 +62,7 @@ export default defineConfig({
     logo: './vue3-dnd.svg',
     algolia: {
       appId: '9YTVQWOEXK',
-      apiKey: 'ddfcf969b80e0b6793be5bdf70751e86',
+      apiKey: '43915512c6a8de5b345283c5a532824d',
       indexName: 'vue3-dnd-docs',
     },
     locales: {
