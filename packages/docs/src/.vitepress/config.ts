@@ -61,9 +61,9 @@ export default defineConfig({
   themeConfig: {
     logo: './vue3-dnd.svg',
     algolia: {
-      appId: 'MPEA5OIOBN',
-      apiKey: '4731e5999d5e86ca8daf77c77a921adc',
-      indexName: 'vue3-dnd',
+      appId: '9YTVQWOEXK',
+      apiKey: 'ddfcf969b80e0b6793be5bdf70751e86',
+      indexName: 'vue3-dnd-docs',
     },
     locales: {
       '/': {
