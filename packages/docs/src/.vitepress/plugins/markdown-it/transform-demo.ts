@@ -9,6 +9,20 @@ import { normalizePath } from 'vite'
 const GIT_MAIN_BRANCH_DOCS_DIR =
   'https://github.com/hcg1023/vue3-dnd/tree/main/packages/docs'
 
+const AppVueFileName = `App.vue`
+const AppVueFileTemplate = `<template>
+  <DndProvider :backend="HTML5Backend">
+    <Container></Container>
+  </DndProvider>
+</template>
+
+<script lang="ts" setup>
+import Container from './index.ts'
+import { DndProvider } from 'vue3-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+</script>`
+
+
 export const transformDemo = (md: MarkdownIt, srcDir: string) => {
   const parser: RuleBlock = (state, startLine, endLine, silent) => {
     const CH = '+'.charCodeAt(0)
@@ -81,7 +95,12 @@ export const transformDemo = (md: MarkdownIt, srcDir: string) => {
               highlight: highlight(source, type),
             },
           }
-        }, {})
+        }, {} as Record<string, { type: string, raw: string, highlight: string }>)
+        fileInfos[AppVueFileName] = {
+          type: 'vue',
+          raw: AppVueFileTemplate,
+          highlight: highlight(AppVueFileTemplate, 'vue')
+        }
         const basename = token.info
         token.info = ''
 
