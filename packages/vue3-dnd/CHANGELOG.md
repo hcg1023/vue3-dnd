@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.0
+
+### Minor Changes
+
+- fce23c2: update dependencies version
+
 ## 2.0.4
 
 ### Patch Changes
