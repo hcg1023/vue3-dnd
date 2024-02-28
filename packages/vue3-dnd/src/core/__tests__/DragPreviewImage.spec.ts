@@ -60,6 +60,5 @@ describe('The DragPreviewImage component', () => {
 
     // TODO: verifying that the image was created appears untestable
     // expect(onConnect.mock.calls.length).toEqual(1)
-    expect(true).toBeTruthy()
   })
 })
