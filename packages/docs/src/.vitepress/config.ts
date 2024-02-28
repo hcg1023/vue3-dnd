@@ -34,6 +34,7 @@ export default defineConfig({
       noExternal: [
         /^react-dnd-/,
         'dnd-core',
+        /^@react-dnd\//,
         /^prismjs/,
         'ant-design-vue',
         '@ant-design/icons-vue',
