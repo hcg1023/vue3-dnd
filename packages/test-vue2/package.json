@@ -1,7 +1,7 @@
 {
   "name": "test-vue2",
   "private": true,
-  "version": "2.0.4",
+  "version": "3.0.0",
   "scripts": {
     "dev": "pnpm -r --filter=\"vue3-dnd\" switch:2 && vite",
     "build": "echo \"not need build\"",

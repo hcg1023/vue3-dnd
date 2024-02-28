@@ -1,5 +1,16 @@
 # test-vue2
 
+## 3.0.0
+
+### Major Changes
+
+- fce23c2: update dependencies version
+
+### Patch Changes
+
+- Updated dependencies [fce23c2]
+  - vue3-dnd@3.0.0
+
 ## 2.0.4
 
 ### Patch Changes

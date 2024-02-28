@@ -1,6 +1,6 @@
 {
   "name": "vue3-dnd",
-  "version": "2.0.4",
+  "version": "3.0.0",
   "description": "Drag and Drop for Vue Composition API",
   "scripts": {
     "test": "vitest run",
