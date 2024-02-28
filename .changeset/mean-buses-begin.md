@@ -1,8 +1,8 @@
 ---
-'docs': major
-'vue3-dnd-test-utils': major
-'test-vue2': major
-'vue3-dnd': major
+'docs': minor
+'vue3-dnd-test-utils': minor
+'test-vue2': minor
+'vue3-dnd': minor
 ---
 
 update dependencies version
