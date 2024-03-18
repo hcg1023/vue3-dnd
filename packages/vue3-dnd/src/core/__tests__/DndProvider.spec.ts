@@ -27,11 +27,7 @@ describe('DndProvider', () => {
     expect(capturedManager).toBe(manager)
   })
 
-  /*
-  * Since @testing-library/vue still calls unmount during uninstallation and determines element.parentNode, although
-  *  our use case is correct, an error will be reported.
-  * */
-  it.skip('stores DragDropManager in global context and cleans up on unmount', () => {
+  it('stores DragDropManager in global context and cleans up on unmount', () => {
     let capturedManager
 
     const ChildComponent = defineComponent(() => {
