@@ -1,10 +1,12 @@
-import { isVue3, nextTick } from 'vue-demi'
+import { isVue3 } from 'vue-demi'
 
 /**
  * A tick that users can use to work through the event queue
  */
 export function tick(): Promise<void> {
-  return nextTick()
+  return new Promise(resolve => {
+    setTimeout(resolve, 0)
+  })
 }
 
 export function resolveProps<T extends Record<string, unknown>>(props: T) {
