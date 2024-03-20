@@ -1,5 +1,11 @@
 # vue3-dnd-test-utils
 
+## 3.0.1
+
+### Patch Changes
+
+- 7afc701: feat: vue3-dnd-test-utils completed
+
 ## 3.0.0
 
 ### Minor Changes

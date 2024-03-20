@@ -1,6 +1,6 @@
 {
   "name": "vue3-dnd-test-utils",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "vue3-dnd test utils",
   "scripts": {
     "test": "vitest run --passWithNoTests",
