@@ -221,6 +221,10 @@ importers:
         version: 2.9.17(less@4.1.2)
 
   packages/test-utils:
+    dependencies:
+      vue-demi:
+        specifier: ^0.14.7
+        version: 0.14.7(@vue/composition-api@1.6.1)(vue@3.2.33)
     devDependencies:
       '@swc/cli':
         specifier: ^0.1.57
@@ -270,13 +274,13 @@ importers:
       vue:
         specifier: npm:vue@2
         version: 2.6.14
-      vue2:
-        specifier: npm:vue@2
-        version: /vue@2.6.14
       vue3-dnd:
         specifier: workspace:*
         version: link:../vue3-dnd
     devDependencies:
+      '@testing-library/vue':
+        specifier: ^5.8.0
+        version: 5.9.0(vue-template-compiler@2.6.14)(vue@2.6.14)
       typescript:
         specifier: ^4.5.4
         version: 4.6.4
@@ -289,9 +293,15 @@ importers:
       vite-plugin-vue2:
         specifier: ^2.0.0
         version: 2.0.0(vite@2.9.17)(vue-template-compiler@2.6.14)
+      vitest:
+        specifier: ^0.12.9
+        version: 0.12.9(jsdom@19.0.0)
       vue-template-compiler:
         specifier: ^2.6.14
         version: 2.6.14
+      vue3-dnd-test-utils:
+        specifier: workspace:*
+        version: link:../test-utils
 
   packages/vue3-dnd:
     dependencies:
@@ -1704,6 +1714,20 @@ packages:
       redent: 3.0.0
     dev: true
 
+  /@testing-library/vue@5.9.0(vue-template-compiler@2.6.14)(vue@2.6.14):
+    resolution: {integrity: sha512-HWvI4s6FayFLmiqGcEMAMfTSO1SV12NukdoyllYMBobFqfO0TalQmfofMtiO+eRz+Amej8Z26dx4/WYIROzfVw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      vue: ^2.6.10
+      vue-template-compiler: ^2.6.10
+    dependencies:
+      '@babel/runtime': 7.23.9
+      '@testing-library/dom': 9.3.4
+      '@vue/test-utils': 1.3.6(vue-template-compiler@2.6.14)(vue@2.6.14)
+      vue: 2.6.14
+      vue-template-compiler: 2.6.14
+    dev: true
+
   /@testing-library/vue@8.0.3(vue@3.2.33):
     resolution: {integrity: sha512-wSsbNlZ69ZFQgVlHMtc/ZC/g9BHO7MhyDrd4nHyfEubtMr3kToN/w4/BsSBknGIF8w9UmPbsgbIuq/CbdBHzCA==}
     engines: {node: '>=14'}
@@ -2267,6 +2291,19 @@ packages:
 
   /@vue/shared@3.2.33:
     resolution: {integrity: sha512-UBc1Pg1T3yZ97vsA2ueER0F6GbJebLHYlEi4ou1H5YL4KWvMOOWwpYo9/QpWq93wxKG6Wo13IY74Hcn/f7c7Bg==}
+
+  /@vue/test-utils@1.3.6(vue-template-compiler@2.6.14)(vue@2.6.14):
+    resolution: {integrity: sha512-udMmmF1ts3zwxUJEIAj5ziioR900reDrt6C9H3XpWPsLBx2lpHKoA4BTdd9HNIYbkGltWw+JjWJ+5O6QBwiyEw==}
+    peerDependencies:
+      vue: 2.x
+      vue-template-compiler: ^2.x
+    dependencies:
+      dom-event-types: 1.1.0
+      lodash: 4.17.21
+      pretty: 2.0.0
+      vue: 2.6.14
+      vue-template-compiler: 2.6.14
+    dev: true
 
   /@vue/test-utils@2.4.4(vue@3.2.33):
     resolution: {integrity: sha512-8jkRxz8pNhClAf4Co4ZrpAoFISdvT3nuSkUlY6Ys6rmTpw3DMWG/X3mw3gQ7QJzgCZO9f+zuE2kW57fi09MW7Q==}
@@ -3154,6 +3191,15 @@ packages:
       inherits: 2.0.4
       readable-stream: 3.6.0
       typedarray: 0.0.6
+    dev: true
+
+  /condense-newlines@0.2.1:
+    resolution: {integrity: sha512-P7X+QL9Hb9B/c8HI5BFFKmjgBu2XpQuF98WZ9XkO+dBGgk5XgwiQz7o1SmpglNWId3581UcS0SFAWfoIhMHPfg==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      extend-shallow: 2.0.1
+      is-whitespace: 0.3.0
+      kind-of: 3.2.2
     dev: true
 
   /config-chain@1.1.13:
@@ -4087,6 +4133,10 @@ packages:
   /dom-align@1.12.3:
     resolution: {integrity: sha512-Gj9hZN3a07cbR6zviMUBOMPdWxYhbMI+x+WS0NAIu2zFZmbK8ys9R79g+iG9qLnlCwpFoaB+fKy8Pdv470GsPA==}
     dev: false
+
+  /dom-event-types@1.1.0:
+    resolution: {integrity: sha512-jNCX+uNJ3v38BKvPbpki6j5ItVlnSqVV6vDWGS6rExzCMjsc39frLjm1n91o6YaKK6AZl0wLloItW6C6mr61BQ==}
+    dev: true
 
   /dom-scroll-into-view@2.0.1:
     resolution: {integrity: sha512-bvVTQe1lfaUr1oFzZX80ce9KLDlZ3iU+XGNE/bz9HnGdklTieqsbmsLHe+rT2XWqopvL0PckkYqN7ksmm5pe3w==}
@@ -5967,6 +6017,11 @@ packages:
     resolution: {integrity: sha512-SDweEzfIZM0SJV0EUga669UTKlmL0Pq8Lno0QDQsPnvECB3IM2aP0gdx5TrU0A01MAPfViaZiI2V1QMZLaKK5w==}
     dev: true
 
+  /is-whitespace@0.3.0:
+    resolution: {integrity: sha512-RydPhl4S6JwAyj0JJjshWJEFG6hNye3pZFBRZaTUfZFwGHxzppNaNOVgQuS/E/SlhrApuMXrpnK1EEIXfdo3Dg==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /is-windows@1.0.2:
     resolution: {integrity: sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==}
     engines: {node: '>=0.10.0'}
@@ -7515,6 +7570,15 @@ packages:
       ansi-regex: 5.0.1
       ansi-styles: 5.2.0
       react-is: 17.0.2
+    dev: true
+
+  /pretty@2.0.0:
+    resolution: {integrity: sha512-G9xUchgTEiNpormdYBl+Pha50gOUovT18IvAe7EYMZ1/f9W/WWMPRn+xI68yXNMUk3QXHDwo/1wV/4NejVNe1w==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      condense-newlines: 0.2.1
+      extend-shallow: 2.0.1
+      js-beautify: 1.15.1
     dev: true
 
   /prismjs@1.28.0:
