@@ -7,6 +7,7 @@ import {
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'vue3-dnd'
 import type { BackendFactory } from 'dnd-core'
+import { resolveChildren, resolveProps } from './utils'
 
 /**
  * Wrap a Component with a DnDContext using the TestBackend
@@ -36,7 +37,7 @@ export function wrapWithTestBackend(
 /**
  * Wrap a component with a DndContext providing a backend.
  *
- * @param DecoratedComponent The compoent to decorate
+ * @param DecoratedComponent The component to decorate
  * @param Backend The backend to use (default=HTML5Backend)
  * @param backendOptions The optional backend options
  */
@@ -46,12 +47,18 @@ export function wrapWithBackend(
   backendOptions?: unknown
 ): Component {
   return defineComponent({
+    inheritAttrs: false,
     render() {
-      // @ts-ignore
-      return h(DndProvider, { backend: Backend, options: backendOptions }, [
-        // @ts-ignore
-        h(DecoratedComponent, { ...this.$attrs }),
-      ])
+      return h(
+        DndProvider,
+        resolveProps({
+          backend: Backend,
+          options: backendOptions,
+        }),
+        resolveChildren([
+          h(DecoratedComponent, resolveProps({ ...this.$attrs })),
+        ])
+      )
     },
   })
 }
