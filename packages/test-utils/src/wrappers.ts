@@ -1,4 +1,4 @@
-import { h, defineComponent, DefineComponent } from 'vue'
+import { h, defineComponent, Component } from 'vue-demi'
 import {
   TestBackend,
   ITestBackend,
@@ -17,9 +17,9 @@ import type { BackendFactory } from 'dnd-core'
  * to get the test backend instance.
  */
 export function wrapWithTestBackend(
-  DecoratedComponent: DefineComponent,
+  DecoratedComponent: Component,
   backendOptions?: unknown
-): [DefineComponent, () => ITestBackend | undefined] {
+): [Component, () => ITestBackend | undefined] {
   let backend: ITestBackend | undefined
   const opts: TestBackendOptions = Object.assign(
     {
@@ -41,19 +41,17 @@ export function wrapWithTestBackend(
  * @param backendOptions The optional backend options
  */
 export function wrapWithBackend(
-  DecoratedComponent: DefineComponent,
+  DecoratedComponent: Component,
   Backend: BackendFactory = HTML5Backend,
   backendOptions?: unknown
-): DefineComponent {
+): Component {
   return defineComponent({
     render() {
-      return h(
-        DndProvider,
-        { backend: Backend, options: backendOptions },
-        {
-          default: () => h(DecoratedComponent, { ...this.$attrs }),
-        }
-      )
+      // @ts-ignore
+      return h(DndProvider, { backend: Backend, options: backendOptions }, [
+        // @ts-ignore
+        h(DecoratedComponent, { ...this.$attrs }),
+      ])
     },
   })
 }

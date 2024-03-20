@@ -1,12 +1,12 @@
 import { wrapWithBackend } from './wrappers'
 import { render, RenderOptions } from '@testing-library/vue'
-import { DefineComponent } from 'vue'
+import { Component } from 'vue-demi'
 import { BackendFactory } from 'dnd-core'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { TestBackend } from 'react-dnd-test-backend'
 
 export function renderWithBackend(
-  DecoratedComponent: DefineComponent,
+  DecoratedComponent: Component,
   renderOptions: RenderOptions = {},
   Backend: BackendFactory = HTML5Backend,
   backendOptions: Record<string, any> = {}
@@ -25,7 +25,7 @@ export function renderWithBackend(
 }
 
 export function renderWithTestBackend(
-  DecoratedComponent: DefineComponent,
+  DecoratedComponent: Component,
   renderOptions: RenderOptions = {},
   backendOptions: Record<string, any> = {}
 ) {

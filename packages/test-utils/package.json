@@ -55,6 +55,9 @@
     "droppable",
     "drag-and-drop"
   ],
+  "dependencies": {
+    "vue-demi": "^0.14.7"
+  },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.178",
@@ -70,7 +73,7 @@
     "vue3-dnd": "workspace:*"
   },
   "peerDependencies": {
-    "@testing-library/vue": ">= 8",
+    "@testing-library/vue": "^8.0.0 || ^5.8.0",
     "vue": "^3.0.0-0 || ^2.6.0",
     "vue3-dnd": ">=2.1.0"
   },

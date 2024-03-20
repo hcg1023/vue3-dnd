@@ -221,6 +221,10 @@ importers:
         version: 2.9.17(less@4.1.2)
 
   packages/test-utils:
+    dependencies:
+      vue-demi:
+        specifier: ^0.14.7
+        version: 0.14.7(@vue/composition-api@1.6.1)(vue@3.2.33)
     devDependencies:
       '@swc/cli':
         specifier: ^0.1.57
