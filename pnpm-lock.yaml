@@ -233,8 +233,8 @@ importers:
         specifier: ^1.2.178
         version: 1.2.185
       '@testing-library/vue':
-        specifier: ^8.0.3
-        version: 8.0.3(vue@3.2.33)
+        specifier: ^8.1.0
+        version: 8.1.0(vue@3.2.33)
       dnd-core:
         specifier: ^16.0.1
         version: 16.0.1
@@ -1710,6 +1710,24 @@ packages:
 
   /@testing-library/vue@8.0.3(vue@3.2.33):
     resolution: {integrity: sha512-wSsbNlZ69ZFQgVlHMtc/ZC/g9BHO7MhyDrd4nHyfEubtMr3kToN/w4/BsSBknGIF8w9UmPbsgbIuq/CbdBHzCA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@vue/compiler-sfc': '>= 3'
+      vue: '>= 3'
+    peerDependenciesMeta:
+      '@vue/compiler-sfc':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.23.9
+      '@testing-library/dom': 9.3.4
+      '@vue/test-utils': 2.4.4(vue@3.2.33)
+      vue: 3.2.33
+    transitivePeerDependencies:
+      - '@vue/server-renderer'
+    dev: true
+
+  /@testing-library/vue@8.1.0(vue@3.2.33):
+    resolution: {integrity: sha512-ls4RiHO1ta4mxqqajWRh8158uFObVrrtAPoxk7cIp4HrnQUj/ScKzqz53HxYpG3X6Zb7H2v+0eTGLSoy8HQ2nA==}
     engines: {node: '>=14'}
     peerDependencies:
       '@vue/compiler-sfc': '>= 3'
@@ -9865,13 +9883,13 @@ packages:
     dev: true
 
   registry.nlark.com/concat-map@0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=, registry: https://registry.npmmirror.com/, tarball: https://registry.nlark.com/concat-map/download/concat-map-0.0.1.tgz}
+    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=, registry: https://registry.npmjs.org/, tarball: https://registry.nlark.com/concat-map/download/concat-map-0.0.1.tgz}
     name: concat-map
     version: 0.0.1
     dev: true
 
   registry.nlark.com/write@1.0.3:
-    resolution: {integrity: sha1-CADhRSO5I6OH5BUSPIZWFqrg9cM=, registry: https://registry.npmmirror.com/, tarball: https://registry.nlark.com/write/download/write-1.0.3.tgz}
+    resolution: {integrity: sha1-CADhRSO5I6OH5BUSPIZWFqrg9cM=, registry: https://registry.npmjs.org/, tarball: https://registry.nlark.com/write/download/write-1.0.3.tgz}
     name: write
     version: 1.0.3
     engines: {node: '>=4'}

@@ -7,7 +7,7 @@ import { TestBackend } from 'react-dnd-test-backend'
 
 export function renderWithBackend(
   DecoratedComponent: Component,
-  renderOptions: RenderOptions = {},
+  renderOptions: RenderOptions<any> = {},
   Backend: BackendFactory = HTML5Backend,
   backendOptions: Record<string, any> = {}
 ) {
@@ -26,7 +26,7 @@ export function renderWithBackend(
 
 export function renderWithTestBackend(
   DecoratedComponent: Component,
-  renderOptions: RenderOptions = {},
+  renderOptions: RenderOptions<any> = {},
   backendOptions: Record<string, any> = {}
 ) {
   return renderWithBackend(
