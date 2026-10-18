@@ -35,12 +35,13 @@ jobs:
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         # https://github.com/changesets/action
-        uses: changesets/action@v2
+        # action v2 要求 Changesets CLI v3；本仓库为 CLI v2，须用 action v1
+        uses: changesets/action@v1
         with:
-          publish-script: pnpm run release
-          version-script: pnpm run pack-version
-          commit-message: 'chore(changesets): release'
-          pr-title: 'Release From Changesets'
+          publish: pnpm run release
+          version: pnpm run pack-version
+          commit: 'chore(changesets): release'
+          title: 'Release From Changesets'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
