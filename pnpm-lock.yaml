@@ -2762,7 +2762,7 @@ packages:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
     dependencies:
       balanced-match: 1.0.2
-      concat-map: registry.nlark.com/concat-map@0.0.1
+      concat-map: registry.npmjs.org/concat-map@0.0.1
     dev: true
 
   /brace-expansion@2.0.1:
@@ -4956,7 +4956,7 @@ packages:
     dependencies:
       flatted: 2.0.2
       rimraf: 2.6.3
-      write: registry.nlark.com/write@1.0.3
+      write: registry.npmjs.org/write@1.0.3
     dev: true
 
   /flat-cache@3.0.4:
@@ -9879,14 +9879,14 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  registry.nlark.com/concat-map@0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=, registry: https://registry.npmjs.org/, tarball: https://registry.nlark.com/concat-map/download/concat-map-0.0.1.tgz}
+  registry.npmjs.org/concat-map@0.0.1:
+    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=, registry: https://registry.npmjs.org/, tarball: https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz}
     name: concat-map
     version: 0.0.1
     dev: true
 
-  registry.nlark.com/write@1.0.3:
-    resolution: {integrity: sha1-CADhRSO5I6OH5BUSPIZWFqrg9cM=, registry: https://registry.npmjs.org/, tarball: https://registry.nlark.com/write/download/write-1.0.3.tgz}
+  registry.npmjs.org/write@1.0.3:
+    resolution: {integrity: sha1-CADhRSO5I6OH5BUSPIZWFqrg9cM=, registry: https://registry.npmjs.org/, tarball: https://registry.npmjs.org/write/-/write-1.0.3.tgz}
     name: write
     version: 1.0.3
     engines: {node: '>=4'}
