@@ -1,6 +1,5 @@
 name: CI
 
-# 在master分支发生push事件时触发。
 on:
   schedule:
     - cron: '0 0 * * *'
@@ -14,19 +13,25 @@ on:
     branches:
       - main
 
-jobs: # 工作流
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
   lint:
-    runs-on: ubuntu-latest #运行在虚拟机环境ubuntu-latest
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: checkout code repository # 步骤的名字 切到对应的分支
-        uses: actions/checkout@v2 # 使用actions/checkout@v2这个action
-        with: # 这个action的参数
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+        with:
           fetch-depth: 0
 
       - name: Install pnpm
         uses: ./.github/actions/pnpm
-        with:
-          cache: '.pnpm-store'
 
       - name: Run Lint
         run: pnpm run lint
@@ -38,17 +43,16 @@ jobs: # 工作流
         run: pnpm run prettier
 
   build:
-    runs-on: ubuntu-latest #运行在虚拟机环境ubuntu-latest
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - name: checkout code repository # 步骤的名字 切到对应的分支
-        uses: actions/checkout@v2 # 使用actions/checkout@v2这个action
-        with: # 这个action的参数
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+        with:
           fetch-depth: 0
 
       - name: Install pnpm
         uses: ./.github/actions/pnpm
-        with:
-          cache: '.pnpm-store'
 
       - name: Run Test
         run: pnpm run test

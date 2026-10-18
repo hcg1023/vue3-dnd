@@ -1,18 +1,16 @@
 name: Deploy Docs
 description: Deploys the docs to GitHub Pages
 
-on:
-  workflow_call:
-    inputs:
-      build:
-        required: true
-        type: string
-      publish_dir:
-        required: true
-        type: string
-      github_token:
-        required: true
-        type: string
+inputs:
+  build:
+    description: 'Command to build the docs'
+    required: true
+  publish_dir:
+    description: 'Directory to publish'
+    required: true
+  github_token:
+    description: 'GitHub token for the deployment'
+    required: true
 
 runs:
   using: 'composite'
@@ -24,7 +22,7 @@ runs:
       shell: bash
 
     - name: Run Deploy
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       if: ${{ hashFiles(inputs.publish_dir) }}
       with:
         github_token: ${{ inputs.github_token }}

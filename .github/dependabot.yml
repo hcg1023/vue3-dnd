@@ -1,0 +1,30 @@
+version: 2
+
+# 依赖与 GitHub Actions 的自动更新：
+# - npm 周更，minor/patch 合并成组，major 单独评估（老项目大版本升级需人工确认）
+# - github-actions 周更不分组，避免再次出现 runner 升级导致旧版 action 失败的问题
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Asia/Shanghai
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - version-update:semver-major
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Asia/Shanghai
+    open-pull-requests-limit: 10

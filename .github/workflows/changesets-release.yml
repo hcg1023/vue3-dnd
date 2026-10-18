@@ -4,7 +4,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 env:
   BASE_URL: /
-  BUILD_PACKAGE_NAME: "docs"
+  BUILD_PACKAGE_NAME: 'docs'
   PUBLISH_DIR: ./packages/docs/dist
 
 on:
@@ -13,15 +13,19 @@ on:
     branches: [main]
     types: [completed]
 
+permissions:
+  contents: write # 发版提交与 GitHub Pages 部署
+  pull-requests: write # changesets 版本 PR
+
 jobs:
   release:
     if: github.event.workflow_run.conclusion == 'success'
-    timeout-minutes: 10
-    runs-on: ubuntu-latest #运行在虚拟机环境ubuntu-latest
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           persist-credentials: false
@@ -31,13 +35,12 @@ jobs:
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         # https://github.com/changesets/action
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
-          # this expects you to have a script called release which does a build for your packages and calls changeset publish
-          publish: pnpm run release
-          version: pnpm run pack-version
-          commit: 'chore(changesets): release'
-          title: 'Release From Changesets'
+          publish-script: pnpm run release
+          version-script: pnpm run pack-version
+          commit-message: 'chore(changesets): release'
+          pr-title: 'Release From Changesets'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -46,11 +49,14 @@ jobs:
         if: ${{ steps.changesets.outputs.published == 'true' }}
         run: pnpm run publish-success
 
-      - name: Deploy to GitHub Pages # 发布成功以后自动部署到 GitHub Pages,或者没有任何changeset更改的时候
-        if: ${{ steps.changesets.outputs.published == 'true' || steps.changesets.outputs.hasChangesets == 'false' }}
+      - name: Deploy to GitHub Pages # 发布成功后或无changeset时部署
+        if: >-
+          ${{ steps.changesets.outputs.published == 'true' ||
+          steps.changesets.outputs.hasChangesets == 'false' }}
         uses: ./.github/actions/deploy-docs
         with:
-          build: BASE_URL=${{ env.BASE_URL }} pnpm -r build --filter=${{ env.BUILD_PACKAGE_NAME }}
+          build: >-
+            BASE_URL=${{ env.BASE_URL }} pnpm -r build
+            --filter=${{ env.BUILD_PACKAGE_NAME }}
           publish_dir: ${{ env.PUBLISH_DIR }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-

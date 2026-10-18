@@ -1,32 +1,19 @@
 name: 'pnpm installation'
-description: 'Install and audit dependencies for pnpm'
-inputs:
-  cache: # id of input
-    description: 'The location of the pnpm cache'
-    required: false
-    default: '.pnpm-store'
+description: 'Install pnpm and project dependencies'
 
 runs:
   using: 'composite'
   steps:
-    - run: echo '${{ toJSON(inputs) }}'
-      shell: bash
-
+    # 版本来自根 package.json 的 packageManager 字段
     - name: Install pnpm
-      uses: pnpm/action-setup@v2.0.1
-      with:
-        version: 6.15.1
+      uses: pnpm/action-setup@v6
 
-    # - name: setup pnpm config
-    #  run: pnpm config set store-dir ${{ inputs.cache }}
-    #  shell: bash
-
-    - name: Set node version to 16
-      uses: actions/setup-node@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v7
       with:
-        node-version: 16
+        node-version: 22
         cache: 'pnpm'
 
-    - name: install dependencies
-      run: pnpm install
+    - name: Install Dependencies
+      run: pnpm install --frozen-lockfile
       shell: bash
