@@ -36,7 +36,7 @@ jobs:
         id: changesets
         # https://github.com/changesets/action
         # action v2 要求 Changesets CLI v3；本仓库为 CLI v2，须用 action v1
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
           publish: pnpm run release
           version: pnpm run pack-version
