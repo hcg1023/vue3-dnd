@@ -33,7 +33,7 @@
     "escape-html": "^1.0.3",
     "fast-glob": "^3.2.11",
     "less": "^4.1.2",
-    "markdown-it": "^13.0.1",
+    "markdown-it": "^14.3.3",
     "prismjs": "^1.28.0",
     "unplugin-vue-components": "^0.19.6",
     "vite": "^2.9.18"
